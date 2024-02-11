@@ -18,7 +18,7 @@ const questions = [
 
 
 export default function Faq() {
-    const [expanded, setExpanded] = useState([questions.map(q => false)])
+    const [expanded, setExpanded] = useState(questions.map(q => false))
     const toggle = (i) => {
         let newExpanded = [...expanded]
         newExpanded[i] = !newExpanded[i]
