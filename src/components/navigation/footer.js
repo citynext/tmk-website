@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
+
 
 
 export default function Footer() {
@@ -13,9 +15,9 @@ export default function Footer() {
     }
     return (
         <section className="relative bg-third pt-10 lg:pt-0">
-            <img src="images/footer/footer-bg.svg" className="absolute bottom-0 left-0 w-full z-[-1]" />
+            <img src="/images/footer/footer-bg.svg" alt="footer background" className="absolute bottom-0 left-0 w-full z-[-1]" />
             <div className="flex justify-between items-center mx-10">
-                <img src="logo/transparent/green-title.png" className="hidden lg:block max-w-64 w-full m-10" />
+                <Image src="/logo/transparent/green-title.png" alt="take my keys logo" width={256} height={142.2} className="hidden lg:block m-10" />
                 <div className="grid grid-cols-3">
                     <div className={className.div}>
                         <h3 className={className.h3}>Liens rapides</h3>

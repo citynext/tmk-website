@@ -28,7 +28,7 @@ export default function Faq() {
         <section className='mb-60'>
             <div className="flex flex-col ">
                 <h1 className="text-4xl font-bold text-center">Réponses à vos questions</h1>
-                <p className="text-gray-500 my-5 text-xl text-center">Besoin d'aide ? <Link href="/faq" className="text-secondary">Posez votre question ici !</Link></p>
+                <p className="text-gray-500 my-5 text-xl text-center">Besoin d&apos;aide ? <Link href="/faq" className="text-secondary">Posez votre question ici !</Link></p>
             </div>
             <ul className='flex flex-col justify-center items-stretch max-w-[50rem] mx-auto'>
                 {questions.map((q, i) => (

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 const navigation = [
@@ -42,7 +43,7 @@ export default function Navbar() {
     return (
         <nav className={`flex w-full p-3 items-center justify-around fixed z-50 top-0 ${className} transition-colors duration-1000 ease-in-out `}>
             <Link href="/">
-                <img src="/logo/transparent/white-title.png" alt="logo" className="w-28" />
+                <Image src="/logo/transparent/white-title.png" alt="take my keys logo" width={112} height={62.56} />
             </Link>
             <ul className="flex justify-end items-center text-white text-lg">
                 {navigation.map((item) => (
