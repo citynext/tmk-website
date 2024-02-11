@@ -54,7 +54,7 @@ export default function Navbar() {
                     </li>
                 ))}
             </ul>
-            <Link href="/" className='md-4'>
+            <Link href="/dashboard" className='md-4'>
                 <button className='bg-secondary text-white text-lg rounded-3xl p-2 px-6 whitespace-nowrap'>
                     Se connecter
                 </button>

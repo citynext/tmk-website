@@ -19,7 +19,7 @@ const questions = [
 
 export default function Faq() {
     const [expanded, setExpanded] = useState([questions.map(q => false)])
-    const expand = (i) => {
+    const toggle = (i) => {
         let newExpanded = [...expanded]
         newExpanded[i] = !newExpanded[i]
         setExpanded(newExpanded)
@@ -36,7 +36,7 @@ export default function Faq() {
                         <div className='flex justify-between items-center w-full pl-5'>
                             <span className=" bg-white text-xl rounded-3xl mx-5 my-3">{i}.</span>
                             <h2 className="flex-1 text-2xl">{q.question}</h2>
-                            <button className={`${expanded[i] ? 'bg-third' :'text-white bg-primary'} text-xl px-5 py-3`} onClick={() => expand(i)}>{expanded[i] ? '-' : '+'}</button>
+                            <button className={`${expanded[i] ? 'bg-third' :'text-white bg-primary'} text-xl px-5 py-3`} onClick={() => toggle(i)}>{expanded[i] ? '-' : '+'}</button>
                         </div>
                         <p className={`text-gray-500 mx-24 my-5 ${expanded[i] ? '' : 'hidden'}`}>{q.answer}</p>
                     </li>
