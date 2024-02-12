@@ -1,7 +1,7 @@
 import { BiSolidHappyHeartEyes } from "react-icons/bi";
 import { FaHeartCirclePlus } from "react-icons/fa6";
 import { BsPeopleFill } from "react-icons/bs";
-
+import Image from "next/image";
 
 const StatItem = ({icon, kpi, text}) => {
     const _icon = icon;
@@ -22,8 +22,8 @@ export default function Stats() {
         li: 'flex-1 scale-75 md:scale-100',
     }
     return (
-        <section className="relative">
-            <img src="images/general-landing/stats-bg.svg" alt="stats bg" className="w-screen h-48 object-cover" />
+        <section className="relative w-screen h-48">
+            <Image src="images/general-landing/stats-bg.svg" alt="stats bg" fill objectFit="cover" className="z-[-1]" />
             <div className="absolute top-0 px-0 md:px-20 left-0 w-full h-full flex justify-center">
                 <ul className="flex justify-around items-center w-full max-w-[80rem]">
                     <li className={className.li}><StatItem icon={BiSolidHappyHeartEyes} kpi="97%" text="Satisfaction client" /></li>

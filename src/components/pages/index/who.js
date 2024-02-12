@@ -1,6 +1,6 @@
 import { IoKeyOutline } from "react-icons/io5";
 import { IoHomeOutline } from "react-icons/io5";
-
+import Image from "next/image";
 
 export default function Who() {
     const className = {
@@ -8,7 +8,7 @@ export default function Who() {
     }
     return (
         <section className="relative mt-32 h-fit">
-            <img src="/images/general-landing/who-bg.svg" alt="bg img" className="absolute top-0 left-0 w-full z-[-1]" />
+            <img src="/images/general-landing/who-bg.svg" alt="bg img" className="absolute top-40 lg:top-0 left-0 w-full z-[-1]" />
             <div className="flex flex-col mx-5">
                 <div className="flex flex-col justify-center items-center">
                     <h1 className="text-2xl sm:text-4xl text-center">Curieux d&apos;en apprendre davantage ?</h1>

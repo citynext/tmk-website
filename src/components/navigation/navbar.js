@@ -6,11 +6,11 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 const navigation = [
     { name: 'Sous-location', href: '/sous-location' },
-    { name: 'Conciergerie', href: '/concergerie' },
-    { name: 'A propos', href: '/about' },
-    { name: 'Contact', href: '/about' },
+    { name: 'Conciergerie', href: '/conciergerie' },
+    { name: 'A propos de nous', href: '/a-propos-de-nous' },
+    { name: 'Contact', href: '/contact' },
     { name: 'Blog', href: '/blog'},
-    { name: 'FAQ', href: '/faq' },
+    { name: 'FAQ', href: '/foire-aux-questions' },
 
 ]
 
