@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { RxHamburgerMenu } from "react-icons/rx";
+import Button from '../form/button';
 
 
 const navigation = [
@@ -63,9 +64,9 @@ export default function Navbar() {
                 ))}
             </ul>
             <Link href="/dashboard" className='md-4'>
-                <button className={`lg:block bg-secondary text-white text-lg rounded-3xl p-2 px-6 whitespace-nowrap ${open ? '' : 'hidden'}`}>
+                <Button className={`lg:block text-lg ${open ? '' : 'hidden'}`}>
                     Se connecter
-                </button>
+                </Button>
             </Link>
         </nav>
     );
