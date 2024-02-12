@@ -16,14 +16,8 @@
         letter-spacing: 0.5px;
         color: theme('colors.text');
     }
-    h1 {
+    h1, h2 {
         font-weight: 500;
-        font-size: 4.5rem;
-    }
-    
-    h2 {
-        font-weight: 500;
-        font-size: 3.5rem;
     }
 }
 
