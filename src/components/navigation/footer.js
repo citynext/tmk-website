@@ -7,7 +7,7 @@ import { MdOutlineEmail } from "react-icons/md";
 
 export default function Footer() {
     const className = {
-        div: "mx-10",
+        div: "mx-10 my-5",
         h3: "mb-5 text-",
         ul: "flex flex-col justify-center items-start",
         li: "flex items-center justify-center text-gray-700 font-light text-lg",
@@ -18,7 +18,7 @@ export default function Footer() {
             <img src="/images/footer/footer-bg.svg" alt="footer background" className="absolute bottom-0 left-0 w-full z-[-1]" />
             <div className="flex justify-between items-center mx-10">
                 <Image src="/logo/transparent/green-title.png" alt="take my keys logo" width={256} height={142.2} className="hidden lg:block m-10" />
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                     <div className={className.div}>
                         <h3 className={className.h3}>Liens rapides</h3>
                         <ul className={className.ul}>

@@ -4,17 +4,17 @@ import { IoHomeOutline } from "react-icons/io5";
 
 export default function Who() {
     const className = {
-        btn: "flex flex-col justify-center items-center rounded-xl px-20 py-10 mx-5 max-w-[32rem]"
+        btn: "flex flex-col justify-center items-center rounded-xl px-20 py-10 m-5 max-w-[32rem]"
     }
     return (
         <section className="relative mt-32 h-fit">
                 <img src="/images/general-landing/who-bg.svg" alt="bg img" className="absolute top-0 left-0 w-full z-[-1]" />
-            <div className="flex flex-col">
+            <div className="flex flex-col mx-5">
                 <div className="flex flex-col justify-center items-center">
-                    <h1 className="text-4xl text-center">Curieux d&apos;en apprendre davantage ?</h1>
+                    <h1 className="text-2xl sm:text-4xl text-center">Curieux d&apos;en apprendre davantage ?</h1>
                     <p className="text-gray-500 my-5 text-xl text-center">Explorez les opportunités passionnantes qui vous attendent</p>
                 </div>
-                <div className="flex justify-center items-center my-10">
+                <div className="flex flex-wrap justify-center items-center my-10">
                     <button className={`${className.btn} text-white bg-secondary`}>
                         <IoKeyOutline size={80} className="mb-5" />
                         <h2 className="text-4xl">Locataire</h2>

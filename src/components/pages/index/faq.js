@@ -25,9 +25,9 @@ export default function Faq() {
         setExpanded(newExpanded)
     }
     return (
-        <section className='mb-60'>
+        <section className='mb-60 px-5'>
             <div className="flex flex-col ">
-                <h1 className="text-4xl font-bold text-center">Réponses à vos questions</h1>
+                <h1 className="text-2xl sm:text-4xl font-bold text-center">Réponses à vos questions</h1>
                 <p className="text-gray-500 my-5 text-xl text-center">Besoin d&apos;aide ? <Link href="/faq" className="text-secondary">Posez votre question ici !</Link></p>
             </div>
             <ul className='flex flex-col justify-center items-stretch max-w-[50rem] mx-auto'>
@@ -35,7 +35,7 @@ export default function Faq() {
                     <li key={i} className="bg-white flex flex-col justify-between items-center my-5 border-2 rounded-lg border-primary">
                         <div className='flex justify-between items-center w-full pl-5'>
                             <span className=" bg-white text-xl rounded-3xl mx-5 my-3">{i}.</span>
-                            <h2 className="flex-1 text-2xl">{q.question}</h2>
+                            <h2 className="flex-1 text-lg sm:text-2xl">{q.question}</h2>
                             <button className={`${expanded[i] ? 'bg-third' :'text-white bg-primary'} text-xl px-5 py-3`} onClick={() => toggle(i)}>{expanded[i] ? '-' : '+'}</button>
                         </div>
                         <p className={`text-gray-500 mx-24 my-5 ${expanded[i] ? '' : 'hidden'}`}>{q.answer}</p>

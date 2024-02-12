@@ -25,7 +25,7 @@ const whys = [
 const WhyItem = ({icon, title, description}) => {
     const Icon = icon;
     return (
-        <div className="flex flex-col justify-center items-center mx-5">
+        <div className="flex flex-col justify-center items-center mx-5 max-w-80">
             <div className="min-w-20 min-h-20 mt-20 mb-5 bg-primary-40 text-primary p-5 rounded-full" >
                 <Icon className="text-6xl" />
             </div>
@@ -37,12 +37,12 @@ const WhyItem = ({icon, title, description}) => {
 
 export default function Why() {
     return (
-        <section className="flex flex-col justify-center items-center py-10">
-            <div className="mx-10 mt-20 max-w-[60rem]">
-                <h2 className="text-center text-4xl font-medium mb-4">Pourquoi choisir <strong className="text-secondary">TAKE MY KEYS</strong> ?</h2>
-                <p className="text-gray-500 text-2xl font-light text-center">Maximisez vos gains, assurez la tranquilité d&apos;esprit, et bénéficiez d&apos;une flexibilité exceptionnelle avec nous.</p>
+        <section className="flex flex-col justify-center items-center md:py-10">
+            <div className="mx-5 sm:mx-10 mt-20 max-w-[60rem]">
+                <h2 className="text-center text-2xl sm:text-4xl font-medium mb-4">Pourquoi choisir <strong className="text-secondary">TAKE MY KEYS</strong> ?</h2>
+                <p className="text-gray-500 text-xl sm:text-2xl font-light text-center">Maximisez vos gains, assurez la tranquilité d&apos;esprit, et bénéficiez d&apos;une flexibilité exceptionnelle avec nous.</p>
             </div>
-            <ul className="flex justify-around mx-20">
+            <ul className="flex flex-wrap w-full justify-around">
                 {whys.map((why, index) => (
                     <li key={index}>
                         <WhyItem {...why} />
