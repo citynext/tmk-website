@@ -2,6 +2,8 @@ import { useState } from "react";
 import { IoPersonOutline } from "react-icons/io5";
 import { LiaDoorOpenSolid } from "react-icons/lia";
 import { IoLocationOutline } from "react-icons/io5";
+import Button from "../form/button";
+
 
 const Input = ({value, onChange, maxValue, ...props}) => {
     const _max = maxValue;
@@ -64,10 +66,9 @@ export default function CTA({ className }) {
                         </div>
                     }
                 </div>
-                
                 <div className="flex flex-col m-3">
-                    <button className="bg-secondary hover:bg-primary-80 text-white px-5 py-1 rounded-3xl ">Calculer</button>
-                    <button onClick={() => setExpanded(!expanded)} className="rounded-3xl border px-5 py-1 border-text hover:bg-primary-80 hover:text-white hover:border-white mt-2">{expanded ? "Moins" : "Plus"} d'options</button>
+                    <Button>Calculer</Button>
+                    <Button outline onClick={() => setExpanded(!expanded)} className="mt-2">{expanded ? "Moins" : "Plus"} d'options</Button>
                 </div>
             </div>
         </section>

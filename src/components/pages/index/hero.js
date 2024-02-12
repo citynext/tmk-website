@@ -1,4 +1,4 @@
-import CTA from "../../form/cta";
+import CTA from "../../reusable/cta";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
