@@ -1,6 +1,7 @@
 import { IoPersonOutline } from "react-icons/io5";
 import { LiaDoorOpenSolid } from "react-icons/lia";
 import { IoLocationOutline } from "react-icons/io5";
+import { useState, useEffect } from "react";
 
 const Input = (props) => {
     const btnClasses = "flex justify-center items-center rounded-full w-5 h-5 m-[1px] pb-0.5 text-primary line-height-[1.5]";
@@ -22,7 +23,6 @@ const Input = (props) => {
 }
 
 function CTA({ className }) {
-    console.log(className)
     return (
         <section className={className}>
             <div className="bg-white opacity-80 lg:opacity-100 w-fit px-5 py-2 font-medium text-lg rounded-tl-2xl rounded-tr-2xl border-gray-400 border-l border-t border-r">Calculez votre revenu garanti</div>
@@ -42,11 +42,26 @@ function CTA({ className }) {
 }
 
 export default function Hero() {
+    const [cid, setCid] = useState(0)
+    const choices = ['voyager', "t'épanouir", "profiter"];
+    useEffect(() => {
+        const id = setInterval(() => setCid((oldCount) => {
+            if (oldCount === choices.length - 1) {
+                return 0
+            }
+            else {
+                return oldCount + 1
+            }
+        }), 1500);
+        return () => {
+          clearInterval(id);
+        };
+      }, [])
     return (
     <div className="relative flex justify-center h-screen">
         <img src="/images/general-landing/hero.jpeg" alt="Image principale" className="h-[95vh] w-screen object-cover" />
         <div className="absolute flex flex-col justify-end lg:justify-center inset-0 bg-gradient-to-b from-primary to-transparent px-5 lg:px-20 text-white">
-          <h1 className="text-4xl leading-[3rem] lg:leading-[6rem] lg:text-[4.5rem]">TAKE MY KEYS te permettra <br />de <strong className="bg-secondary px-2 pb-2">voyager</strong></h1>
+          <h1 className="text-4xl leading-[3rem] lg:leading-[6rem] lg:text-[4.5rem]">TAKE MY KEYS te permettra <br />de <strong className="bg-secondary px-2 pb-2 transition ease-linear">{choices[cid]}</strong></h1>
           <h2 className="text-2xl font-light">Tout en payant ton loyer durant ton absence... et bien plus encore</h2>
           <CTA className="text-text my-20 lg:my-0 w-fit lg:mx-auto lg:left-0 lg:right-0 lg:absolute lg:bottom-0 lg:h-36" />
         </div>
