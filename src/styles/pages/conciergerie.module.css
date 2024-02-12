@@ -1,2 +1,7 @@
-.a {
+.all {
+
+}
+
+.all h1 {
+    @apply text-7xl font-bold;
 }
