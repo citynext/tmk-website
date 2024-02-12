@@ -59,8 +59,8 @@ export default function Hero() {
       }, [])
     return (
     <div className="relative flex justify-center h-screen">
-        <img src="/images/general-landing/hero.jpeg" alt="Image principale" className="h-[95vh] w-screen object-cover" />
-        <div className="absolute flex flex-col justify-end lg:justify-center inset-0 bg-gradient-to-b from-primary to-transparent px-5 lg:px-20 text-white">
+        <img src="/images/general-landing/hero.svg" alt="Image principale" className="h-[95vh] w-screen object-cover" />
+        <div className="absolute flex flex-col justify-end lg:justify-center inset-0 px-5 lg:px-20 text-white">
           <h1 className="text-4xl leading-[3rem] lg:leading-[6rem] lg:text-[4.5rem]">TAKE MY KEYS te permettra <br />de <strong className="bg-secondary px-2 pb-2 transition ease-linear">{choices[cid]}</strong></h1>
           <h2 className="text-2xl font-light">Tout en payant ton loyer durant ton absence... et bien plus encore</h2>
           <CTA className="text-text my-20 lg:my-0 w-fit lg:mx-auto lg:left-0 lg:right-0 lg:absolute lg:bottom-0 lg:h-36" />
