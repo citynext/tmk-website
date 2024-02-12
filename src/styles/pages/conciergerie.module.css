@@ -3,11 +3,11 @@
 }
 
 .all h1 {
-    @apply text-5xl font-bold mb-2;
+    @apply text-5xl font-bold mb-3;
 }
 
 .all h2 {
-    @apply text-4xl font-medium mb-1;
+    @apply text-4xl font-medium mb-2;
 }
 
 .all p {
@@ -16,4 +16,8 @@
 
 .all strong {
     @apply font-bold text-secondary;
+}
+
+.all section:not(:first-child) {
+    @apply my-20;
 }
