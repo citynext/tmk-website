@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { HiOutlineArrowSmallLeft, HiOutlineArrowSmallRight } from "react-icons/hi2";
+import Image from "next/image";
 
 
 const steps = [
@@ -82,9 +83,9 @@ export default function How() {
                 <div className="">
                     <div className="relative">
                         <ul className="flex justify-center my-5">
-                            <li><img src={steps[getPrevStep()].image} alt={steps[getPrevStep()].title} className={`${className.image} opacity-50 scale-90`} /></li>
-                            <li><img src={steps[currentStep].image} alt={steps[currentStep].title} className={className.image} /></li>
-                            <li><img src={steps[getNextStep()].image} alt={steps[getNextStep()].title} className={`${className.image} opacity-50 scale-90`} /></li>
+                            <li><Image src={steps[getPrevStep()].image} alt={steps[getPrevStep()].title} width={384} height={0} className={`${className.image} opacity-50 scale-90`} /></li>
+                            <li><Image src={steps[currentStep].image} alt={steps[currentStep].title} width={384} height={0} className={className.image} /></li>
+                            <li><Image src={steps[getNextStep()].image} alt={steps[getNextStep()].title} width={384} height={0} className={`${className.image} opacity-50 scale-90`} /></li>
                         </ul>
                         <ul className="flex absolute right-0 left-32 mx-auto md:left-auto scale-75 md:scale-75 lg:scale-100 md:right-20 bottom-20 lg:right-[-5rem] w-[40rem] overflow-hidden">
                             {steps.map((step, index) => {
