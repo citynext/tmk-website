@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { RxHamburgerMenu } from "react-icons/rx";
 
 
 const navigation = [
@@ -35,17 +36,24 @@ const useScrollPosition = () => {
 
 
 export default function Navbar() {
+    const [open, setOpen] = useState(false);
+
+    const toggle = () => {
+        setOpen(!open);
+    }
+
     const scrollY = useScrollPosition();
-    let className = 'bg-transparent';
+    let className = open ? 'bg-primary': 'bg-transparent';
     if (scrollY > 200) {
         className = 'bg-primary';
     }
     return (
-        <nav className={`flex w-full p-3 items-center justify-around fixed z-50 top-0 ${className} transition-colors duration-1000 ease-in-out `}>
-            <Link href="/">
+        <nav className={`flex flex-col w-full p-3 items-end justify-between lg:flex-row lg:justify-around lg:items-center fixed z-50 top-0 ${className} transition-colors duration-1000 ease-in-out `}>
+            <button className='absolute right-5 top-5 lg:hidden' onClick={toggle}><RxHamburgerMenu size={48} color='white' /></button>
+            <Link className='absolute left-5 top-5 lg:static' href="/">
                 <Image src="/logo/transparent/white-title.png" alt="take my keys logo" width={112} height={62.56} />
             </Link>
-            <ul className="flex justify-end items-center text-white text-lg">
+            <ul className={`${open ? 'flex flex-col mt-20 text-center' : 'hidden'} text-white text-lg lg:mt-0 lg:flex lg:flex-row lg:justify-end lg:items-center`}>
                 {navigation.map((item) => (
                     <li key={item.name} className='m-4'>
                         <Link href={item.href}>
@@ -55,7 +63,7 @@ export default function Navbar() {
                 ))}
             </ul>
             <Link href="/dashboard" className='md-4'>
-                <button className='bg-secondary text-white text-lg rounded-3xl p-2 px-6 whitespace-nowrap'>
+                <button className={`lg:block bg-secondary text-white text-lg rounded-3xl p-2 px-6 whitespace-nowrap ${open ? '' : 'hidden'}`}>
                     Se connecter
                 </button>
             </Link>
