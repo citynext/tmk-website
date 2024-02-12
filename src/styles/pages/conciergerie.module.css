@@ -3,5 +3,17 @@
 }
 
 .all h1 {
-    @apply text-7xl font-bold;
+    @apply text-5xl font-bold mb-2;
+}
+
+.all h2 {
+    @apply text-4xl font-medium mb-1;
+}
+
+.all p {
+    @apply text-xl font-light;
+}
+
+.all strong {
+    @apply font-bold text-secondary;
 }

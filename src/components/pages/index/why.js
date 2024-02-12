@@ -52,3 +52,5 @@ export default function Why() {
         </section>
     )
 }
+
+export { whys }

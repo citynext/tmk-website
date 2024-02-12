@@ -14,8 +14,8 @@ export default function Footer() {
         icon: "text-xl mr-2",
     }
     return (
-        <section className="relative bg-third pt-10 lg:pt-0">
-            <img src="/images/footer/footer-bg.svg" alt="footer background" className="absolute bottom-0 left-0 w-full z-[-1]" />
+        <section className="relative bg-third lg:bg-transparent mt-20 lg:pt-0">
+            <img src="/images/footer/footer-bg.svg" alt="footer background" className="hidden lg:block absolute bottom-0 left-0 w-full z-[-1]" />
             <div className="flex justify-between items-center mx-10">
                 <Image src="/logo/transparent/green-title.png" alt="take my keys logo" width={256} height={142.2} className="hidden lg:block m-10" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">

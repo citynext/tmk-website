@@ -68,7 +68,7 @@ export default function CTA({ className }) {
                 </div>
                 <div className="flex flex-col m-3">
                     <Button>Calculer</Button>
-                    <Button outline onClick={() => setExpanded(!expanded)} className="mt-2">{expanded ? "Moins" : "Plus"} d'options</Button>
+                    <Button outline onClick={() => setExpanded(!expanded)} className="mt-2">{expanded ? "Moins" : "Plus"} d&apos;options</Button>
                 </div>
             </div>
         </section>

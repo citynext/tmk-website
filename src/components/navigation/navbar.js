@@ -56,7 +56,7 @@ export default function Navbar() {
             </Link>
             <ul className={`${open ? 'flex flex-col mt-20 text-center' : 'hidden'} text-white text-lg lg:mt-0 lg:flex lg:flex-row lg:justify-end lg:items-center`}>
                 {navigation.map((item) => (
-                    <li key={item.name} className='m-4'>
+                    <li key={item.name} className='m-4 hover:underline'>
                         <Link href={item.href}>
                             {item.name}
                         </Link>
