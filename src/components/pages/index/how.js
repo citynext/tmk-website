@@ -78,7 +78,7 @@ export default function How() {
     return (
         <section className="flex justify-center items-center lg:py-32">
             <div className="flex flex-col justify-center items-center">
-                <h1 className="max-w-[60rem] my-5 text-2xl lg:text-4xl text-center">Ils ne sont pas les seuls à être malins, profitez également de vos voyages sans double peine !</h1>
+                <h1 className="max-w-[95vw] lg:max-w-[60rem] my-5 text-2xl lg:text-4xl text-center">Ils ne sont pas les seuls à être malins, profitez également de vos voyages sans double peine !</h1>
                 <div className="">
                     <div className="relative">
                         <ul className="flex justify-center my-5">
