@@ -73,12 +73,12 @@ export default function How() {
     const className = {
         arrow: "text-3xl bg-text text-white rounded-full p-3 m-4",
         inactiveArrow: "opacity-30 cursor-default",
-        image: "m-5 rounded-2xl object-cover"
+        image: "m-5 rounded-2xl object-cover min-w-96"
     }
     return (
-        <section className="flex justify-center items-center py-32">
+        <section className="flex justify-center items-center lg:py-32">
             <div className="flex flex-col justify-center items-center">
-                <h1 className="max-w-[60rem] my-5 text-4xl text-center">Ils ne sont pas les seuls à être malins, profitez également de vos voyages sans double peine !</h1>
+                <h1 className="max-w-[60rem] my-5 text-2xl lg:text-4xl text-center">Ils ne sont pas les seuls à être malins, profitez également de vos voyages sans double peine !</h1>
                 <div className="">
                     <div className="relative">
                         <ul className="flex justify-center my-5">
@@ -86,7 +86,7 @@ export default function How() {
                             <li><img src={steps[currentStep].image} alt={steps[currentStep].title} className={className.image} /></li>
                             <li><img src={steps[getNextStep()].image} alt={steps[getNextStep()].title} className={`${className.image} opacity-50 scale-90`} /></li>
                         </ul>
-                        <ul className="flex absolute bottom-20 right-[-5rem] w-[40rem] overflow-hidden">
+                        <ul className="flex absolute right-0 left-32 mx-auto md:left-auto scale-75 md:scale-75 lg:scale-100 md:right-20 bottom-20 lg:right-[-5rem] w-[40rem] overflow-hidden">
                             {steps.map((step, index) => {
                                 if (index === currentStep) {
                                     return (

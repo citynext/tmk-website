@@ -48,7 +48,7 @@ export default function Navbar() {
         className = 'bg-primary';
     }
     return (
-        <nav className={`flex flex-col w-full p-3 items-end justify-between lg:flex-row lg:justify-around lg:items-center fixed z-50 top-0 ${className} transition-colors duration-1000 ease-in-out `}>
+        <nav className={`flex flex-col min-h-24 w-full p-3 items-end justify-between lg:flex-row lg:justify-around lg:items-center fixed z-50 top-0 ${className} transition-colors duration-1000 ease-in-out `}>
             <button className='absolute right-5 top-5 lg:hidden' onClick={toggle}><RxHamburgerMenu size={48} color='white' /></button>
             <Link className='absolute left-5 top-5 lg:static' href="/">
                 <Image src="/logo/transparent/white-title.png" alt="take my keys logo" width={112} height={62.56} />
