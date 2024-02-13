@@ -84,7 +84,7 @@ export default function How() {
 
   const className = {
     arrow: "text-3xl bg-text text-white rounded-full p-3 m-4",
-    inactiveArrow: "opacity-30 cursor-default",
+    inactiveArrow: "opacity-30 cursor-not-allowed",
     image: "m-5 rounded-2xl object-cover min-w-96",
   };
 
@@ -92,39 +92,33 @@ export default function How() {
     gsap.fromTo(
       "#firstSlide",
       {
-        opacity: 0,
-        x: 40,
+        x: 5,
       },
       {
-        opacity: 1,
         x: 0,
-        // duration: 0.1,
-        delay: 0.3,
+        duration: 0.1,
+        delay: 0.2,
         ease: "power.in",
       }
     );
     gsap.fromTo(
       "#lastSlide",
       {
-        opacity: 0,
-        x: -40,
+        x: -5,
       },
       {
-        opacity: 1,
         x: 0,
-        // duration: 0.1,
-        delay: 0.3,
+        duration: 0.1,
+        delay: 0.2,
         ease: "power.in",
       }
     );
     gsap.fromTo(
       "#currentSlide",
       {
-        opacity: 0,
-        x: currentStep <= steps.length - 1 ? 200 : -200,
+        x: currentStep <= steps.length - 1 ? 50 : -50,
       },
       {
-        opacity: 1,
         x: 0,
         duration: 0.5,
         ease: "power.in",
@@ -133,42 +127,38 @@ export default function How() {
     gsap.fromTo(
       "#currentSlideText",
       {
-        opacity: 0,
-        x: currentStep <= steps.length - 1 ? 200 : 0,
+        scale: 0,
+        x: currentStep <= steps.length - 1 ? 220 : 0,
       },
       {
-        opacity: 1,
+        scale: 1,
         x: 0,
-        duration: 0.5,
-        delay: 0.3,
+        duration: 0.3,
+        delay: 0.2,
         ease: "power.in",
       }
     );
     gsap.fromTo(
       "#nextSlideText",
       {
-        opacity: 0,
-        x: currentStep <= steps.length - 1 ? 40 : 0,
+        x: currentStep <= steps.length - 1 ? 12 : 0,
       },
       {
-        opacity: 1,
         x: 0,
-        duration: 0.5,
-        delay: 0.5,
+        duration: 0.2,
+        delay: 0.4,
         ease: "power.in",
       }
     );
     gsap.fromTo(
       "#stepLabel",
       {
-        opacity: 0,
         scale: 0,
       },
       {
-        opacity: 1,
         scale: 1,
-        duration: 0.2,
-        delay: 0.6,
+        duration: 0.1,
+        delay: 0.4,
         ease: "power.in",
       }
     );
