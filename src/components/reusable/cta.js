@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { IoPersonOutline } from "react-icons/io5";
 import { LiaDoorOpenSolid } from "react-icons/lia";
 import { IoLocationOutline } from "react-icons/io5";
+import { LiaBedSolid } from "react-icons/lia";
+import { LiaBathSolid } from "react-icons/lia";
 import Button from "../form/button";
 import gsap from "gsap";
 import {motion} from  'framer-motion'
@@ -81,18 +83,18 @@ export default function CTA({ className }) {
           }}
           viewport={{ once: true }}
         className={`${className} transform translate-y-[100%]`} id="ctaHero">
-            <div className="bg-white opacity-80 lg:opacity-100 w-fit px-5 py-2 font-medium text-lg rounded-tl-2xl rounded-tr-2xl border-gray-400 border-l border-t border-r">Calculez votre revenu garanti</div>
+            <div className="bg-white opacity-80 lg:opacity-100 w-fit px-5 py-2 font-medium text-lg rounded-tl-2xl rounded-tr-2xl border-gray-400 border-l border-t border-r">Estimez vos revenus</div>
             <div className="bg-white opacity-80 flex-wrap lg:opacity-100 h-fit flex justify-between items-start rounded-2xl rounded-tl-none border-gray-400 border-solid border-b border-x p-5">
                 <div className="flex flex-col">
                     <div className="flex flex-wrap">
-                        <Input type="text" value={location} onChange={(v) => setLocation(v)} icon={IoLocationOutline} label="Localisation" placeholder="Où habitez-vous ?" className="w-80 lg:pl-0" />
+                        <Input type="text" value={location} onChange={(v) => setLocation(v)} icon={IoLocationOutline} label="Adresse" placeholder="Où habitez-vous ?" className="w-80 lg:pl-0" />
                         <Input type="number" value={rooms} onChange={(v) => setRooms(v)} icon={LiaDoorOpenSolid} label="Chambre(s)" placeholder="0" className="w-48 border-gray-400 lg:border-solid lg:border-l lg:border-r" />
                         <Input type="number" value={capacity} onChange={(v) => setCapacity(v)} icon={IoPersonOutline} label="Capacité d'accueil" placeholder="0" className="w-56" />
                     </div>
                     {expanded &&
                         <div className="flex lg:justify-end mt-5 flex-wrap">
-                            <Input type="number" value={beds} onChange={(v) => setBeds(v)} label="Lit(s)" placeholder="0" className="w-48 border-gray-400 lg:border-solid lg:border-l lg:border-r" />
-                            <Input type="number" value={bathrooms} onChange={(v) => setBathrooms(v)} label="Salle(s) de bain" placeholder="0" className="w-56" />
+                            <Input type="number" icon={LiaBedSolid} value={beds} onChange={(v) => setBeds(v)} label="Lit(s)" placeholder="0" className="w-48 border-gray-400 lg:border-solid lg:border-l lg:border-r" />
+                            <Input type="number" icon={LiaBathSolid} value={bathrooms} onChange={(v) => setBathrooms(v)} label="Salle(s) de bain" placeholder="0" className="w-56" />
                         </div>
                     }
                 </div>
