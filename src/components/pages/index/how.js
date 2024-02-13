@@ -180,8 +180,7 @@ export default function How() {
           viewport={{ once: true }}
           className="max-w-[95vw] lg:max-w-[60rem] my-5 text-2xl lg:text-4xl text-center"
         >
-          Ils ne sont pas les seuls à être malins, profitez également de vos
-          voyages sans double peine !
+          Comment ça marche ?
         </motion.h1>
         <div className="">
           <div className="relative">

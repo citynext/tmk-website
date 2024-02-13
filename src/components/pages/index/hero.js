@@ -59,7 +59,7 @@ export default function Hero() {
       />
       <div className="absolute pt-36 flex flex-col justify-around lg:justify-center inset-0 px-5 lg:px-20 text-white">
         <h1 className="overflow-hidden text-4xl leading-[3rem] lg:leading-[6rem] lg:text-[3.5rem]">
-          Besoin d'argent pour{" "}<br />
+          Besoin d&apos;argent pour{" "}<br />
           
           <span
             className="px-2 bg-secondary pb-2 transition ease-linear font-[700] inline-block"
