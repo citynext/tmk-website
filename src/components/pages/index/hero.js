@@ -5,7 +5,7 @@ import gsap from "gsap";
 
 export default function Hero() {
   const [cid, setCid] = useState(0);
-  const choices = ["voyager", "t'épanouir", "profiter"];
+  const choices = ["rendre visite à la famille", "découvrir de nouveaux pays", "télétravailler depuis la plage"];
   useEffect(() => {
     const id = setInterval(
       () =>
@@ -57,23 +57,23 @@ export default function Hero() {
         alt="Image principale"
         className="bg-primary object-cover w-full h-full"
       />
-      <div className="absolute flex flex-col justify-end lg:justify-center inset-0 px-5 lg:px-20 text-white">
-        <h1 className="overflow-hidden text-4xl leading-[3rem] lg:leading-[6rem] lg:text-[4.5rem]">
-          TAKE MY KEYS te permettra <br />
-          de{" "}
+      <div className="absolute pt-36 flex flex-col justify-around lg:justify-center inset-0 px-5 lg:px-20 text-white">
+        <h1 className="overflow-hidden text-4xl leading-[3rem] lg:leading-[6rem] lg:text-[3.5rem]">
+          Besoin d'argent pour{" "}<br />
+          
           <span
-            className="bg-secondary px-2 pb-2 transition ease-linear font-[700] inline-block"
+            className="px-2 bg-secondary pb-2 transition ease-linear font-[700] inline-block"
             id="cidTextWrap"
           >
             <span className="inline-block" id="cidText">
-              {choices[cid]}
+              {choices[cid]} ?
             </span>
           </span>
         </h1>
-        <h2 className="text-2xl font-light">
-          Tout en payant ton loyer durant ton absence... et bien plus encore
-        </h2>
-        <CTA className="text-text my-10 lg:my-0 w-fit lg:mx-auto lg:left-0 lg:right-0 lg:absolute lg:bottom-0 lg:h-36" />
+        <h1 className="text-4xl lg:leading-[6rem] lg:text-[3.5rem]">
+          TAKE MY KEYS a la solution !
+        </h1>
+        <CTA className="text-text mb-5 mt-16 lg:my-0 w-fit lg:mx-auto lg:left-0 lg:right-0 lg:absolute lg:bottom-0 lg:h-36" />
       </div>
     </div>
   );
