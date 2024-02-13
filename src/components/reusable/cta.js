@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoPersonOutline } from "react-icons/io5";
 import { LiaDoorOpenSolid } from "react-icons/lia";
 import { IoLocationOutline } from "react-icons/io5";
 import Button from "../form/button";
+import gsap from "gsap";
+import {motion} from  'framer-motion'
 
 
 const Input = ({value, onChange, maxValue, ...props}) => {
@@ -49,8 +51,36 @@ export default function CTA({ className }) {
     const [capacity, setCapacity] = useState();
     const [beds, setBeds] = useState();
     const [bathrooms, setBathrooms] = useState();
+
+    useEffect(() => {
+    gsap.fromTo('#ctaHero',{
+        y: '100%',
+        opacity:0,
+    }, 
+    {
+        y: 0,
+        opacity:1,
+        duration: 0.6,
+        ease: 'power2.in'
+    })
+    }, [])
+    
     return (
-        <section className={className}>
+        <motion.section
+        initial={{
+            opacity: 0,
+            y: 150,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.6,
+            ease: "easeInOut",
+          }}
+          viewport={{ once: true }}
+        className={`${className} transform translate-y-[100%]`} id="ctaHero">
             <div className="bg-white opacity-80 lg:opacity-100 w-fit px-5 py-2 font-medium text-lg rounded-tl-2xl rounded-tr-2xl border-gray-400 border-l border-t border-r">Calculez votre revenu garanti</div>
             <div className="bg-white opacity-80 flex-wrap lg:opacity-100 h-fit flex justify-between items-start rounded-2xl rounded-tl-none border-gray-400 border-solid border-b border-x p-5">
                 <div className="flex flex-col">
@@ -71,6 +101,6 @@ export default function CTA({ className }) {
                     <Button outline onClick={() => setExpanded(!expanded)} className="mt-2">{expanded ? "Moins" : "Plus"} d&apos;options</Button>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
