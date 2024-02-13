@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { RxHamburgerMenu } from "react-icons/rx";
 import Button from '../form/button';
+import { motion } from "framer-motion";
+
 
 
 const navigation = [
@@ -48,6 +50,20 @@ export default function Navbar() {
     if (scrollY > 200) {
         className = 'bg-primary';
     }
+
+    const initialState = {
+        opacity: 0,
+        y: 10,
+      };
+      const inView = {
+        opacity: 1,
+        y: 0,
+      };
+    
+      const transit = {
+        duration: 0.2,
+        ease: "easeInOut",
+      };
     return (
         <nav className={`flex flex-col min-h-24 w-full p-3 items-end justify-between lg:flex-row lg:justify-around lg:items-center fixed z-50 top-0 ${className} transition-colors duration-1000 ease-in-out `}>
             <button className='absolute right-5 top-5 lg:hidden' onClick={toggle}><RxHamburgerMenu size={48} color='white' /></button>
@@ -55,12 +71,17 @@ export default function Navbar() {
                 <Image src="/logo/transparent/white-title.png" alt="take my keys logo" width={112} height={62.56} />
             </Link>
             <ul className={`${open ? 'flex flex-col mt-20 text-center' : 'hidden'} text-white text-lg lg:mt-0 lg:flex lg:flex-row lg:justify-end lg:items-center`}>
-                {navigation.map((item) => (
-                    <li key={item.name} className='m-4 hover:underline'>
+                {navigation.map((item, index) => (
+                    <motion.li 
+                    initial={initialState}
+                    whileInView={inView}
+                    transition={{ ...transit, delay:index/6 }}
+                    viewport={{ once: true }}
+                    key={item.name} className='m-4 hover:underline'>
                         <Link href={item.href}>
                             {item.name}
                         </Link>
-                    </li>
+                    </motion.li>
                 ))}
             </ul>
             <Link href="/dashboard" className='md-4'>
