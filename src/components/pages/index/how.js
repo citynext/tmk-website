@@ -84,7 +84,7 @@ export default function How() {
 
   const className = {
     arrow: "text-3xl bg-text text-white rounded-full p-3 m-4",
-    inactiveArrow: "opacity-30 cursor-not-allowed",
+    inactiveArrow: "opacity-30 cursor-default",
     image: "m-5 rounded-2xl object-cover min-w-96",
   };
 
