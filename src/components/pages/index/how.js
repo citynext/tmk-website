@@ -11,21 +11,21 @@ import { motion } from "framer-motion";
 
 const steps = [
   {
-    title: "Confiez-nous votre logement",
+    title: "Estimez vos revenus",
     description:
-      "Complétez le formulaire et estimez combien vous pouvez gagner en nous confiant votre logement.",
+      "Décrivez-nous votre logement, sa localisation, sa capacité d’accueil, ses petits plus pour recevoir votre estimation.",
     image: "/images/general-landing/how1.svg",
   },
   {
-    title: "Explorez sereinement et encaissez votre loyer",
+    title: "Confiez-nous votre logement",
     description:
-      "Inscrivez-vous gratuitement en quelques clics et obtenez votre carte de membre.",
+      "Nous nous occupons de tout : de la mise en ligne de votre annonce à l’accueil de vos voyageurs.",
     image: "/images/general-landing/how2.svg",
   },
   {
-    title: "Finito-vous",
+    title: "Encaissez votre loyer chaque mois",
     description:
-      "Inscrivez-vous gratuitement en quelques clics et obtenez votre carte de membre.",
+      "Profitez de votre temps libre, nous nous occupons de tout pour vous garantir un revenu régulier.",
     image: "/images/general-landing/how3.svg",
   },
 ];
@@ -43,7 +43,7 @@ const StepCard = ({ step, title, description, className }) => {
       </label>
       <div className="ml-5">
         <h2 className="text-xl mb-2">{title}</h2>
-        <p className="text-gray-500 text-xs">{description}</p>
+        <p className="text-gray-500 text-sm">{description}</p>
       </div>
     </div>
   );
@@ -193,7 +193,7 @@ export default function How() {
           viewport={{ once: true }}
           className="max-w-[95vw] lg:max-w-[60rem] my-5 text-2xl lg:text-4xl text-center"
         >
-          Comment ça marche ?
+          Une démarche simplifiée pour nous confier votre logement
         </motion.h1>
         <div className="">
           <div className="relative">

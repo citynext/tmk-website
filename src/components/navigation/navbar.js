@@ -10,10 +10,10 @@ import { motion } from "framer-motion";
 const navigation = [
     { name: 'Sous-location', href: '/sous-location' },
     { name: 'Conciergerie', href: '/conciergerie' },
-    { name: 'A propos de nous', href: '/a-propos-de-nous' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Blog', href: '/blog'},
+    { name: 'A propos', href: '/a-propos' },
     { name: 'FAQ', href: '/foire-aux-questions' },
+    { name: 'Parrainage', href: '/parrainage' },
+    { name: 'Bonus JO 2024', href: '/bonus-jo-2024' },
 
 ]
 
@@ -77,16 +77,16 @@ export default function Navbar() {
                     whileInView={inView}
                     transition={{ ...transit, delay:index/6 }}
                     viewport={{ once: true }}
-                    key={item.name} className='m-4 hover:underline'>
+                    key={item.name} className='m-4 hover:font-bold'>
                         <Link href={item.href}>
                             {item.name}
                         </Link>
                     </motion.li>
                 ))}
             </ul>
-            <Link href="/dashboard" className='md-4'>
+            <Link href="/formulaire" className='md-4'>
                 <Button className={`lg:block text-lg ${open ? '' : 'hidden'}`}>
-                    Se connecter
+                    S&apos;inscrire
                 </Button>
             </Link>
         </nav>

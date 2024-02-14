@@ -6,23 +6,23 @@ import { motion } from "framer-motion";
 const whys = [
   {
     icon: AiOutlineDollar,
-    title: "Les plus généreux",
+    title: "Générosité",
     description:
       "Nous offrons le meilleur système de rémunération à nos clients. Que vous soyez proprétaires ou locataires, c'est avec Take My Keys que vous allez gagner le plus d'argent.",
     delay: 0,
   },
   {
     icon: LuShieldCheck,
-    title: "Les plus fiables",
+    title: "Fiabilité",
     description:
       "Notre couverture complémentaire exclusive protège votre bien contre d'éventuels dommages causés par les locataires. Elle complète votre assurance habitation, renforçant la fiabilité et la sécuritté communautaire.",
     delay: 0.3,
   },
   {
     icon: TbCircleKey,
-    title: "Les plus flexibles",
+    title: "Flexibilité",
     description:
-      "Confiez-nous votre appartement jusqu'à 5 jours avant votre départ, ou 2 jours si vous êtes déjà client. Une flexibilité sans égale pour planifier en toute sérénité.",
+      "Nous vous offrons une flexibilité exceptionnelle. Vous pouvez choisir de louer votre bien pour une courte ou longue durée, ou même de le retirer du marché à tout moment. Vous avez le contrôle.",
     delay: 0.6,
   },
 ];
