@@ -1,11 +1,11 @@
 import { IoKeyOutline } from "react-icons/io5";
 import { IoHomeOutline } from "react-icons/io5";
-import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Who() {
   const className = {
-    btn: "flex flex-col justify-center items-center rounded-xl px-20 py-10 m-5 max-w-[32rem]",
+    btn: "flex flex-col justify-center items-center rounded-xl px-10 py-10 m-5 max-w-[32rem]",
   };
 
   const initialState = {
@@ -46,42 +46,47 @@ export default function Who() {
             viewport={{ once: true }}
             className="text-gray-500 my-5 text-xl text-center"
           >
-            Explorez les opportunités passionnantes qui vous attendent
+            Nous avons une offre adaptée à vos besoins
           </motion.p>
         </div>
         <div className="flex flex-wrap justify-center items-center my-10">
-          <motion.button
-            initial={{ x: -500, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            viewport={{ once: true }}
-            className={`${className.btn} text-white bg-secondary`}
-          >
-            <IoKeyOutline size={80} className="mb-5" />
-            <h2 className="text-4xl">Locataire</h2>
-            <p className="text-xl my-10 font-light">
-              Transformez votre logement en source de revenus avec Take My Keys
-            </p>
-            <span className="text-secondary bg-white text-xl rounded-3xl px-5 py-3">
-              Commencer
-            </span>
-          </motion.button>
-          <motion.button
-            initial={{ x: 500, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            viewport={{ once: true }}
-            className={`${className.btn} bg-white border border-gray-300`}
-          >
-            <IoHomeOutline size={80} className="text-primary mb-5" />
-            <h2 className="text-4xl">Locataire</h2>
-            <p className="text-xl my-10 font-light">
-              Transformez votre logement en source de revenus avec Take My Keys
-            </p>
-            <span className="text-white bg-primary text-xl rounded-3xl px-5 py-3">
-              Commencer
-            </span>
-          </motion.button>
+          <Link href="/sous-location">
+            <button
+              initial={{ x: -500, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              viewport={{ once: true }}
+              className={`${className.btn} text-white bg-secondary`}
+            >
+              <IoKeyOutline size={80} className="mb-5" />
+              <h2 className="text-4xl">Sous-location</h2>
+              <p className="text-xl my-10 font-light">
+                Transformez votre logement en source de revenu garantie avec Take My
+                Keys
+              </p>
+              <span className="text-secondary bg-white text-xl rounded-3xl px-5 py-3">
+                En savoir plus
+              </span>
+            </button>
+          </Link>
+          <Link href="/conciergerie">
+            <button
+              initial={{ x: 500, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              viewport={{ once: true }}
+              className={`${className.btn} bg-white border border-gray-300`}
+            >
+              <IoHomeOutline size={80} className="text-primary mb-5" />
+              <h2 className="text-4xl">Conciergerie</h2>
+              <p className="text-xl my-10 font-light">
+                Maximisez votre rentabilité et assurez-vous une tranquilité d&apos;esprit avec Take My Keys
+              </p>
+              <span className="text-white bg-primary text-xl rounded-3xl px-5 py-3">
+                En savoir plus
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
     </section>
