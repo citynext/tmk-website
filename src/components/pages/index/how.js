@@ -92,39 +92,31 @@ export default function How() {
     gsap.fromTo(
       "#firstSlide",
       {
-        opacity: 0,
-        x: 40,
+        x: steps.length <= currentStep ? -200 : 200,
       },
       {
-        opacity: 1,
         x: 0,
-        // duration: 0.1,
-        delay: 0.3,
-        ease: "power.in",
+        duration: 0.5,
+        ease: "power.inOut",
       }
     );
     gsap.fromTo(
       "#lastSlide",
       {
-        opacity: 0,
-        x: -40,
+        x: steps.length <= currentStep ? 200 : -200,
       },
       {
-        opacity: 1,
         x: 0,
-        // duration: 0.1,
-        delay: 0.3,
-        ease: "power.in",
+        duration: 0.5,
+        ease: "power1.inOut",
       }
     );
     gsap.fromTo(
       "#currentSlide",
       {
-        opacity: 0,
-        x: currentStep <= steps.length - 1 ? 200 : -200,
+        x: steps.length < currentStep ? 200 : -200,
       },
       {
-        opacity: 1,
         x: 0,
         duration: 0.5,
         ease: "power.in",
@@ -133,42 +125,37 @@ export default function How() {
     gsap.fromTo(
       "#currentSlideText",
       {
-        opacity: 0,
-        x: currentStep <= steps.length - 1 ? 200 : 0,
+        scale: 0,
+        x: steps.length < currentStep ? -200 : 200,
       },
       {
-        opacity: 1,
+        scale: 1,
         x: 0,
-        duration: 0.5,
-        delay: 0.3,
+        duration: 0.3,
+        delay: 0.2,
         ease: "power.in",
       }
     );
     gsap.fromTo(
       "#nextSlideText",
       {
-        opacity: 0,
-        x: currentStep <= steps.length - 1 ? 40 : 0,
+        x: steps.length < currentStep ? -200 : 200,
       },
       {
-        opacity: 1,
         x: 0,
-        duration: 0.5,
-        delay: 0.5,
-        ease: "power.in",
+        duration: 0.4,
+        ease: "power.inOut",
       }
     );
     gsap.fromTo(
       "#stepLabel",
       {
-        opacity: 0,
         scale: 0,
       },
       {
-        opacity: 1,
         scale: 1,
         duration: 0.2,
-        delay: 0.6,
+        delay: 0.4,
         ease: "power.in",
       }
     );
