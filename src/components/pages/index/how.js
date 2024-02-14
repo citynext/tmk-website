@@ -92,31 +92,29 @@ export default function How() {
     gsap.fromTo(
       "#firstSlide",
       {
-        x: 5,
+        x: steps.length <= currentStep ? -200 : 200,
       },
       {
         x: 0,
-        duration: 0.1,
-        delay: 0.2,
-        ease: "power.in",
+        duration: 0.5,
+        ease: "power.inOut",
       }
     );
     gsap.fromTo(
       "#lastSlide",
       {
-        x: -5,
+        x: steps.length <= currentStep ? 200 : -200,
       },
       {
         x: 0,
-        duration: 0.1,
-        delay: 0.2,
-        ease: "power.in",
+        duration: 0.5,
+        ease: "power1.inOut",
       }
     );
     gsap.fromTo(
       "#currentSlide",
       {
-        x: currentStep <= steps.length - 1 ? 50 : -50,
+        x: steps.length < currentStep ? 200 : -200,
       },
       {
         x: 0,
@@ -128,7 +126,7 @@ export default function How() {
       "#currentSlideText",
       {
         scale: 0,
-        x: currentStep <= steps.length - 1 ? 220 : 0,
+        x: steps.length < currentStep ? -200 : 200,
       },
       {
         scale: 1,
@@ -141,13 +139,12 @@ export default function How() {
     gsap.fromTo(
       "#nextSlideText",
       {
-        x: currentStep <= steps.length - 1 ? 12 : 0,
+        x: steps.length < currentStep ? -200 : 200,
       },
       {
         x: 0,
-        duration: 0.2,
-        delay: 0.4,
-        ease: "power.in",
+        duration: 0.4,
+        ease: "power.inOut",
       }
     );
     gsap.fromTo(
@@ -157,7 +154,7 @@ export default function How() {
       },
       {
         scale: 1,
-        duration: 0.1,
+        duration: 0.2,
         delay: 0.4,
         ease: "power.in",
       }
