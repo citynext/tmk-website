@@ -27,8 +27,6 @@ export default function Services() {
     }
 
 
-
-export default function Services() {
     const nextStep = () => {
         if (idx === services.length - 1) setIdx(0)
         else setIdx(idx + 1)
