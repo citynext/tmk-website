@@ -11,7 +11,7 @@
 }
 
 .all p {
-    @apply text-xl font-light;
+    @apply lg:text-lg text-sm font-light text-gray-500;
 }
 
 .all strong {

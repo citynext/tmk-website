@@ -1,27 +1,46 @@
-import Image from "next/image"
-import {whys} from "@/components/pages/index/why"
-
-
 export default function Why() {
+    const className = {
+        container: "flex items-center text-gray-500",
+        p: "flex-1 !text-xs",
+        pleft: "text-right",
+        pright: "text-left",
+        div: "flex-1 flex flex-col justify-center items-center shadow-xl rounded-xl mx-4",
+        img: "object-cover lg:h-[95%] w-12",
+        h2: "!text-xl lg:!text-3xl !font-bold text-center"
+    }
     return (
-        <section className="flex justify-around my-20 px-20">
-            <Image src="/images/conciergerie/phone.svg" alt='Smartphone TAKE MY KEYS' width={400} height={0} className="mx-10" />
-            <div className="max-w-[40rem]">
-                <h2>Pourquoi choisir <strong>TAKE MY KEYS</strong> ?</h2>
-                <p>Découvrez les avantages qu&apos;offre TAKE MY KEYS pour la gestion de votre propriété</p>
-                <ul className="mt-10">
-                    {whys.map((why, index) => (
-                        <li key={index} className="flex flex-col items-start mb-10">
-                            <div className="flex items-center">
-                                <why.icon className="text-7xl w-16 h-16 bg-primary-40 text-primary p-3 rounded-full" />
-                                <h3 className="text-3xl font-medium ml-5">{why.title}</h3>
-                            </div>
-                            <div className="flex flex-col">
-                                <p className="mt-5 font-light">{why.description}</p>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
+        <section className="flex flex-col items-center px-4 text-center">
+            <h1>Pourquoi choisir <strong>TAKE MY KEYS</strong> ?</h1>
+            <p className="text-gray-500">Découvrez les avantages de faire confiance à Take My Keys pour la gestion de votre propriété</p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 mt-12 lg:mt-20">
+                <div className={className.container}>
+                    <p className={`${className.p} ${className.pleft}`}>Ne perdez plus de temps à gérer votre location saisonnière</p>
+                    <div className={className.div}>
+                        <img src="/logo/transparent/green.png" alt="why1" className={className.img} />
+                        <h2 className={className.h2}>Gain de temps</h2>
+                    </div>
+                </div>
+                <div className={className.container}>
+                    <div className={className.div}>
+                        <img src="/logo/transparent/green.png" alt="why1" className={className.img} />
+                        <h2 className={className.h2}>Gain de temps</h2>
+                    </div>
+                    <p className={`${className.p} ${className.pright}`}>Ne perdez plus de temps à gérer votre location saisonnière</p>
+                </div>
+                <div className={className.container}>
+                    <p className={`${className.p} ${className.pleft}`}>Ne perdez plus de temps à gérer votre location saisonnière</p>
+                    <div className={className.div}>
+                        <img src="/logo/transparent/green.png" alt="why1" className={className.img} />
+                        <h2 className={className.h2}>Gain de temps</h2>
+                    </div>
+                </div>
+                <div className={className.container}>
+                    <div className={className.div}>
+                        <img src="/logo/transparent/green.png" alt="why1" className={className.img} />
+                        <h2 className={className.h2}>Gain de temps</h2>
+                    </div>
+                    <p className={`${className.p} ${className.pright}`}>Ne perdez plus de temps à gérer votre location saisonnière</p>
+                </div>
             </div>
         </section>
     )

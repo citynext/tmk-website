@@ -60,7 +60,7 @@ export default function Who() {
             >
               <IoKeyOutline size={80} className="mb-5" />
               <h2 className="text-4xl">Sous-location</h2>
-              <p className="text-xl my-10 font-light">
+              <p className="!text-white text-xl my-10 font-light">
                 Transformez votre logement en source de revenu garantie avec Take My
                 Keys
               </p>
