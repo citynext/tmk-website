@@ -31,7 +31,7 @@ const Input = ({value, onChange, maxValue, ...props}) => {
     const btnClasses = "flex justify-center items-center rounded-full w-5 h-5 m-[1px] pb-0.5 text-primary line-height-[1.5]";
     return (
         <div className={`flex flex-col px-2 lg:px-8 ${props.className}`}>
-            <label className="amine text-lg mb-3">{props.label}</label>
+            <label className="text-md mb-3">{props.label}</label>
             <div className="flex relative items-center">
                 { props.icon && <props.icon className="absolute size-5 top-2/4 bottom-2/4 my-auto mx-3 text-gray-600" /> }
                 <input value={value} onChange={handleChange} className="appearance-none border border-gray-400 rounded-lg pl-12 w-full h-11" type={props.type} placeholder={props.placeholder} />
