@@ -65,7 +65,7 @@ export default function Hero() {
         <div className="absolute inset-0 w-full h-full flex flex-col">
           <div className="flex-1 flex flex-col justify-center text-white pt-24 px-4 lg:px-10">
             <h1 className="!text-4xl lg:!text-5xl !font-medium lg:!font-bold">Besoin d&apos;argent pour</h1>
-            <h1 id="cidTextWrap"><strong id="cidText" className="bg-secondary !text-4xl lg:!text-5xl">{choices[cid]} ?</strong></h1>
+            <h1 id="cidTextWrap"><strong id="cidText" className="bg-secondary !text-white !text-4xl lg:!text-5xl">{choices[cid]} ?</strong></h1>
             <h2 className="!text-3xl lg:!text-4xl !font-medium lg:!font-bold lg:mt-6">
               TAKE MY KEYS a la solution !
             </h2>
