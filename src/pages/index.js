@@ -1,3 +1,4 @@
+import styles from '../styles/pages/index.module.css'
 import Hero from '../components/pages/index/hero';
 import How from '../components/pages/index/how';
 import Stats from '../components/pages/index/stats';
@@ -9,7 +10,7 @@ import Faq from '../components/pages/index/faq';
 
 export default function index() {
   return (
-    <main>
+    <main className={styles.all}>
       <Hero />
       <How />
       <Stats />

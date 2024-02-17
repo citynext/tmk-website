@@ -13,11 +13,9 @@
     }
     html, body {
         overflow-x: hidden;
-        letter-spacing: 0.5px;
+        letter-spacing: 1px;
+        line-height: 1rem;
         color: theme('colors.text');
-    }
-    h1, h2 {
-        font-weight: 500;
     }
 }
 

@@ -68,7 +68,7 @@ export default function CTA({ className }) {
     }, [])
     
     return (
-        <motion.section
+        <motion.div
         initial={{
             opacity: 0,
             y: 150,
@@ -82,7 +82,7 @@ export default function CTA({ className }) {
             ease: "easeInOut",
           }}
           viewport={{ once: true }}
-        className={`${className} transform translate-y-[100%]`} id="ctaHero">
+        className={`${className} w-fit transform translate-y-[100%]`} id="ctaHero">
             <div className="bg-white opacity-80 lg:opacity-100 w-fit px-5 py-2 font-medium text-lg rounded-tl-2xl rounded-tr-2xl border-gray-400 border-l border-t border-r">Estimez vos revenus</div>
             <div className="bg-white opacity-80 flex-wrap lg:opacity-100 h-fit flex justify-between items-start rounded-2xl rounded-tl-none border-gray-400 border-solid border-b border-x p-5">
                 <div className="flex flex-col">
@@ -103,6 +103,6 @@ export default function CTA({ className }) {
                     <Button outline onClick={() => setExpanded(!expanded)} className="mt-2">{expanded ? "Moins" : "Plus"} d&apos;options</Button>
                 </div>
             </div>
-        </motion.section>
+        </motion.div>
     );
 }

@@ -5,7 +5,11 @@ import gsap from "gsap";
 
 export default function Hero() {
   const [cid, setCid] = useState(0);
-  const choices = ["rendre visite à la famille", "découvrir de nouveaux pays", "télétravailler depuis la plage"];
+  const choices = [
+    "rendre visite à la famille",
+    "découvrir de nouveaux pays",
+    "télétravailler depuis la plage",
+  ];
   useEffect(() => {
     const id = setInterval(
       () =>
@@ -16,7 +20,7 @@ export default function Hero() {
             return oldCount + 1;
           }
         }),
-      1900
+      3000
     );
     return () => {
       clearInterval(id);
@@ -51,30 +55,24 @@ export default function Hero() {
   }, [cid]);
 
   return (
-    <div className="relative flex justify-center h-screen sm:h-[95vh] w-screen">
-      <img
-        src="/images/general-landing/hero.svg"
-        alt="Image principale"
-        className="bg-primary object-cover w-full h-full"
-      />
-      <div className="absolute pt-36 flex flex-col justify-around lg:justify-center inset-0 px-5 lg:px-20 text-white">
-        <h1 className="overflow-hidden text-4xl leading-[3rem] lg:leading-[6rem] lg:text-[3.5rem]">
-          Besoin d&apos;argent pour{" "}<br />
-          
-          <span
-            className="px-2 bg-secondary pb-2 transition ease-linear font-[700] inline-block"
-            id="cidTextWrap"
-          >
-            <span className="inline-block" id="cidText">
-              {choices[cid]} ?
-            </span>
-          </span>
-        </h1>
-        <h1 className="text-4xl lg:leading-[6rem] lg:text-[3.5rem]">
-          TAKE MY KEYS a la solution !
-        </h1>
-        <CTA className="text-text mb-5 mt-16 lg:my-0 w-fit lg:mx-auto lg:left-0 lg:right-0 lg:absolute lg:bottom-0 lg:h-36" />
+    <>
+      <div className="relative h-screen w-screen">
+        <img
+          src="/images/general-landing/hero.svg"
+          alt="Image principale"
+          className="bg-primary object-cover w-full h-screen lg:h-[95%]"
+        />
+        <div className="absolute inset-0 w-full h-full flex flex-col">
+          <div className="flex-1 flex flex-col justify-center text-white pt-24 px-4 lg:px-10">
+            <h1 className="!text-4xl lg:!text-5xl !font-medium lg:!font-bold">Besoin d&apos;argent pour</h1>
+            <h1 id="cidTextWrap"><strong id="cidText" className="bg-secondary !text-4xl lg:!text-5xl">{choices[cid]} ?</strong></h1>
+            <h2 className="!text-3xl lg:!text-4xl !font-medium lg:!font-bold lg:mt-6">
+              TAKE MY KEYS a la solution !
+            </h2>
+          </div>
+          <CTA className="mx-4 lg:mx-auto my-4" />
+        </div> 
       </div>
-    </div>
+    </>
   );
 }
