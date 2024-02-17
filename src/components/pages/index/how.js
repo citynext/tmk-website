@@ -42,8 +42,8 @@ const StepCard = ({ step, title, description, className }) => {
         {step}
       </label>
       <div className="ml-5">
-        <h2 className="text-xl mb-2">{title}</h2>
-        <p className="text-gray-500 text-sm">{description}</p>
+        <h3 className="text-xl mb-2">{title}</h3>
+        <p className="text-gray-500 !text-sm">{description}</p>
       </div>
     </div>
   );
@@ -162,7 +162,7 @@ export default function How() {
   }, [currentStep]);
 
   return (
-    <section className="flex justify-center items-center lg:py-32">
+    <section className="flex justify-center items-center">
       <div className="flex flex-col justify-center items-center">
         <motion.h1
           initial={{

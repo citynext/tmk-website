@@ -70,7 +70,7 @@ export default function Hero() {
               TAKE MY KEYS a la solution !
             </h2>
           </div>
-          <CTA className="mx-4 lg:mx-auto my-4" />
+          <CTA className="mx-4 lg:mx-auto mt-4" />
         </div> 
       </div>
     </>
