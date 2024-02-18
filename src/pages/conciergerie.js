@@ -3,6 +3,7 @@ import Hero from '../components/pages/conciergerie/hero';
 import Why from '../components/pages/conciergerie/why';
 import Services from '../components/pages/conciergerie/services';
 import Process from '../components/pages/conciergerie/process';
+import Pricing from '../components/pages/conciergerie/pricing';
 
 
 export default function ConciergeriePage() {
@@ -12,6 +13,7 @@ export default function ConciergeriePage() {
             <Why />
             <Services />
             <Process />
+            <Pricing />
         </main>
     )
 }
