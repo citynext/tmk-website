@@ -1,12 +1,14 @@
 'use client';
 
-import styles from '../styles/pages/landing-page.module.css'
-import Hero from '../components/pages/conciergerie/hero';
-import Why from '../components/pages/conciergerie/why';
-import Services from '../components/pages/conciergerie/services';
-import Process from '../components/pages/conciergerie/process';
-import Pricing from '../components/pages/conciergerie/pricing';
-import ClientReviews from '../components/pages/conciergerie/clientReviews';
+import styles from '@/styles/pages/landing-page.module.css'
+import Hero from '@/components/pages/conciergerie/hero';
+import Why from '@/components/pages/conciergerie/why';
+import Services from '@/components/pages/conciergerie/services';
+import Process from '@/components/pages/conciergerie/process';
+import Pricing from '@/components/pages/conciergerie/pricing';
+import ClientReviews from '@/components/pages/conciergerie/clientReviews';
+import Partners from '@/components/pages/conciergerie/partners';
+import Faq from '@/components/pages/index/faq';
 
 
 export default function ConciergeriePage() {
@@ -18,6 +20,8 @@ export default function ConciergeriePage() {
             <Process />
             <Pricing />
             <ClientReviews />
+            <Partners />
+            <Faq />
         </main>
     )
 }

@@ -50,7 +50,7 @@ const EmblaCarousel = ({children, className, options, autoplay, ...props}) => {
   } = usePrevNextButtons(emblaApi)
 
   const mappedChildren = Children.map(children, child =>
-    <li className="embla__slide">{child}</li>
+    <li className="pl-4 min-w-0 relative" style={{flex: "0 0 auto"}}>{child}</li>
   );
   return (
     <div className={className}>

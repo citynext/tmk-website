@@ -21,10 +21,3 @@
 .all section:not(:first-child) {
     @apply my-16;
 }
-
-.all .emba__slide {
-    flex: 0 0 100%;
-    min-width: 0;
-    padding-left: 1rem;
-    position: relative;
-}

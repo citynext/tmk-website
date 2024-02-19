@@ -39,6 +39,15 @@ module.exports = {
         third: "#F5F3EE",
         text: "#001524",
       },
+      animation: {
+        amine: 'swipe 20000ms linear infinite backwards'
+      },
+      keyframes: {
+        swipe: {
+          '0%': { transform: 'translate(0)' },
+          '100%': { transform: 'translate(-100%)' },
+        }
+      }
     },
   },
   plugins: [],
