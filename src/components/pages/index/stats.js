@@ -47,7 +47,6 @@ export default function Stats() {
         src="images/general-landing/stats-bg.svg"
         alt="stats bg"
         fill
-        objectFit="cover"
         className="z-[-1] object-cover"
       />
       <div className="absolute top-0 px-0 md:px-20 left-0 w-full h-full flex justify-center">

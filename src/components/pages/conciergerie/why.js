@@ -3,13 +3,13 @@ import logo from "../../../../public/logo/transparent/green.png";
 
 export default function Why() {
     const className = {
-        container: "flex items-center text-gray-500",
-        p: "flex-1 !text-xs",
+        container: "flex items-center",
+        p: "flex-1 !text-xs text-gray-500",
         pleft: "text-right",
         pright: "text-left",
-        div: "flex-1 flex flex-col justify-center items-center shadow-xl rounded-xl mx-4",
-        img: "object-cover lg:h-[95%] w-12",
-        h2: "!text-xl lg:!text-3xl !font-bold text-center"
+        div: " w-36 h-36 flex-1 flex flex-col justify-between items-center border border-secondary shadow-xl rounded-xl mx-4 my-2",
+        img: "",
+        h2: "!text-md lg:!text-lg !font-bold text-center"
     }
     return (
         <section className="flex flex-col items-center px-4 text-center">
@@ -19,7 +19,9 @@ export default function Why() {
                 <div className={className.container}>
                     <p className={`${className.p} ${className.pleft}`}>Ne perdez plus de temps à gérer votre location saisonnière</p>
                     <div className={className.div}>
-                        <Image src={logo} alt="why1" className={className.img} />
+                        <div className={className.img}>
+                            <Image src={logo} alt="why1" className="" />
+                        </div>
                         <h2 className={className.h2}>Gain de temps</h2>
                     </div>
                 </div>

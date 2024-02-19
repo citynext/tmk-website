@@ -46,7 +46,7 @@ const Input = ({value, onChange, maxValue, ...props}) => {
     );
 }
 
-export default function CTA({ className }) {
+export default function CTA({ className, ...props }) {
     const [expanded, setExpanded] = useState(false)
     const [location, setLocation] = useState("");
     const [rooms, setRooms] = useState();
@@ -82,7 +82,7 @@ export default function CTA({ className }) {
             ease: "easeInOut",
           }}
           viewport={{ once: true }}
-        className={`${className} w-fit transform translate-y-[100%]`} id="ctaHero">
+        className={`${className} w-fit transform translate-y-[100%]`} id="ctaHero" {...props}>
             <div className="bg-white opacity-80 lg:opacity-100 w-fit px-5 py-2 font-medium text-lg rounded-tl-2xl rounded-tr-2xl border-gray-400 border-l border-t border-r">Estimez vos revenus</div>
             <div className="bg-white opacity-80 flex-wrap lg:opacity-100 h-fit flex justify-between items-start rounded-2xl rounded-tl-none border-gray-400 border-solid border-b border-x p-5">
                 <div className="flex flex-col">
@@ -99,7 +99,7 @@ export default function CTA({ className }) {
                     }
                 </div>
                 <div className="flex flex-col m-3">
-                    <Button>Calculer</Button>
+                    <Button className="animate-bounce hover:animate-none">Calculer</Button>
                     <Button outline onClick={() => setExpanded(!expanded)} className="mt-2">{expanded ? "Moins" : "Plus"} d&apos;options</Button>
                 </div>
             </div>
