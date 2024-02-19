@@ -23,7 +23,7 @@ export default function Partners() {
                 { Array(3).fill().map((_, index) => (
                     <div key={index} className="flex items-center justify-center animate-amine">
                     {images.map((image, index) => (
-                        <div  className="mx-2 my-1 w-44 flex justify-center">
+                        <div key={index} className="mx-2 my-1 w-44 flex justify-center">
                             <Image key={index} quality={100} src={image} alt="image" className="m-1 object-cover" />
                         </div>
                     ))}
