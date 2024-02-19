@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
+import footerImg from '../../../public/images/footer/footer-bg.svg'
+import logoImg from '../../../public/logo/transparent/green-title.png'
 
 
 
@@ -14,10 +16,13 @@ export default function Footer() {
         icon: "text-xl mr-2",
     }
     return (
-        <section className="relative bg-third lg:bg-transparent mt-20 lg:pt-0">
-            <img src="/images/footer/footer-bg.svg" alt="footer background" className="hidden lg:block absolute bottom-0 left-0 w-full z-[-1]" />
+        <>
+        <section className="relative bg-third mt-32 pt-10">
+            <div className='absolute bottom-0 w-full'>
+                <Image src={footerImg} alt="footer background" className='w-full absolute bottom-0 z-[-1]' />
+            </div>
             <div className="flex justify-between items-center mx-10">
-                <Image src="/logo/transparent/green-title.png" alt="take my keys logo" width={256} height={142.2} className="hidden lg:block m-10" />
+                <Image src={logoImg} alt="take my keys logo" className="hidden w-60 lg:block m-10" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                     <div className={className.div}>
                         <h3 className={className.h3}>Liens rapides</h3>
@@ -47,5 +52,6 @@ export default function Footer() {
             </div>
             <p className="border-t-[0.5px] border-gray-700 w-full text-gray-700 font-light text-center py-3">© 2024 TAKE MY KEYS. Tous droits réservés.</p>
         </section>
+        </>
     )
 }

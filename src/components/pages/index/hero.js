@@ -1,6 +1,7 @@
 import CTA from "../../reusable/cta";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import heroImg from "../../../../public/images/general-landing/hero.png";
 import gsap from "gsap";
 
 export default function Hero() {
@@ -57,10 +58,11 @@ export default function Hero() {
   return (
     <>
       <div className="relative h-screen w-screen">
-        <img
-          src="/images/general-landing/hero.svg"
+        <Image
+          src={heroImg}
+          placeholder="blur"
           alt="Image principale"
-          className="bg-primary object-cover w-full h-screen lg:h-[95%]"
+          className="object-cover w-full h-screen lg:h-[95%]"
         />
         <div className="absolute inset-0 w-full h-full flex flex-col">
           <div className="flex-1 flex flex-col justify-center text-white pt-24 px-4 lg:px-10">

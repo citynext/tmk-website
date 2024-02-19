@@ -1,3 +1,6 @@
+import Image from "next/image";
+import logo from "../../../../public/logo/transparent/green.png";
+
 export default function Why() {
     const className = {
         container: "flex items-center text-gray-500",
@@ -16,13 +19,13 @@ export default function Why() {
                 <div className={className.container}>
                     <p className={`${className.p} ${className.pleft}`}>Ne perdez plus de temps à gérer votre location saisonnière</p>
                     <div className={className.div}>
-                        <img src="/logo/transparent/green.png" alt="why1" className={className.img} />
+                        <Image src={logo} alt="why1" className={className.img} />
                         <h2 className={className.h2}>Gain de temps</h2>
                     </div>
                 </div>
                 <div className={className.container}>
                     <div className={className.div}>
-                        <img src="/logo/transparent/green.png" alt="why1" className={className.img} />
+                        <Image src={logo} alt="why1" className={className.img} />
                         <h2 className={className.h2}>Gain de temps</h2>
                     </div>
                     <p className={`${className.p} ${className.pright}`}>Ne perdez plus de temps à gérer votre location saisonnière</p>
@@ -30,13 +33,13 @@ export default function Why() {
                 <div className={className.container}>
                     <p className={`${className.p} ${className.pleft}`}>Ne perdez plus de temps à gérer votre location saisonnière</p>
                     <div className={className.div}>
-                        <img src="/logo/transparent/green.png" alt="why1" className={className.img} />
+                        <Image src={logo} alt="why1" className={className.img} />
                         <h2 className={className.h2}>Gain de temps</h2>
                     </div>
                 </div>
                 <div className={className.container}>
                     <div className={className.div}>
-                        <img src="/logo/transparent/green.png" alt="why1" className={className.img} />
+                        <Image src={logo} alt="why1" className={className.img} />
                         <h2 className={className.h2}>Gain de temps</h2>
                     </div>
                     <p className={`${className.p} ${className.pright}`}>Ne perdez plus de temps à gérer votre location saisonnière</p>

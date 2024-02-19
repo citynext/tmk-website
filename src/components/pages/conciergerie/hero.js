@@ -1,19 +1,23 @@
 import CTA from "@/components/reusable/cta"
+import Image from "next/image"
+import heroImg from "../../../../public/images/conciergerie/hero.png"
+import rectangle from "../../../../public/images/conciergerie/hero-rectangle.svg"
 
 
 export default function Hero() {
     return (
         <section className="relative h-screen w-screen">
-            <img 
-                src="/images/conciergerie/hero.svg" 
+            <Image 
+                src={heroImg}
+                placeholder="blur"
                 alt="Personne souriante qui tend des clefs"
-                className="object-cover w-full h-screen lg:h-[95%]" 
+                className="object-cover w-full h-full lg:h-[95%]" 
             />
             <div className="absolute inset-0 w-full h-full flex flex-col">
                 <div className="flex-1 flex flex-col justify-center text-white mt-24 px-4 lg:px-10">
                     <div className="border-8 border-secondary lg:border-none relative h-fit py-10 lg:py-20 pl-5 lg:pl-10">
-                        <img
-                            src="/images/conciergerie/hero-rectangle.svg"
+                        <Image
+                            src={rectangle}
                             alt="Conciergerie"
                             className="hidden lg:block absolute left-0 top-0 h-full object-[fit]"
                         />

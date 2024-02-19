@@ -2,6 +2,8 @@ import { IoKeyOutline } from "react-icons/io5";
 import { IoHomeOutline } from "react-icons/io5";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import bgImg from "../../../../public/images/general-landing/who-bg.svg";
 
 export default function Who() {
   const className = {
@@ -23,8 +25,8 @@ export default function Who() {
   };
   return (
     <section className="relative mt-32 h-fit">
-      <img
-        src="/images/general-landing/who-bg.svg"
+      <Image
+        src={bgImg}
         alt="bg img"
         className="absolute top-40 lg:top-0 left-0 w-full z-[-1]"
       />
