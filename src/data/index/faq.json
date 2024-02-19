@@ -1,0 +1,14 @@
+[
+    {
+      "question": "Qu'est-ce que le Lorem Ipsum?",
+      "answer": "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."
+    },
+    {
+      "question": "Pourquoi l'utiliser?",
+      "answer": "On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions."
+    },
+    {
+      "question": "Où puis-je",
+      "answer": "Il existe de nombreuses variantes de passages du Lorem Ipsum disponibles."
+    }
+]

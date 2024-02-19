@@ -1,24 +1,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import questions from "@/data/index/faq";
 
-const questions = [
-  {
-    question: "Qu'est-ce que le Lorem Ipsum?",
-    answer:
-      "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
-  },
-  {
-    question: "Pourquoi l'utiliser?",
-    answer:
-      "On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions.",
-  },
-  {
-    question: "Où puis-je",
-    answer:
-      "Il existe de nombreuses variantes de passages du Lorem Ipsum disponibles.",
-  },
-];
 
 export default function Faq() {
   const initialState = {
@@ -78,22 +62,22 @@ export default function Faq() {
               expanded[i] ? "h-full" : "h-[55px]"
             } transition-all duration-250 ease-in-out bg-white flex flex-col overflow-hidden justify-between items-center my-5 border-2 rounded-lg border-primary`}
           >
-            <div className="flex justify-between items-center w-full pl-5">
+            <div className="flex justify-between items-center w-full sm:pl-5">
               <span className=" bg-white text-xl rounded-3xl mx-5 my-3">
                 {i}.
               </span>
-              <h2 className="flex-1 text-md sm:text-2xl">{q.question}</h2>
+              <h2 className="flex-1 !text-base lg:!text-2xl">{q.question}</h2>
               <button
                 className={`${
                   expanded[i] ? "bg-third" : "text-white bg-primary"
-                } text-xl px-5 py-3 transition-all duration-200 ease-in-out`}
+                } h-full text-xl px-5 py-3 transition-all duration-200 ease-in-out`}
                 onClick={() => toggle(i)}
               >
                 {expanded[i] ? "-" : "+"}
               </button>
             </div>
             <p
-              className={`text-gray-500 mx-24 my-5 duration-200 transition-all transform ${
+              className={`text-gray-500 mx-12 sm:mx-24 my-5 duration-200 transition-all transform ${
                 expanded[i]
                   ? "translate-y-0 opacity-[1] visible"
                   : "translate-y-[50px] opacity-0 invisible"
