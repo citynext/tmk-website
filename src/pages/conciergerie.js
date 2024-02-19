@@ -1,5 +1,3 @@
-'use client';
-
 import styles from '@/styles/pages/landing-page.module.css'
 import Hero from '@/components/pages/conciergerie/hero';
 import Why from '@/components/pages/conciergerie/why';

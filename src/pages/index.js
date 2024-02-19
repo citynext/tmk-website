@@ -1,5 +1,3 @@
-'use client';
-
 import styles from '../styles/pages/landing-page.module.css'
 import Hero from '../components/pages/index/hero';
 import How from '../components/pages/index/how';
