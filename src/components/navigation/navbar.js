@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { RxHamburgerMenu } from "react-icons/rx";
 import Button from '../form/button';
 import { motion } from "framer-motion";
-
+import { IoMdLogIn } from "react-icons/io";
 
 
 const navigation = [
@@ -70,7 +70,7 @@ export default function Navbar() {
             <Link className='absolute left-5 top-5 lg:static' href="/">
                 <Image src="/logo/transparent/white-title.png" alt="take my keys logo" width={112} height={62.56} />
             </Link>
-            <ul className={`${open ? 'flex flex-col mt-20 text-center' : 'hidden'} text-white text-lg lg:mt-0 lg:flex lg:flex-row lg:justify-end lg:items-center`}>
+            <ul className={`${open ? 'absolute bg-primary flex flex-col mt-20' : 'hidden'} text-white text-lg lg:mt-0 lg:flex lg:flex-row lg:justify-end lg:items-center`}>
                 {navigation.map((item, index) => (
                     <motion.li 
                     initial={initialState}
@@ -83,9 +83,20 @@ export default function Navbar() {
                         </Link>
                     </motion.li>
                 ))}
+                <motion.li
+                initial={initialState}
+                whileInView={inView}
+                transition={{ ...transit }}
+                viewport={{ once: true }}
+                className='m-4 hover:font-bold'>
+                  <Link href="/formulaire" className='flex items-center'>
+                    <IoMdLogIn className='mr-2' />
+                            S&apos;inscrire
+                        </Link>
+                  </motion.li>
             </ul>
             <Link href="/formulaire" className='md-4'>
-                <Button className={`lg:block text-lg ${open ? '' : 'hidden'}`}>
+                <Button className={`hidden lg:block text-lg ${open ? '' : 'hidden'}`}>
                     S&apos;inscrire
                 </Button>
             </Link>
