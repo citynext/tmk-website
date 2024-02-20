@@ -46,9 +46,9 @@ export default function Navbar() {
     }
 
     const scrollY = useScrollPosition();
-    let className = open ? 'bg-primary': 'bg-transparent';
+    let className = open ? 'bg-primary shadow-2xl': 'bg-transparent';
     if (scrollY > 200) {
-        className = 'bg-primary';
+        className = 'bg-primary shadow-2xl';
     }
 
     const initialState = {
@@ -65,12 +65,12 @@ export default function Navbar() {
         ease: "easeInOut",
       };
     return (
-        <nav className={`flex flex-col min-h-24 w-full p-3 items-end justify-between lg:flex-row lg:justify-around lg:items-center fixed z-50 top-0 ${className} transition-colors duration-1000 ease-in-out `}>
+        <nav className={`flex flex-col min-h-24 w-full p-3 items-end justify-between lg:flex-row lg:justify-around lg:items-center fixed z-50 top-0 ${className} transition-colors duration-1000 ease-in-out`}>
             <button className='absolute right-5 top-5 lg:hidden' onClick={toggle}><RxHamburgerMenu size={48} color='white' /></button>
             <Link className='absolute left-5 top-5 lg:static' href="/">
                 <Image src="/logo/transparent/white-title.png" alt="take my keys logo" width={112} height={62.56} />
             </Link>
-            <ul className={`${open ? 'absolute bg-primary flex flex-col mt-20' : 'hidden'} text-white text-lg lg:mt-0 lg:flex lg:flex-row lg:justify-end lg:items-center`}>
+            <ul className={`${open ? 'absolute bg-primary shadow-2xl flex flex-col mt-20 rounded' : 'hidden'} text-white text-lg lg:mt-0 lg:flex lg:flex-row lg:justify-end lg:items-center`}>
                 {navigation.map((item, index) => (
                     <motion.li 
                     initial={initialState}
