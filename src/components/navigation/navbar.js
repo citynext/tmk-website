@@ -88,7 +88,7 @@ export default function Navbar() {
                 whileInView={inView}
                 transition={{ ...transit }}
                 viewport={{ once: true }}
-                className='m-4 hover:font-bold'>
+                className='lg:hidden m-4 hover:font-bold'>
                   <Link href="/formulaire" className='flex items-center'>
                     <IoMdLogIn className='mr-2' />
                             S&apos;inscrire
