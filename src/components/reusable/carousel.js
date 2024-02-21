@@ -40,7 +40,11 @@ const usePrevNextButtons = (emblaApi) => {
 }
 
 const EmblaCarousel = ({children, className, options, autoplay, ...props}) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
+  let args = [];
+  if (autoplay) {
+    args.push(Autoplay());
+  }
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, args);
   
   const {
     prevBtnDisabled,
