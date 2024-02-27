@@ -9,8 +9,7 @@ export default function Why() {
         container: "flex flex-col gap-2 justify-center items-center max-w-96 ",
         img: { width: 100, height: 100},
         h2: "!text-lg !font-bold text-center",
-        p: "!text-sm",
-        // strong: "font-bold text-secondary"
+        p: "!text-sm"
     }
     return (
         <section className="flex flex-col items-center px-4 text-center">

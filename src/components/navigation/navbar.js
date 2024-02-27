@@ -10,10 +10,10 @@ import { IoMdLogIn } from "react-icons/io";
 const navigation = [
     { name: 'Sous-location', href: '/sous-location' },
     { name: 'Conciergerie', href: '/conciergerie' },
-    { name: 'A propos', href: '/a-propos' },
-    { name: 'FAQ', href: '/foire-aux-questions' },
-    { name: 'Parrainage', href: '/parrainage' },
-    { name: 'Bonus JO 2024', href: '/bonus-jo-2024' },
+    // { name: 'A propos', href: '/a-propos' },
+    // { name: 'FAQ', href: '/foire-aux-questions' },
+    // { name: 'Parrainage', href: '/parrainage' },
+    // { name: 'Bonus JO 2024', href: '/bonus-jo-2024' },
 
 ]
 
@@ -65,7 +65,7 @@ export default function Navbar() {
         ease: "easeInOut",
       };
     return (
-        <nav className={`flex flex-col min-h-24 w-full p-3 items-end justify-between lg:flex-row lg:justify-around lg:items-center fixed z-50 top-0 ${className} transition-colors duration-1000 ease-in-out`}>
+        <nav className={`flex flex-col min-h-24 w-full p-3 items-end justify-between lg:flex-row lg:justify-between lg:items-center fixed z-50 top-0 ${className} transition-colors duration-1000 ease-in-out`}>
             <button className='absolute right-5 top-5 lg:hidden' onClick={toggle}><RxHamburgerMenu size={48} color='white' /></button>
             <Link className='absolute left-5 top-5 lg:static' href="/">
                 <Image src="/logo/transparent/white-title.png" alt="take my keys logo" width={112} height={62.56} />
@@ -83,7 +83,7 @@ export default function Navbar() {
                         </Link>
                     </motion.li>
                 ))}
-                <motion.li
+                {/* <motion.li
                 initial={initialState}
                 whileInView={inView}
                 transition={{ ...transit }}
@@ -93,13 +93,13 @@ export default function Navbar() {
                     <IoMdLogIn className='mr-2' />
                             S&apos;inscrire
                         </Link>
-                  </motion.li>
+                  </motion.li> */}
             </ul>
-            <Link href="/formulaire" className='md-4'>
+            {/* <Link href="/formulaire" className='md-4'>
                 <Button className={`hidden lg:block text-lg ${open ? '' : 'hidden'}`}>
                     S&apos;inscrire
                 </Button>
-            </Link>
+            </Link> */}
         </nav>
     );
 }

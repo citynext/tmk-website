@@ -14,7 +14,7 @@ export default function Hero({ children, bgImg, className, ...props }) {
         <div className="flex-1 flex flex-col justify-center text-white pt-24 px-4 lg:px-10">
           {children}
         </div>
-        <CTA className="mx-4 lg:mx-auto mt-4" />
+        <CTA className="mx-4 mb-4 lg:mx-auto mt-4" />
       </div>
     </section>
   );
