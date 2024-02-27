@@ -77,7 +77,7 @@ export default function Navbar() {
                     whileInView={inView}
                     transition={{ ...transit, delay:index/6 }}
                     viewport={{ once: true }}
-                    key={item.name} className='m-4 hover:font-bold'>
+                    key={item.name} className='m-4 hover:underline'>
                         <Link href={item.href}>
                             {item.name}
                         </Link>

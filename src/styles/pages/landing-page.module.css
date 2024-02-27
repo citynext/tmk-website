@@ -3,7 +3,7 @@
 }
 
 .all h1 {
-    @apply text-4xl lg:text-5xl font-medium lg:font-bold mb-2 lg:mb-4;
+    @apply text-2xl lg:text-4xl font-bold mb-2 lg:mb-4;
 }
 
 .all h2 {

@@ -3,7 +3,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import bgImg from "../../../../public/images/general-landing/who-bg.svg";
+import bgImg from "@/../public/images/backgrounds/wave.svg";
 
 export default function Who() {
   const className = {

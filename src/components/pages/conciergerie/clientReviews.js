@@ -5,9 +5,9 @@ import Carousel from "@/components/reusable/carousel";
 
 export default function ClientReviews() {
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section className="flex flex-col justify-center items-center px-10">
       <h1 className="text-center">Ce que nos clients disent de nous</h1>
-      <Carousel className="w-full mt-32" options={{ loop: true, dragFree: true, containScroll: 'trimSnaps' }}>
+      <Carousel className="w-full mt-32" autoplay options={{ loop: true, dragFree: true, containScroll: 'trimSnaps' }}>
         {data.map((review, index) => (
           <div
             key={index}

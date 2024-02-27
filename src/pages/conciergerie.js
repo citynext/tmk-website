@@ -7,6 +7,9 @@ import Pricing from '@/components/pages/conciergerie/pricing';
 import ClientReviews from '@/components/pages/conciergerie/clientReviews';
 import Partners from '@/components/pages/conciergerie/partners';
 import Faq from '@/components/pages/index/faq';
+import Personas from '@/components/pages/conciergerie/personas';
+import TravelerReviews from '@/components/pages/conciergerie/travelerReviews';
+
 
 
 export default function ConciergeriePage() {
@@ -17,7 +20,9 @@ export default function ConciergeriePage() {
             <Services />
             <Process />
             <Pricing />
+            <Personas />
             <ClientReviews />
+            <TravelerReviews />
             <Partners />
             <Faq />
         </main>
