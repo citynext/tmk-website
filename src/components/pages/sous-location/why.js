@@ -13,7 +13,7 @@ export default function Why() {
     }
     return (
         <section className="flex flex-col items-center px-4 text-center">
-            <h1 className="!text-2xl !font-bold lg:!text-4xl">Pourquoi partager votre logement avec<br /><strong>TAKE MY KEYS</strong> ?</h1>
+            <h1 className="!text-2xl !font-medium lg:!text-4xl">Pourquoi partager votre logement avec<br /><strong>TAKE MY KEYS</strong> ?</h1>
             <div className="grid lg:grid-cols-2 my-10 px-4 lg:px-24 justify-items-center items-center w-full gap-10">
                 <div className={className.container}>
                     <Image src={icon1} alt="Pour les propriétaires" {...className.img} />
