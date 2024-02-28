@@ -2,28 +2,30 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
-import footerImg from '../../../public/images/footer/footer-bg.svg'
-import logoImg from '../../../public/logo/transparent/green-title.png'
+import footerImg from '@/../public/images/footer/footer-bg.svg'
+import footerImgMobile from '@/../public/images/footer/bgm.svg'
+import logoImg from '@/../public/logo/transparent/green-title.png'
 
 
 
 export default function Footer() {
     const className = {
-        div: "mx-10 my-5",
+        div: "mx-10 my-5  text-center lg:text-start",
         h3: "mb-5 text-",
-        ul: "flex flex-col justify-center items-start",
-        li: "flex items-center justify-center text-gray-700 font-light text-lg",
+        ul: "flex flex-col justify-center items-center lg:items-start",
+        li: "flex items-center justify-center text-gray-700 font-light text-lg w-full",
         icon: "text-xl mr-2",
     }
     return (
         <>
-        <section className="relative bg-third mt-32 pt-10">
+        <section className="relative bg-transparent mt-32 pt-10">
             <div className='absolute bottom-0 w-full'>
-                <Image src={footerImg} alt="footer background" className='w-full absolute bottom-0 z-[-1]' />
+                <Image src={footerImg} alt="footer background" className='hidden md:block w-full absolute bottom-0 z-[-1]' />
+                <Image src={footerImgMobile} alt="footer background" className='md:hidden w-full absolute bottom-0 z-[-1]' />
             </div>
-            <div className="flex justify-between items-center mx-10">
-                <Image src={logoImg} alt="take my keys logo" className="hidden w-60 lg:block m-10" />
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+            <div className="flex flex-col sm:flex-row justify-between items-center mx-10">
+                <Image src={logoImg} alt="take my keys logo" className="w-60 m-10" />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     <div className={className.div}>
                         <h3 className={className.h3}>Liens rapides</h3>
                         <ul className={className.ul}>
