@@ -1,23 +1,8 @@
-import Button from "@/components/form/button";
 import data from "@/data/conciergerie/personas.json";
 import Image from "next/image";
 import bgd from "@/../public/images/backgrounds/wave2d.svg";
 import bgm from "@/../public/images/backgrounds/wave2m.svg";
-
-const PersonaItem = ({img, title, description, reverse}) => {
-    return (
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-10 p-4 lg:p-10">
-            <div className={`relative w-[90vw] h-[60vw] lg:w-[50rem] lg:h-[30rem] ${reverse ? "lg:order-last" : ""}`}>
-                <Image src={img} alt={title} fill className="object-cover rounded-xl" />
-            </div>
-            <div className={`flex-1 text-center ${reverse ? 'lg:text-end' : 'lg:text-start'}`}>
-                <h2 className="!text-2xl !font-bold">{title}</h2>
-                <p>{description}</p>
-                <Button className="mt-10 lg:text-2xl !px-10 !py-4">Se connecter</Button>
-            </div>
-        </div>
-    )
-}
+import PersonaItem from "@/components/reusable/persona";
 
 
 export default function Personas() {

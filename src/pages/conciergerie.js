@@ -5,8 +5,8 @@ import Services from '@/components/pages/conciergerie/services';
 import Process from '@/components/pages/conciergerie/process';
 import Pricing from '@/components/pages/conciergerie/pricing';
 import ClientReviews from '@/components/pages/conciergerie/clientReviews';
-import Partners from '@/components/pages/conciergerie/partners';
-import Faq from '@/components/pages/index/faq';
+import Partners from '@/components/reusable/partners';
+import Faq from '@/components/pages/conciergerie/faq';
 import Personas from '@/components/pages/conciergerie/personas';
 import TravelerReviews from '@/components/pages/conciergerie/travelerReviews';
 

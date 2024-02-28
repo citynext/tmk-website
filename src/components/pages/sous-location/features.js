@@ -52,7 +52,7 @@ export default function Features() {
         <section className="p-4 text-center bg-third py-12">
             <h1 className="!font-medium">Que se passe-t-il dans le logement pendant votre absence ?</h1>
             <p className="my-4 mx-auto max-w-[60rem]">Nous procédons à des vérification approfondies des antécédents potentiels et effectuons des contrôles sur les réseaux sociaux au besoin, afin de garantir la sécurité de votre logement.</p>
-            <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-32 p-32">
+            <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-32 p-12 sm:p-32">
                 {data.map((item, index) => {
                     const Icon = item.icon;
                     return (

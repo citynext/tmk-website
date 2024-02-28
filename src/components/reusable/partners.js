@@ -1,10 +1,10 @@
 import Image from "next/image"
-import airbnb from "../../../../public/images/partners/airbnb.png"
-import booking from "../../../../public/images/partners/booking.png"
-import leboncoin from "../../../../public/images/partners/leboncoin.png"
-import expedia from "../../../../public/images/partners/expedia.png"
-import vrbo from "../../../../public/images/partners/vrbo.png"
-import abritel from "../../../../public/images/partners/abritel.png"
+import airbnb from "@/../public/images/partners/airbnb.png"
+import booking from "@/../public/images/partners/booking.png"
+import leboncoin from "@/../public/images/partners/leboncoin.png"
+import expedia from "@/../public/images/partners/expedia.png"
+import vrbo from "@/../public/images/partners/vrbo.png"
+import abritel from "@/../public/images/partners/abritel.png"
 
 const images = [
     airbnb,
