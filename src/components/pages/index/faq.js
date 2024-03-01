@@ -58,9 +58,7 @@ export default function Faq() {
             transition={{ ...transit, duration: 0.5, delay: i / 4 }}
             viewport={{ once: true }}
             key={i}
-            className={`${
-              expanded[i] ? "h-full" : "h-[55px]"
-            } transition-all duration-250 ease-in-out bg-white flex flex-col overflow-hidden justify-between items-center my-5 border-2 rounded-lg border-primary`}
+            className={`transition-all duration-250 ease-in-out bg-white flex flex-col overflow-hidden justify-between items-center my-5 border-2 rounded-lg border-primary`}
           >
             <div className="flex justify-between items-center w-full sm:pl-5">
               <span className=" bg-white text-xl rounded-3xl mx-5 my-3">

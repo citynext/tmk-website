@@ -1,14 +1,34 @@
 [
     {
-      "question": "Qu'est-ce que le Lorem Ipsum?",
-      "answer": "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."
+      "question": "Qu'est-ce que Take My Keys ?",
+      "answer": "d'appartements pour des durées allant de 10 à 120 jours. Nous prenons en charge l'intégralité de la gestion de votre appartement pendant votre absence, que vous soyez locataire ou propriétaire. Notre but est de faciliter vos projets de mobilité en éliminant les contraintes liées au logement, vous évitant ainsi le stress de devoir quitter votre appartement ou payer un loyer pour un bien inoccupé durant vos déplacements professionnels, visites familiales, stages ou échanges universitaires."
     },
     {
-      "question": "Pourquoi l'utiliser?",
-      "answer": "On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions."
+      "question": "Comment fonctionne Take My Keys ?",
+      "answer": "Nous assurons le paiement intégral de votre loyer ainsi que les charges (électricité, gaz, internet, etc.) de façon sécurisée, légale et sans frais pour vous. Nous mettons votre appartement à disposition sur des plateformes de location à court terme, telles qu'Airbnb ou Booking, accueillant ainsi des professionnels et des touristes."
     },
     {
-      "question": "Où puis-je",
-      "answer": "Il existe de nombreuses variantes de passages du Lorem Ipsum disponibles."
+      "question": "Qui peut bénéficier de Take My Keys ?",
+      "answer": "Notre service s'adresse aux personnes devant s'absenter de leur logement pour une période supérieure à deux semaines, et ce, aussi bien aux locataires qu'aux propriétaires situés dans Paris intra-muros."
+    },
+    {
+      "question": "Quels sont les engagements de Take My Keys ?",
+      "answer": "Nous nous engageons à promouvoir la mobilité en supprimant les obstacles liés au logement et en facilitant le retour chez soi. Nous visons à offrir un service transparent et sans frais, avec la garantie d'un versement mensuel de votre loyer et de vos charges. Cette promesse constitue notre engagement principal, reconnu par plusieurs distinctions. En outre, nous collaborons avec des écoles et universités parisiennes pour favoriser la mobilité étudiante, offrant des opportunités pour des stages, échanges Erasmus, séjours linguistiques, ou missions humanitaires."
+    },
+    {
+      "question": "Quelle est la rémunération pour Take My Keys ?",
+      "answer": "Notre service est entièrement gratuit pour vous. Nous nous rémunérons via les services facturés aux sous-locataires. Aucun frais ou commission ne vous sera demandé. Vous recevez votre loyer complet, que votre logement soit occupé ou non."
+    },
+    {
+      "question": "Pourquoi choisir Take My Keys ?",
+      "answer": "En tant qu'agence immobilière agréée, nous vous assurons un service conforme aux régulations légales. Vous bénéficiez d'un revenu fixe indépendamment du taux d'occupation de votre bien, sans frais de gestion supplémentaires. Nos experts s'occupent de tout, vous permettant de partir l'esprit tranquille."
+    },
+    {
+      "question": "Quelles assurances garantissent la sécurité de mon logement ?",
+      "answer": "Votre logement est d'abord couvert par l'assurance habitation existante, couvrant responsabilité civile, vols, bris, incendies et autres dommages. Take My Keys propose en plus une assurance complémentaire pour les sinistres non couverts par votre assurance, renforçant la protection de votre bien sous certaines conditions."
+    },
+    {
+      "question": "Que faire si je bénéficie des aides personnalisées au logement (APL) ?",
+      "answer": "Vous ne pouvez cumuler les APL avec un loyer payé par un tiers. Deux options s'offrent à vous : - Suspendre vos APL : une fois le document de suspension reçu, nous vous verserons l'intégralité de votre loyer. - Conserver vos APL : nous vous verserons votre loyer déduit du montant des APL, sur présentation d'un justificatif."
     }
 ]
