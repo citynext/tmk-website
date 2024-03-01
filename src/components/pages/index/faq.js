@@ -58,27 +58,29 @@ export default function Faq() {
             transition={{ ...transit, duration: 0.5, delay: i / 4 }}
             viewport={{ once: true }}
             key={i}
-            className={`transition-all duration-250 ease-in-out bg-white flex flex-col overflow-hidden justify-between items-center my-5 border-2 rounded-lg border-primary`}
+            className={`transition-all duration-250 ease-in-out bg-white flex flex-col overflow-hidden justify-between items-center my-2 border-2 rounded-lg border-primary`}
           >
-            <div className="flex justify-between items-center w-full sm:pl-5">
-              <span className=" bg-white text-xl rounded-3xl mx-5 my-3">
+            <div className="flex w-full justify-center items-stretch h-16">
+              <span className="text-xl rounded-3xl px-5 my-auto">
                 {i}.
               </span>
-              <h2 className="flex-1 !text-base lg:!text-2xl">{q.question}</h2>
-              <button
-                className={`${
-                  expanded[i] ? "bg-third" : "text-white bg-primary"
-                } h-full text-xl px-5 py-3 transition-all duration-200 ease-in-out`}
-                onClick={() => toggle(i)}
-              >
-                {expanded[i] ? "-" : "+"}
-              </button>
+              <h2 className={`flex-1 !text-base lg:!text-2xl !my-auto ${expanded[i] ? "" : "line-clamp-2"} overflow-hidden`}>{q.question}</h2>
+              <div>
+                <button
+                  className={`${
+                    expanded[i] ? "bg-third" : "text-white bg-primary"
+                  } transition-all duration-200 ease-in-out size-16 ml-4`}
+                  onClick={() => toggle(i)}
+                >
+                  {expanded[i] ? "-" : "+"}
+                </button>
+              </div>
             </div>
             <p
               className={`text-gray-500 mx-12 sm:mx-24 my-5 duration-200 transition-all transform ${
                 expanded[i]
-                  ? "translate-y-0 opacity-[1] visible"
-                  : "translate-y-[50px] opacity-0 invisible"
+                  ? "translate-y-0 opacity-[1]"
+                  : "translate-y-[50px] opacity-0 hidden"
               }`}
             >
               {q.answer}
