@@ -19,5 +19,5 @@
 }
 
 .all section:not(:first-child) {
-    @apply my-16;
+    @apply my-8 lg:my-16;
 }

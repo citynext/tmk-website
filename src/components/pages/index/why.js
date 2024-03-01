@@ -69,7 +69,7 @@ export default function Why() {
 
   return (
     <section className="flex flex-col justify-center items-center md:py-10">
-      <div className="mx-5 sm:mx-10 mt-20 max-w-[60rem]">
+      <div className="mx-5 sm:mx-10 mt-10 max-w-[60rem]">
         <motion.h2
           initial={initialState}
           whileInView={inView}

@@ -52,8 +52,8 @@ const data = [
 export default function How() {
     return (
         <section className="">
-            <h1 className="text-center !mb-24">Comment ça marche ?</h1>
-            <Carousel className="px-10 mx-auto sm:w-3/6" options={{selectedClass: "bg"}}>
+            <h1 className="text-center">Comment ça marche ?</h1>
+            <Carousel className="px-10 mt-10 lg:mt-24 mx-auto sm:w-3/6" options={{selectedClass: "bg"}}>
                 {data.map((item, index) => (
                     <div key={index} className="relative mx-2 sm:mx-4">
                         <Image src={item.img} alt={item.title} className="w-[80vw] sm:w-[30rem] -z-50" />

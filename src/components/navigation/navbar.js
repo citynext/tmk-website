@@ -5,6 +5,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import Button from '../form/button';
 import { motion } from "framer-motion";
 import { IoMdLogIn } from "react-icons/io";
+import logo from "@/../public/logo/transparent/white-title.png";
 
 
 const navigation = [
@@ -68,7 +69,7 @@ export default function Navbar() {
         <nav className={`flex flex-col min-h-24 w-full p-3 items-end justify-between lg:flex-row lg:justify-between lg:items-center fixed z-50 top-0 ${className} transition-colors duration-1000 ease-in-out`}>
             <button className='absolute right-5 top-5 lg:hidden' onClick={toggle}><RxHamburgerMenu size={48} color='white' /></button>
             <Link className='absolute left-5 top-5 lg:static' href="/">
-                <Image src="/logo/transparent/white-title.png" alt="take my keys logo" width={112} height={62.56} />
+                <Image src={logo} alt="take my keys logo" width={112} height={62.56} />
             </Link>
             <ul className={`${open ? 'absolute bg-primary shadow-2xl flex flex-col mt-20 rounded' : 'hidden'} text-white text-lg lg:mt-0 lg:flex lg:flex-row lg:justify-end lg:items-center`}>
                 {navigation.map((item, index) => (
@@ -78,7 +79,7 @@ export default function Navbar() {
                     transition={{ ...transit, delay:index/6 }}
                     viewport={{ once: true }}
                     key={item.name} className='m-4 hover:underline'>
-                        <Link href={item.href}>
+                        <Link href={item.href} onClick={() => setOpen(false)}>
                             {item.name}
                         </Link>
                     </motion.li>
@@ -89,7 +90,7 @@ export default function Navbar() {
                 transition={{ ...transit }}
                 viewport={{ once: true }}
                 className='lg:hidden m-4 hover:font-bold'>
-                  <Link href="/formulaire" className='flex items-center'>
+                  <Link href="/formulaire" className='flex items-center' onClick={() => setOpen(false)}>
                     <IoMdLogIn className='mr-2' />
                             S&apos;inscrire
                         </Link>
