@@ -56,7 +56,7 @@ export default function Hero() {
 
   return (
     <_Hero bgImg={heroImg}>
-      <h1 className="!text-4xl lg:!text-5xl !font-medium lg:!font-bold">
+      <h1 className="!text-4xl lg:!text-5xl !font-bold">
         Besoin d&apos;argent pour
       </h1>
       <h1 id="cidTextWrap">
@@ -67,7 +67,7 @@ export default function Hero() {
           {choices[cid]} ?
         </strong>
       </h1>
-      <h2 className="!text-3xl lg:!text-4xl !font-medium lg:!font-bold lg:mt-6">
+      <h2 className="!text-3xl lg:!text-4xl !font-bold">
         TAKE MY KEYS a la solution !
       </h2>
     </_Hero>

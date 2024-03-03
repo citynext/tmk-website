@@ -7,7 +7,7 @@ import PersonaItem from "@/components/reusable/persona";
 
 export default function Personas() {
     return (
-        <section className="relative w-full !mb-48 lg:!mb-80 !mt-48">
+        <section className="relative w-full !mb-48 lg:!mb-40 !mt-48">
             <Image src={bgd} alt="Personas" className="hidden sm:block absolute top-40 lg:-top-40 left-0 w-full -z-10" />
             <Image src={bgm} alt="Personas" className="sm:hidden absolute top-0 left-0 w-full -z-10" />
             <h1 className="!mb-12 text-center">Personas</h1>

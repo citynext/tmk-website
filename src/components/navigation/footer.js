@@ -25,29 +25,31 @@ export default function Footer() {
             </div>
             <div className="flex flex-col sm:flex-row justify-between items-center mx-10">
                 <Image src={logoImg} alt="take my keys logo" className="w-60 m-10" />
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
                     <div className={className.div}>
                         <h3 className={className.h3}>Liens rapides</h3>
                         <ul className={className.ul}>
                             <li><Link className={className.li} href="/">Qui sommes-nous ?</Link></li>
-                            <li><Link className={className.li} href="/">Comment ça marche ?</Link></li>
-                            <li><Link className={className.li} href="/contact">Contact</Link></li>
+                            <li><Link className={className.li} href="/sous-location">Sous-location</Link></li>
+                            <li><Link className={className.li} href="/conciergerie">Conciergerie</Link></li>
+                            {/* <li><Link className={className.li} href="/">Comment ça marche ?</Link></li> */}
+                            {/* <li><Link className={className.li} href="/contact">Contact</Link></li> */}
                             <li><Link className={className.li} href="/faq">FAQ</Link></li>
                         </ul>
                     </div>
-                    <div className={className.div}>
+                    {/* <div className={className.div}>
                         <h3 className={className.h3}>Services</h3>
                         <ul className={className.ul}>
                             <li><Link className={className.li} href="/sous-location">Sous-location</Link></li>
                             <li><Link className={className.li} href="/conciergerie">Conciergerie</Link></li>
                         </ul>
-                    </div>
+                    </div> */}
                     <div className={className.div}>
-                        <h3 className={className.h3}>Contactez-nous</h3>
+                        <h3 className={className.h3}>Nous contacter</h3>
                         <ul className={className.ul}>
                             <li><Link className={className.li} href="mailto:contact@takemykeys.fr"><MdOutlineEmail className={className.icon} />contact@takemykeys.fr</Link></li>
-                            <li><Link className={className.li} href=""><FaInstagram className={className.icon} />takemykeys</Link></li>
-                            <li><Link className={className.li} href=""><FaFacebook className={className.icon} />Takemykeys</Link></li>
+                            <li><Link className={className.li} href="https://www.instagram.com/takemykeys.fr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><FaInstagram className={className.icon} />takemykeys.fr</Link></li>
+                            <li><Link className={className.li} href="https://www.facebook.com/profile.php?id=61556536019443"><FaFacebook className={className.icon} />Take My Keys</Link></li>
                         </ul>
                     </div>
                 </div>

@@ -18,7 +18,7 @@ const Service = ({
       {...props}
     >
       <Image src={image} alt={title} width={400} height={400} />
-      <h3 className="text-md mx-5 my-4 uppercase">{title}</h3>
+      <h3 className="text-md font-bold mx-5 my-4 uppercase">{title}</h3>
       <p className="!text-sm mx-5">{description}</p>
     </button>
   );
@@ -36,7 +36,7 @@ export default function Services() {
       <Carousel
         options={{loop: true}}
         autoplay
-        className="w-full mt-32 z-10">
+        className="w-full mt-20 z-10">
         {services.map((service, i) => (
           <Service
             key={i}

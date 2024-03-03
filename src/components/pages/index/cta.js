@@ -17,7 +17,7 @@ export default function Cta() {
     ease: "easeInOut",
   };
   return (
-    <section className="relative hidden sm:flex justify-center w-[40rem] h-[15rem] lg:w-[60rem] lg:h-[20rem] mx-auto my-40">
+    <section className="relative hidden sm:flex justify-center w-[40rem] h-[15rem] md:h-[20rem] lg:w-[70rem] lg:h-[22.5rem] mx-auto my-40">
       <Image
         src="/images/general-landing/cta-img.svg"
         alt="discover image"

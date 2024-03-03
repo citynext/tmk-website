@@ -1,11 +1,11 @@
 import { LuShieldCheck } from "react-icons/lu";
 import { TbCircleKey } from "react-icons/tb";
-import { AiOutlineDollar } from "react-icons/ai";
+import { AiOutlineEuroCircle } from "react-icons/ai";
 import { motion } from "framer-motion";
 
 const whys = [
   {
-    icon: AiOutlineDollar,
+    icon: AiOutlineEuroCircle,
     title: "Générosité",
     description:
       "Nous offrons le meilleur système de rémunération à nos clients. Que vous soyez proprétaires ou locataires, c'est avec Take My Keys que vous allez gagner le plus d'argent.",
@@ -16,14 +16,14 @@ const whys = [
     title: "Fiabilité",
     description:
       "Notre couverture complémentaire exclusive protège votre bien contre d'éventuels dommages causés par les locataires. Elle complète votre assurance habitation, renforçant la fiabilité et la sécuritté communautaire.",
-    delay: 0.3,
+    delay: 0.1,
   },
   {
     icon: TbCircleKey,
     title: "Flexibilité",
     description:
       "Nous vous offrons une flexibilité exceptionnelle. Vous pouvez choisir de louer votre bien pour une courte ou longue durée, ou même de le retirer du marché à tout moment. Vous avez le contrôle.",
-    delay: 0.6,
+    delay: 0.2,
   },
 ];
 
@@ -91,7 +91,7 @@ export default function Why() {
           bénéficiez d&apos;une flexibilité exceptionnelle avec nous.
         </motion.p>
       </div>
-      <ul className="flex flex-wrap w-full justify-around">
+      <ul className="flex flex-wrap w-full justify-around lg:px-24">
         {whys.map((why, index) => (
           <li key={index}>
             <WhyItem {...why} />

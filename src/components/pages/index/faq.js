@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import questions from "@/data/index/faq";
+import Button from "@/components/form/button";
 
 
 export default function Faq() {
@@ -51,11 +52,11 @@ export default function Faq() {
         </motion.p>
       </div>
       <ul className="flex flex-col justify-center items-stretch max-w-[50rem] mx-auto">
-        {questions.map((q, i) => (
+        {questions.slice(0,3).map((q, i) => (
           <motion.li
             initial={initialState}
             whileInView={inView}
-            transition={{ ...transit, duration: 0.5, delay: i / 4 }}
+            transition={{ ...transit, duration: 0.5 }}
             viewport={{ once: true }}
             key={i}
             className={`transition-all duration-250 ease-in-out bg-white flex flex-col overflow-hidden justify-between items-center my-2 border-2 rounded-lg border-primary`}
@@ -88,6 +89,9 @@ export default function Faq() {
           </motion.li>
         ))}
       </ul>
+      <div className="flex justify-center mt-10">
+        <Button className="text-3xl !py-2 !px-10 shadow-xl" href="/faq">FAQ</Button>
+      </div>
     </section>
   );
 }

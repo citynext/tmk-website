@@ -15,7 +15,7 @@ export default function Why() {
         <section className="flex flex-col items-center px-4 text-center">
             <h1 className="!text-2xl !font-bold lg:!text-4xl">Pourquoi choisir <strong>TAKE MY KEYS</strong> ?</h1>
             <p className="lg:!text-xl">Découvrez les avantages de faire confiance à Take My Keys pour la gestion de votre propriété</p>
-            <div className="grid lg:grid-cols-2 my-10 px-4 lg:px-24 justify-items-center items-center w-full gap-10">
+            <div className="grid lg:grid-cols-4 mt-20 px-4 lg:px-24 justify-items-center items-start w-full gap-10">
                 <div className={className.container}>
                     <Image src={icon1} alt="Pour les propriétaires" {...className.img} />
                     <h2 className={className.h2}>Conçu par les propriétaires pour les propriétaires</h2>

@@ -87,7 +87,7 @@ export default function CTA({ className, ...props }) {
             <div className="bg-white opacity-80 flex-wrap lg:opacity-100 h-fit flex justify-between items-start rounded-2xl rounded-tl-none gap-2 border-gray-400 border-solid border-b border-x p-5">
                 <div className="flex flex-col w-full lg:w-fit gap-2">
                     <div className="flex flex-wrap items-end gap-y-2">
-                        <Input type="text" value={location} onChange={(v) => setLocation(v)} icon={IoLocationOutline} label="Adresse" placeholder="Où habitez-vous ?" className="w-full lg:w-80 lg:pl-0" />
+                        <Input type="text" value={location} onChange={(v) => setLocation(v)} icon={IoLocationOutline} label="Adresse" placeholder="Adresse du logement" className="w-full lg:w-80 lg:pl-0" />
                         <Input type="number" value={rooms} onChange={(v) => setRooms(v)} icon={LiaDoorOpenSolid} label="Chambre(s)" placeholder="0" className="w-1/2 lg:w-48 border-gray-400 lg:border-solid lg:border-l lg:border-r" />
                         <Input type="number" value={capacity} onChange={(v) => setCapacity(v)} icon={IoPersonOutline} label="Capacité d'accueil" placeholder="0" className="w-1/2 lg:w-56" />
                     </div>
@@ -98,9 +98,9 @@ export default function CTA({ className, ...props }) {
                         </div>
                     }
                 </div>
-                <div className="w-full lg:w-fit flex justify-center gap-2 lg:flex-col m-2">
-                    <Button className="lg:animate-bounce hover:animate-none p-2">Calculer</Button>
-                    <Button outline onClick={() => setExpanded(!expanded)} className="p-2">{expanded ? "Moins" : "Plus"} d&apos;options</Button>
+                <div className="w-full lg:w-fit flex items-center justify-center gap-2 lg:flex-col m-2">
+                    <Button className="p-2 text-xl">Calculer</Button>
+                    {/* <Button outline onClick={() => setExpanded(!expanded)} className="p-2">{expanded ? "Moins" : "Plus"} d&apos;options</Button> */}
                 </div>
             </div>
         </motion.div>
