@@ -84,9 +84,9 @@ export default function CTA({ className, ...props }) {
           viewport={{ once: true }}
         className={`${className} w-fit transform translate-y-[100%]`} id="ctaHero" {...props}>
             <div className="bg-white opacity-80 lg:opacity-100 w-fit px-5 py-2 font-medium text-lg rounded-tl-2xl rounded-tr-2xl border-gray-400 border-l border-t border-r">Estimez vos revenus</div>
-            <div className="bg-white opacity-80 flex-wrap lg:opacity-100 h-fit flex justify-between items-start rounded-2xl rounded-tl-none gap-2 border-gray-400 border-solid border-b border-x p-5">
-                <div className="flex flex-col w-full lg:w-fit gap-2">
-                    <div className="flex flex-wrap items-end gap-y-2">
+            <div className="relative bg-white opacity-80 flex-wrap lg:opacity-100 h-fit flex justify-between rounded-2xl rounded-tl-none gap-3 border-gray-400 border-solid border-b border-x p-5">
+                <div className="flex flex-col w-full lg:w-fit gap-3">
+                    <div className="flex flex-wrap items-end gap-y-3">
                         <Input type="text" value={location} onChange={(v) => setLocation(v)} icon={IoLocationOutline} label="Adresse" placeholder="Adresse du logement" className="w-full lg:w-80 lg:pl-0" />
                         <Input type="number" value={rooms} onChange={(v) => setRooms(v)} icon={LiaDoorOpenSolid} label="Chambre(s)" placeholder="0" className="w-1/2 lg:w-48 border-gray-400 lg:border-solid lg:border-l lg:border-r" />
                         <Input type="number" value={capacity} onChange={(v) => setCapacity(v)} icon={IoPersonOutline} label="Capacité d'accueil" placeholder="0" className="w-1/2 lg:w-56" />
@@ -98,8 +98,8 @@ export default function CTA({ className, ...props }) {
                         </div>
                     }
                 </div>
-                <div className="w-full lg:w-fit flex items-center justify-center gap-2 lg:flex-col m-2">
-                    <Button className="p-2 text-xl">Calculer</Button>
+                <div className="w-full lg:w-fit flex items-center justify-center gap-2 lg:flex-col">
+                    <Button className="!px-6 !py-3">Calculer</Button>
                     {/* <Button outline onClick={() => setExpanded(!expanded)} className="p-2">{expanded ? "Moins" : "Plus"} d&apos;options</Button> */}
                 </div>
             </div>
