@@ -1,13 +1,10 @@
-import Navbar from "../components/navigation/navbar";
-import Footer from "../components/navigation/footer";
-import "../styles/globals.css";
+import DefaultLayout from "../components/layout"
+import "../styles/globals.css"
 
 export default function App({ Component, pageProps }) {
-  return (
-    <>
-    <Navbar />
-    <Component {...pageProps} />
-    <Footer />
-    </>
+  const getLayout = Component.getLayout ?? ((page) => (<DefaultLayout>{page}</DefaultLayout>));
+
+  return getLayout(
+      <Component {...pageProps} />
   );
 }

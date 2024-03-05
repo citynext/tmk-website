@@ -31,7 +31,7 @@ export default function Services() {
       <Image src={bg} alt="bg img" className="absolute top-40 lg:top-0 left-0 w-full -z-10" />
       <div className="text-center lg:mx-24">
         <h1>Nos services</h1>
-        <p>Découvrez nos services - Votre tranquilité, Notre signature</p>
+        <p>Votre tranquilité, Notre signature</p>
       </div>
       <Carousel
         options={{loop: true}}
