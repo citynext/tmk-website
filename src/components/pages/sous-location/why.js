@@ -8,12 +8,12 @@ export default function Why() {
     const className = {
         container: "flex flex-col gap-2 justify-center items-center max-w-96 ",
         img: { width: 100, height: 100},
-        h2: "!text-xl !font-bold text-center",
+        h2: "!text-xl !font-semibold text-center",
         p: "!text-sm"
     }
     return (
         <section className="flex flex-col items-center px-4 text-center">
-            <h1 className="!text-2xl !font-medium lg:!text-4xl">Pourquoi partager votre logement avec<br /><strong>TAKE MY KEYS</strong> ?</h1>
+            <h1 className="">Pourquoi partager votre logement avec<br /><strong>TAKE MY KEYS</strong> ?</h1>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 my-10 px-4 lg:px-24 justify-items-center items-center w-full gap-10">
                 <div className={className.container}>
                     <Image src={icon1} alt="Pour les propriétaires" {...className.img} />

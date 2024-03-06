@@ -12,16 +12,15 @@ export default function Hero() {
           alt="Conciergerie"
           className="hidden lg:block absolute left-0 top-0 h-full object-[fit]"
         />
-        <h1 className="!text-2xl lg:!text-5xl !font-bold">
+        <h1 className="!text-2xl lg:!text-5xl">
           MAXIMISEZ VOS REVENUS
         </h1>
-        <h1 className="!text-2xl lg:!text-5xl !font-bold">
+        <h1 className="!text-2xl lg:!text-5xl">
           Confiez votre propriété à <br />
           <strong>TAKE MY KEYS</strong>
         </h1>
         <p className="!text-white !text-md lg:!text-xl">
-          Confiez-nous votre bien immobilier et profitez d&apos;une gestion sans
-          tracas
+          Confiez-nous votre bien immobilier et profitez d&apos;une gestion sans tracas
         </p>
       </div>
     </_Hero>

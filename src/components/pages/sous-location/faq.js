@@ -51,7 +51,7 @@ export default function Faq() {
         </motion.p>
       </div>
       <ul className="flex flex-col justify-center items-stretch max-w-[50rem] mx-auto">
-        {questions.map((q, i) => (
+        {questions.slice(0, 3).map((q, i) => (
           <motion.li
             initial={initialState}
             whileInView={inView}
