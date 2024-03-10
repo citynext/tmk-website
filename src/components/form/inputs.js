@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import { IoLocation } from "react-icons/io5";
 
 export function TextInput({
   type,
@@ -19,6 +20,7 @@ export function TextInput({
 }) {
   const [suggestions, setSuggestions] = useState([]);
   const [selectedAddress, setSelectedAddress] = useState(true);
+  setTimeout(() => setSelectedAddress(false), 1000);
 
   useEffect(() => {
     if (type === "address") {
@@ -79,6 +81,16 @@ export function TextInput({
         value={value}
         onChange={onChange}
       />
+      { type === 'address' && suggestions.length > 1 && 
+        <ul className='absolute bg-white w-full border z-10'>
+            {suggestions.map((suggestion, i) => (
+            <li key={i} className="flex gap-2 items-center p-2 cursor-pointer text-primary hover:bg-primary hover:text-white" onClick={() => _onSuggestionClick(suggestion)}>
+              <IoLocation className="text-inherit mr-2" />
+              {suggestion.address.freeformAddress}
+            </li>
+            ))}
+        </ul>
+      }
     </div>
   );
 }

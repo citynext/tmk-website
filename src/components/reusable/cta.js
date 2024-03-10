@@ -7,7 +7,7 @@ import { LiaBathSolid } from "react-icons/lia";
 import Button from "../form/button";
 import gsap from "gsap";
 import {motion} from  'framer-motion'
-
+import { useRouter } from "next/router";
 
 const Input = ({value, onChange, maxValue, ...props}) => {
     const _max = maxValue;
@@ -47,6 +47,7 @@ const Input = ({value, onChange, maxValue, ...props}) => {
 }
 
 export default function CTA({ className, ...props }) {
+    const router = useRouter();
     // const [expanded, setExpanded] = useState(false)
     const [location, setLocation] = useState("");
     const [rooms, setRooms] = useState();
@@ -68,7 +69,15 @@ export default function CTA({ className, ...props }) {
     }, [])
     
     const handleSubmit = () => {
-        console.log(location, rooms, capacity);
+        router.push({
+            pathname: '/formulaire',
+            query: {
+                step: 2,
+                address: location,
+                rooms: rooms,
+                capacity: capacity
+            }
+        })
     }
 
     return (
