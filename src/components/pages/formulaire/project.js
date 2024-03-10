@@ -23,16 +23,16 @@ export default function Project({ className, onPrev, onNext, ...props }) {
   const [formData, setFormData] = useState({
     address: searchParams.get("address") || "",
     elevator: searchParams.get("elevator") || false,
-    category: searchParams.get("category") || null,
+    category: searchParams.get("category") || "",
     postalCode: searchParams.get("postalCode") || "",
     city: searchParams.get("city") || "",
-    type: searchParams.get("type") || null,
+    type: searchParams.get("type") || "",
     area: searchParams.get("area") || "",
     level: searchParams.get("level") || "",
-    capacity: searchParams.get("capacity") || null,
+    capacity: searchParams.get("capacity") || "",
     
   });
-  
+
   const handleChange = (e) => {
     if (e.target.type === "checkbox") setFormData({ ...FormData, [e.target.name]: e.target.checked });
     else setFormData({ ...FormData, [e.target.name]: e.target.value });
@@ -40,7 +40,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
 
   return (
     <div className={`flex flex-col items-center ${className}`} {...props}>
-      <h1 className="w-fit text-2xl font-semibold my-6">Votre logement</h1>
+      <h1 className="w-fit text-2xl text-center font-semibold my-6">Votre logement</h1>
       <form onSubmit={(e) => {onNext(formData); e.preventDefault()}} className="max-w-[50rem] w-full">
         <FormGroup title="Adresse" className="w-full mb-6">
           <TextInput

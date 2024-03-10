@@ -27,7 +27,7 @@ export default function Info({ className, onPrev, onNext, ...props }) {
     }
     return (
         <div className={`flex flex-col gap-10 items-center ${className}`} {...props}>
-            <h1 className="w-fit text-2xl font-semibold my-10">Créer votre compte pour obtenir votre estimation</h1>
+            <h1 className="w-fit text-2xl text-center font-semibold my-10">Créer votre compte pour obtenir votre estimation</h1>
             <form onSubmit={handleSubmit} className="flex flex-wrap justify-center gap-4 w-full max-w-[50rem]">
                 <LabelInput label="Nom" className="w-full sm:flex-1 sm:min-w-[40%]">
                     <TextInput required onChange={handleFormDataChange} name="lastName" value={formData.lastName} />

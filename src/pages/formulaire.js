@@ -5,6 +5,9 @@ import Info from "@/components/pages/formulaire/info";
 import Period from "@/components/pages/formulaire/period";
 import Project from "@/components/pages/formulaire/project";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import hair1 from "@/../public/images/backgrounds/hair1.svg"
+import hair2 from "@/../public/images/backgrounds/hair2.svg"
 
 
 const Formulaire = () => {
@@ -18,14 +21,12 @@ const Formulaire = () => {
   else {
     step = parseInt(step);
   }
-  const progress = parseInt(100 * step / totalSteps.length)
 
   let query = {};
   for (const [key, value] of searchParams.entries()) {
     query[key] = value;
   }
   const onPrev = (additionnalParams) => {
-    console.log(234234)
     router?.push({
       pathname: `/formulaire`,
       query: {
@@ -50,7 +51,9 @@ const Formulaire = () => {
   const stepProps = { className: "px-4 py-16", onPrev, onNext }
 
   return (
-    <main className="relative w-full h-screen bg-gray-50 pt-10 px-4">
+    <main className="relative w-full h-screen bg-third bg-opacity-30 pt-10 px-4">
+      <Image src={hair1} className="absolute top-0 left-0" />
+      <Image src={hair2} className="absolute bottom-0 right-0" />
       <div className="relative flex justify-between mx-auto max-w-[50rem] w-[90%]">
         <div className="absolute border border-primary w-full top-6"></div>
         { Array.from({length: totalSteps}, (_, i) => (
