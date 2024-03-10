@@ -48,12 +48,23 @@ const Formulaire = () => {
     });
   };
 
+  const submitResult = (additionnalParams)  => {
+    router?.push({
+      pathname: `/formulaire/result`,
+      query: {
+        ...query,
+        step: step + 1,
+        ...additionnalParams,
+      },
+    });
+  }
+
   const stepProps = { className: "px-4 py-16", onPrev, onNext }
 
   return (
     <main className="relative w-full h-screen bg-third bg-opacity-30 pt-10 px-4">
-      <Image src={hair1} className="absolute top-0 left-0" />
-      <Image src={hair2} className="absolute bottom-0 right-0" />
+      <Image src={hair1} className="absolute top-0 left-0 -z-[50]" />
+      <Image src={hair2} className="absolute bottom-0 right-0 -z-[50]" />
       <div className="relative flex justify-between mx-auto max-w-[50rem] w-[90%]">
         <div className="absolute border border-primary w-full top-6"></div>
         { Array.from({length: totalSteps}, (_, i) => (
@@ -70,7 +81,7 @@ const Formulaire = () => {
       { step == 1 && <Type {...stepProps} /> }
       { step == 2 && <Project {...stepProps} /> }
       { step == 3 && <Period {...stepProps} /> }
-      { step == 4 && <Info {...stepProps} /> }
+      { step == 4 && <Info {...stepProps} onNext={submitResult} /> }
       <div className={`fixed bottom-0 left-0 w-full h-2 flex`}>
         { Array.from({length: totalSteps}, (_, i) => (
           <div key={i} className={`${i < step-1 ? "bg-primary": "bg-transparent"} flex-1 transition transform duration-1000`}></div>
