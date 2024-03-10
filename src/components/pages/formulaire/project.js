@@ -1,16 +1,124 @@
-import { FaHome, FaTools } from "react-icons/fa";
+import { useState } from "react";
+import { TextInput, LabelInput, ToggleButton, NumberInput } from "@/components/form/inputs";
+import { FaCity } from "react-icons/fa";
+import { FaMapMarkedAlt } from "react-icons/fa";
+import { FaMapPin } from "react-icons/fa6";
+import { Select } from "@/components/form/inputs";
+import { useSearchParams } from "next/navigation";
 
-export default function Project({ className, callback, ...props }) {
-    const btnClass = "flex justify-center items-center gap-4 rounded-lg border border-gray-400 px-16 py-10 shadow-xl";
-    const btnClassHover = "hover:bg-secondary hover:text-white hover:border-secondary transition-all duration-300 ease-in-out";
-    return (
-        <div className={`flex flex-col items-center ${className}`} {...props}>
-        <h1 className="w-fit text-2xl font-bold my-6">Quel est votre projet ?</h1>
-        <div className="flex gap-10 text-xl my-16">
-            <button onClick={() => callback({ project: "achat" })} className={`${btnClass} ${btnClassHover}`}><FaHome /><span>Achat</span></button>
-            <button onClick={() => callback({ project: "travaux" })} className={`${btnClass} ${btnClass
-                } ${btnClassHover}`}><FaTools /><span>Travaux</span></button>
+
+const FormGroup = ({ children, title, className, ...props }) => {
+  return (
+    <div className={`flex flex-wrap gap-4 my-4 ${className}`} {...props}>
+      <h2 className="py-3 text-xl text-text font-medium mb-3 w-full border-b border-b-1 border-b-gray-300">
+        {title}
+      </h2>
+      {children}
+    </div>
+  );
+};
+
+export default function Project({ className, onPrev, onNext, ...props }) {
+  const searchParams = useSearchParams();
+  const [formData, setFormData] = useState({
+    address: searchParams.get("address") || "",
+    elevator: searchParams.get("elevator") || false,
+    category: searchParams.get("category") || null,
+    postalCode: searchParams.get("postalCode") || "",
+    city: searchParams.get("city") || "",
+    type: searchParams.get("type") || null,
+    area: searchParams.get("area") || "",
+    level: searchParams.get("level") || "",
+    capacity: searchParams.get("capacity") || null,
+    
+  });
+  
+  const handleChange = (e) => {
+    if (e.target.type === "checkbox") setFormData({ ...FormData, [e.target.name]: e.target.checked });
+    else setFormData({ ...FormData, [e.target.name]: e.target.value });
+  }
+
+  return (
+    <div className={`flex flex-col items-center ${className}`} {...props}>
+      <h1 className="w-fit text-2xl font-semibold my-6">Votre logement</h1>
+      <form onSubmit={(e) => {onNext(formData); e.preventDefault()}} className="max-w-[50rem] w-full">
+        <FormGroup title="Adresse" className="w-full mb-6">
+          <TextInput
+            required
+            value={formData.address} onChange={handleChange} name="address"
+            type="address"
+            className="w-full"
+            icon={FaMapMarkedAlt}
+            placeholder="Adresse postale"
+          />
+          <TextInput
+            disabled
+            className="flex-1"
+            name="postalCode"
+            value={formData.postalCode}
+            onChange={handleChange}
+            icon={FaMapPin}
+            placeholder="Code postal"
+          />
+          <TextInput
+            disabled
+            value={formData.city}
+            onChange={handleChange}
+            name="city"
+            className="flex-1"
+            icon={FaCity}
+            placeholder="Ville"
+          />
+        </FormGroup>
+        <FormGroup title="Le logement" className="w-full mb-6">
+          <LabelInput label="Catégorie" className="flex-1 min-w-[40%]">
+            <Select
+              value={formData.category} onChange={handleChange} name="category"
+              options={[
+                { value: 1, label: "Appartement" },
+                { value: 2, label: "Maison" },
+              ]}
+              className="w-full"
+            />
+          </LabelInput>
+          <LabelInput label="Type" className="flex-1 min-w-[40%]">
+            <Select
+              value={formData.type} onChange={handleChange} name="type"
+              options={[{ value: 1, label: "Résidence principale" }]}
+              className="w-full"
+            />
+          </LabelInput>
+          <LabelInput label="Surface" className="flex-1 min-w-[40%]">
+            <TextInput
+              value={formData.area} onChange={handleChange} name="area"
+              className="flex-1 min-w-[40%]" unit="m2" placeholder="0" />
+          </LabelInput>
+          <LabelInput label="Etage" className="flex-1 min-w-[40%]">
+            <TextInput value={formData.level} onChange={handleChange} name="level" className="flex-1 min-w-[40%]" placeholder="0" />
+          </LabelInput>
+          <LabelInput label="Capacité" className="flex-1 min-w-[40%]">
+            <NumberInput value={formData.capacity} onChange={handleChange} name="capacity" className="flex-1 min-w-[40%]" placeholder="0" />
+          </LabelInput>
+          <LabelInput label="Ascenseur" className="flex-1 min-w-[40%]">
+            <ToggleButton value={formData.elevator} onChange={handleChange} name="elevator" />
+          </LabelInput>
+        </FormGroup>
+        <div className="w-full flex justify-between">
+          <button
+            type="button"
+            onClick={() => onPrev()}
+            className="bg-transparent border rounded-lg py-2 px-6 hover:underline"
+          >
+            Précédent
+          </button>
+          <button
+            type="submit"
+            className="border border-secondary bg-secondary-20 text-secondary rounded-lg py-2 px-10 hover:underline"
+          >
+            Suivant
+          </button>
         </div>
-        </div>
-    );
+      </form>
+    </div>
+  );
 }

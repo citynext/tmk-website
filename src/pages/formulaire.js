@@ -1,29 +1,42 @@
-import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { FaCheck } from "react-icons/fa6";
 import Type from "@/components/pages/formulaire/type";
 import Info from "@/components/pages/formulaire/info";
+import Period from "@/components/pages/formulaire/period";
 import Project from "@/components/pages/formulaire/project";
 import { useRouter } from "next/navigation";
 
-const steps = [Type, Project, Info];
 
 const Formulaire = () => {
+  const totalSteps = 4;
   const router = useRouter();
   const searchParams = useSearchParams();
-
   let step = searchParams.get("step");
-  if (!step || step < 1 || step > steps.length) {
+  if (!step || step < 1 || step > totalSteps.length) {
     step = 1;
   }
-  step = parseInt(step);
+  else {
+    step = parseInt(step);
+  }
+  const progress = parseInt(100 * step / totalSteps.length)
 
-  const callback = (additionnalParams) => {
-    let query = {};
-    for (const [key, value] of searchParams.entries()) {
-      query[key] = value;
-    }
+  let query = {};
+  for (const [key, value] of searchParams.entries()) {
+    query[key] = value;
+  }
+  const onPrev = (additionnalParams) => {
+    console.log(234234)
+    router?.push({
+      pathname: `/formulaire`,
+      query: {
+        ...query,
+        step: step - 1,
+        ...additionnalParams,
+      },
+    });
+  }
 
+  const onNext = (additionnalParams) => {
     router?.push({
       pathname: `/formulaire`,
       query: {
@@ -31,25 +44,35 @@ const Formulaire = () => {
         step: step + 1,
         ...additionnalParams,
       },
-    }, undefined, { shallow: true });
+    });
   };
 
+  const stepProps = { className: "px-4 py-16", onPrev, onNext }
+
   return (
-    <main className="w-full h-screen bg-gray-50 pt-16">
+    <main className="relative w-full h-screen bg-gray-50 pt-10 px-4">
       <div className="relative flex justify-between mx-auto max-w-[50rem] w-[90%]">
         <div className="absolute border border-primary w-full top-6"></div>
-        {steps.map((_, i) => (
-          <div
+        { Array.from({length: totalSteps}, (_, i) => (
+          <button
             key={i}
             className={`z-10 flex justify-center items-center size-12 text-xl ${
               i + 1 === step ? "bg-primary text-white" : "bg-white text-primary"
             } rounded-full border-2 border-primary`}
           >
             {i + 1 < step ? <FaCheck /> : i + 1}
-          </div>
+          </button>
         ))}
       </div>
-      {steps[step - 1]({ className: "my-16", callback })}
+      { step == 1 && <Type {...stepProps} /> }
+      { step == 2 && <Project {...stepProps} /> }
+      { step == 3 && <Period {...stepProps} /> }
+      { step == 4 && <Info {...stepProps} /> }
+      <div className={`fixed bottom-0 left-0 w-full h-2 flex`}>
+        { Array.from({length: totalSteps}, (_, i) => (
+          <div key={i} className={`${i < step-1 ? "bg-primary": "bg-transparent"} flex-1 transition transform duration-1000`}></div>
+        ))}
+      </div>
     </main>
   );
 };
