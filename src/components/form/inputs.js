@@ -61,7 +61,7 @@ export function TextInput({
         icon({
           size: 20,
           className: `absolute top-0 bottom-0 left-2 my-auto ${
-            disabled ? "text-gray-400" : "text-inherit"
+            disabled ? "text-gray-400" : "text-gray-500"
           }`,
         })}
       {unit && (
