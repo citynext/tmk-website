@@ -1,11 +1,15 @@
 import { useState } from "react";
-import { TextInput, LabelInput, ToggleButton, NumberInput } from "@/components/form/inputs";
+import {
+  TextInput,
+  LabelInput,
+  ToggleButton,
+  NumberInput,
+} from "@/components/form/inputs";
 import { FaCity } from "react-icons/fa";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { FaMapPin } from "react-icons/fa6";
 import { Select } from "@/components/form/inputs";
 import { useSearchParams } from "next/navigation";
-
 
 const FormGroup = ({ children, title, className, ...props }) => {
   return (
@@ -30,25 +34,43 @@ export default function Project({ className, onPrev, onNext, ...props }) {
     area: searchParams.get("area") || "",
     level: searchParams.get("level") || "",
     capacity: searchParams.get("capacity") || "",
-    
   });
 
   const handleChange = (e) => {
-    if (e.target.type === "checkbox") setFormData({ ...FormData, [e.target.name]: e.target.checked });
+    if (e.target.type === "checkbox")
+      setFormData({ ...FormData, [e.target.name]: e.target.checked });
     else setFormData({ ...FormData, [e.target.name]: e.target.value });
-  }
+  };
 
   return (
     <div className={`flex flex-col items-center ${className}`} {...props}>
-      <h1 className="w-fit text-2xl text-center font-semibold my-6">Votre logement</h1>
-      <form onSubmit={(e) => {onNext(formData); e.preventDefault()}} className="max-w-[50rem] w-full">
+      <h1 className="w-fit text-2xl text-center font-semibold my-6">
+        Votre logement
+      </h1>
+      <form
+        onSubmit={(e) => {
+          onNext(formData);
+          e.preventDefault();
+        }}
+        className="max-w-[50rem] w-full"
+      >
         <FormGroup title="Adresse" className="w-full mb-6">
           <TextInput
             required
-            value={formData.address} onChange={handleChange} name="address"
+            value={formData.address}
+            onChange={handleChange}
+            name="address"
             type="address"
             className="w-full"
             icon={FaMapMarkedAlt}
+            onSuggestionClick={(suggestion) => {
+              setFormData({
+                ...formData,
+                address: suggestion.address.freeformAddress,
+                postalCode: suggestion.address.postalCode,
+                city: suggestion.address.municipality,
+              });
+            }}
             placeholder="Adresse postale"
           />
           <TextInput
@@ -73,7 +95,9 @@ export default function Project({ className, onPrev, onNext, ...props }) {
         <FormGroup title="Le logement" className="w-full mb-6">
           <LabelInput label="Catégorie" className="flex-1 min-w-[40%]">
             <Select
-              value={formData.category} onChange={handleChange} name="category"
+              value={formData.category}
+              onChange={handleChange}
+              name="category"
               options={[
                 { value: 1, label: "Appartement" },
                 { value: 2, label: "Maison" },
@@ -83,24 +107,47 @@ export default function Project({ className, onPrev, onNext, ...props }) {
           </LabelInput>
           <LabelInput label="Type" className="flex-1 min-w-[40%]">
             <Select
-              value={formData.type} onChange={handleChange} name="type"
+              value={formData.type}
+              onChange={handleChange}
+              name="type"
               options={[{ value: 1, label: "Résidence principale" }]}
               className="w-full"
             />
           </LabelInput>
           <LabelInput label="Surface" className="flex-1 min-w-[40%]">
             <TextInput
-              value={formData.area} onChange={handleChange} name="area"
-              className="flex-1 min-w-[40%]" unit="m2" placeholder="0" />
+              value={formData.area}
+              onChange={handleChange}
+              name="area"
+              className="flex-1 min-w-[40%]"
+              unit="m2"
+              placeholder="0"
+            />
           </LabelInput>
           <LabelInput label="Etage" className="flex-1 min-w-[40%]">
-            <TextInput value={formData.level} onChange={handleChange} name="level" className="flex-1 min-w-[40%]" placeholder="0" />
+            <TextInput
+              value={formData.level}
+              onChange={handleChange}
+              name="level"
+              className="flex-1 min-w-[40%]"
+              placeholder="0"
+            />
           </LabelInput>
           <LabelInput label="Capacité" className="flex-1 min-w-[40%]">
-            <NumberInput value={formData.capacity} onChange={handleChange} name="capacity" className="flex-1 min-w-[40%]" placeholder="0" />
+            <NumberInput
+              value={formData.capacity}
+              onChange={handleChange}
+              name="capacity"
+              className="flex-1 min-w-[40%]"
+              placeholder="0"
+            />
           </LabelInput>
           <LabelInput label="Ascenseur" className="flex-1 min-w-[40%]">
-            <ToggleButton value={formData.elevator} onChange={handleChange} name="elevator" />
+            <ToggleButton
+              value={formData.elevator}
+              onChange={handleChange}
+              name="elevator"
+            />
           </LabelInput>
         </FormGroup>
         <div className="w-full flex justify-between">

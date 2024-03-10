@@ -8,6 +8,7 @@ import Button from "../form/button";
 import gsap from "gsap";
 import {motion} from  'framer-motion'
 import { useRouter } from "next/router";
+import { TextInput, LabelInput } from "../form/inputs";
 
 const Input = ({value, onChange, maxValue, ...props}) => {
     const _max = maxValue;
@@ -49,12 +50,14 @@ const Input = ({value, onChange, maxValue, ...props}) => {
 export default function CTA({ className, ...props }) {
     const router = useRouter();
     // const [expanded, setExpanded] = useState(false)
-    const [location, setLocation] = useState("");
+    const [address, setAddress] = useState("");
+    const [postalCode, setPostalCode] = useState("");
+    const [city, setCity] = useState("");
     const [rooms, setRooms] = useState();
     const [capacity, setCapacity] = useState();
     // const [beds, setBeds] = useState();
     // const [bathrooms, setBathrooms] = useState();
-
+    console.log(address, postalCode, city, rooms, capacity)
     useEffect(() => {
     gsap.fromTo('#ctaHero',{
         y: '100%',
@@ -72,13 +75,21 @@ export default function CTA({ className, ...props }) {
         router.push({
             pathname: '/formulaire',
             query: {
-                step: 2,
-                address: location,
+                address: address,
+                postalCode: postalCode,
+                city: city,
                 rooms: rooms,
                 capacity: capacity
             }
         })
     }
+
+    const onSuggestionClick = (suggestion) => {
+
+        setAddress(suggestion.address.freeformAddress);
+        setPostalCode(suggestion.address.postalCode);
+        setCity(suggestion.address.municipality);
+      };
 
     return (
         <motion.div
@@ -100,7 +111,16 @@ export default function CTA({ className, ...props }) {
             <div className="relative bg-white opacity-80 flex-wrap lg:opacity-100 h-fit flex justify-between rounded-2xl rounded-tl-none gap-5 border-gray-400 border-solid border-b border-x p-5">
                 <div className="flex flex-col w-full lg:w-fit gap-3">
                     <div className="flex flex-wrap items-end gap-y-3">
-                        <Input type="text" value={location} onChange={(v) => setLocation(v)} icon={IoLocationOutline} label="Adresse" placeholder="Adresse du logement" className="w-full lg:w-80 lg:pl-0" />
+                        <LabelInput label={"Adresse"} className="w-full text-md lg:w-80 mx-2 lg:mx-8">
+                            <TextInput 
+                                type="address" value={address}
+                                onChange={(e) => setAddress(e.target.value)} 
+                                onSuggestionClick={onSuggestionClick}
+                                name="address"
+                                icon={IoLocationOutline} 
+                                placeholder="Adresse du logement" 
+                                className="lg:w-80 mt-3 border-gray-400" />
+                        </LabelInput>
                         <Input type="number" value={rooms} onChange={(v) => setRooms(v)} icon={LiaDoorOpenSolid} label="Chambre(s)" placeholder="0" className="w-1/2 lg:w-48 border-gray-400 lg:border-solid lg:border-l lg:border-r" />
                         <Input type="number" value={capacity} onChange={(v) => setCapacity(v)} icon={IoPersonOutline} label="Capacité d'accueil" placeholder="0" className="w-1/2 lg:w-56 !pr-0" />
                     </div>

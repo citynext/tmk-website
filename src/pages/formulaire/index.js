@@ -63,8 +63,8 @@ const Formulaire = () => {
 
   return (
     <main className="relative w-full h-screen bg-third bg-opacity-30 pt-10 px-4">
-      <Image src={hair1} className="absolute top-0 left-0 -z-[50]" />
-      <Image src={hair2} className="absolute bottom-0 right-0 -z-[50]" />
+      <Image src={hair1} alt="Background image" className="absolute top-0 left-0 -z-[50]" />
+      <Image src={hair2} alt="Background image" className="absolute bottom-0 right-0 -z-[50]" />
       <div className="relative flex justify-between mx-auto max-w-[50rem] w-[90%]">
         <div className="absolute border border-primary w-full top-6"></div>
         { Array.from({length: totalSteps}, (_, i) => (

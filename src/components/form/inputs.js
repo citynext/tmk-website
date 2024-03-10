@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
+import { searchAddress } from "@/lib/tomtom";
 
 export function TextInput({
   type,
@@ -29,7 +30,8 @@ export function TextInput({
           if (value && value.length > 2) {
             searchAddress(value)
               .then((response) => {
-                setSuggestions(response.data.results);
+                console.log(response)
+                setSuggestions(response.results);
               })
               .catch((error) => {
                 console.log(error);
@@ -75,7 +77,7 @@ export function TextInput({
         required={required}
         pattern={pattern}
         disabled={disabled}
-        autoComplete={autocomplete}
+        autoComplete={autocomplete || "off"}
         placeholder={placeholder}
         name={name}
         value={value}

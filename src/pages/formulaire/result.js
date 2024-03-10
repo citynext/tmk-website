@@ -8,8 +8,8 @@ export default function Result() {
   return (
     
     <main className="relative flex flex-col items-center justify-end w-full gap-4 h-screen bg-third bg-opacity-30 px-4">
-      <Image src={hair1} className="absolute top-0 left-0 -z-[50]" />
-      <Image src={hair2} className="absolute bottom-0 right-0 -z-[50]" />
+      <Image src={hair1} alt="Background Image" className="absolute top-0 left-0 -z-[50]" />
+      <Image src={hair2} alt="Background Image" className="absolute bottom-0 right-0 -z-[50]" />
       <h1 className="text-center text-xl lg:text-3xl font-semibold max-w-[30rem]">Félicitations ! Votre estimation de prix est prête</h1>
       <p className="text-center text lg:text-lg my-6">Gagner jusqu&apos;à</p>
       <div className="flex items-center gap-4">
@@ -19,7 +19,7 @@ export default function Result() {
       </div>
       <div className="flex flex-col items-center lg:mt-10">
         <button className="bg-secondary w-fit text-white rounded-full py-3 px-10 hover:underline z-10">Préparez votre départ</button>
-        <Image src={happy} className="max-h-[50vh]" />
+        <Image src={happy} alt="happy woman raising hands" className="max-h-[50vh]" />
       </div>
     </main>
   )
