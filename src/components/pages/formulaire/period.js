@@ -34,6 +34,7 @@ export default function Period({ className, onPrev, onNext, ...props }) {
             <label>Période d&apos;absence</label>
             <div className="mt-2 border border-gray-400 rounded-lg">
                 <Datepicker
+                  useRange={false}
                   i18n="fr"
                   separator="->"
                   displayFormat="DD/MM/YYYY"

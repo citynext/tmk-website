@@ -89,6 +89,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
             placeholder="Adresse postale"
           />
           <TextInput
+            required
             className="flex-1"
             name="postalCode"
             value={formData.postalCode}
@@ -97,6 +98,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
             placeholder="Code postal"
           />
           <TextInput
+            required
             value={formData.city}
             onChange={handleChange}
             name="city"
@@ -120,6 +122,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
           {searchParams.get("owner") === 'false' &&
             <LabelInput label="Loyer Mensuel (Charges comprises)" className="flex-1 min-w-[40%]">
               <TextInput
+                required
                 value={formData.monthlyRent}
                 onChange={handleChange}
                 name="monthlyRent"
@@ -131,6 +134,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
           }
           <LabelInput label="Type" className="flex-1 min-w-[40%]">
             <Select
+              required
               value={formData.type}
               onChange={handleChange}
               name="type"
@@ -140,7 +144,8 @@ export default function Project({ className, onPrev, onNext, ...props }) {
           </LabelInput>
           <LabelInput label="Surface" className="flex-1 min-w-[40%]">
             <TextInput
-            type="number"
+              required
+              type="number"
               value={formData.area}
               onChange={handleChange}
               name="area"
@@ -151,6 +156,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
           </LabelInput>
           <LabelInput label="Etage" className="flex-1 min-w-[40%]">
             <TextInput
+              required
               type="number"
               value={formData.level}
               onChange={handleChange}
@@ -161,6 +167,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
           </LabelInput>
           <LabelInput label="Capacité" className="flex-1 min-w-[40%]">
             <NumberInput
+              required
               value={formData.capacity}
               maxValue={10}
               onChange={handleChange}
