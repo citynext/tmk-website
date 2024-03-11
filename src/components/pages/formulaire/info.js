@@ -21,7 +21,6 @@ export default function Info({ className, onPrev, onNext, ...props }) {
     }
 
     const handleSubmit = (e) => {
-        console.log(formData)
         onNext(formData)
         e.preventDefault();
     }

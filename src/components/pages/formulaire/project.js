@@ -11,9 +11,24 @@ import { FaMapPin } from "react-icons/fa6";
 import { Select } from "@/components/form/inputs";
 import { useSearchParams } from "next/navigation";
 
+const typeOptions = [
+  { value: "t1", label: "Studio" },
+  { value: "t2", label: "2 pièce" },
+  { value: "t3", label: "3 pièces" },
+  { value: "t4", label: "4 pièces" },
+  { value: "t5", label: "5 pièces" },
+  { value: "t6+", label: "Plus de 6 pièces" },
+]
+
+const categoryOptions = [
+  { value: "primary", label: "Résidence principale" },
+  { value: "secondary", label: "Résidence secondaire" },
+  { value: "other", label: "Autre" },
+]
+
 const FormGroup = ({ children, title, className, ...props }) => {
   return (
-    <div className={`flex flex-wrap gap-4 my-4 ${className}`} {...props}>
+    <div className={`flex flex-wrap items-end gap-4 my-4 ${className}`} {...props}>
       <h2 className="py-3 text-xl text-text font-medium mb-3 w-full border-b border-b-1 border-b-gray-300">
         {title}
       </h2>
@@ -74,7 +89,6 @@ export default function Project({ className, onPrev, onNext, ...props }) {
             placeholder="Adresse postale"
           />
           <TextInput
-            disabled
             className="flex-1"
             name="postalCode"
             value={formData.postalCode}
@@ -83,7 +97,6 @@ export default function Project({ className, onPrev, onNext, ...props }) {
             placeholder="Code postal"
           />
           <TextInput
-            disabled
             value={formData.city}
             onChange={handleChange}
             name="city"
@@ -93,29 +106,41 @@ export default function Project({ className, onPrev, onNext, ...props }) {
           />
         </FormGroup>
         <FormGroup title="Le logement" className="w-full mb-6">
-          <LabelInput label="Catégorie" className="flex-1 min-w-[40%]">
-            <Select
-              value={formData.category}
-              onChange={handleChange}
-              name="category"
-              options={[
-                { value: 1, label: "Appartement" },
-                { value: 2, label: "Maison" },
-              ]}
-              className="w-full"
-            />
-          </LabelInput>
+          {searchParams.get("owner") === 'true' && 
+            <LabelInput label="Catégorie" className="flex-1 min-w-[40%]">
+              <Select
+                value={formData.category}
+                onChange={handleChange}
+                name="category"
+                options={categoryOptions}
+                className="w-full"
+              />
+            </LabelInput>
+          }
+          {searchParams.get("owner") === 'false' &&
+            <LabelInput label="Loyer Mensuel (Charges comprises)" className="flex-1 min-w-[40%]">
+              <TextInput
+                value={formData.monthlyRent}
+                onChange={handleChange}
+                name="monthlyRent"
+                className="w-full"
+                unit="€"
+                placeholder="0"
+              />
+            </LabelInput>
+          }
           <LabelInput label="Type" className="flex-1 min-w-[40%]">
             <Select
               value={formData.type}
               onChange={handleChange}
               name="type"
-              options={[{ value: 1, label: "Résidence principale" }]}
+              options={typeOptions}
               className="w-full"
             />
           </LabelInput>
           <LabelInput label="Surface" className="flex-1 min-w-[40%]">
             <TextInput
+            type="number"
               value={formData.area}
               onChange={handleChange}
               name="area"
@@ -126,6 +151,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
           </LabelInput>
           <LabelInput label="Etage" className="flex-1 min-w-[40%]">
             <TextInput
+              type="number"
               value={formData.level}
               onChange={handleChange}
               name="level"
@@ -136,6 +162,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
           <LabelInput label="Capacité" className="flex-1 min-w-[40%]">
             <NumberInput
               value={formData.capacity}
+              maxValue={10}
               onChange={handleChange}
               name="capacity"
               className="flex-1 min-w-[40%]"

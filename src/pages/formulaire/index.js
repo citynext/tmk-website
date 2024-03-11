@@ -15,7 +15,7 @@ const Formulaire = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   let step = searchParams.get("step");
-  if (!step || step < 1 || step > totalSteps.length) {
+  if (!step || step < 1 || step > totalSteps.length || !searchParams.get("owner")) {
     step = 1;
   }
   else {

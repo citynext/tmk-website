@@ -30,7 +30,6 @@ export function TextInput({
           if (value && value.length > 2) {
             searchAddress(value)
               .then((response) => {
-                console.log(response)
                 setSuggestions(response.results);
               })
               .catch((error) => {
@@ -168,10 +167,12 @@ export function NumberInput({ className, required, value, onChange, name, placeh
     onChange(e);
   };
 
-  const handleChange = (e) => {
-    if (_max && e.target.value < _max) onChange(e.target.value);
-    else if (_max) onChange(_max);
-    else onChange(e.target.value);
+  const handleChange = (_e) => {
+
+    const e = {target: ref.current}
+    if (e.target.value < 0) e.target.value = 0;
+    else if (_max && e.target.value > _max) e.target.value = _max;
+    onChange(e);
   };
 
   const btnClass =
@@ -191,7 +192,7 @@ export function NumberInput({ className, required, value, onChange, name, placeh
         onChange={handleChange}
         className={`w-20 text-center bg-transparent`}
       />
-      <button type="button" className={btnClass} onClick={increment}>
+      <button disabled={maxValue && (value >= maxValue)} type="button" className={btnClass} onClick={increment}>
         <FaPlus />
       </button>
     </div>

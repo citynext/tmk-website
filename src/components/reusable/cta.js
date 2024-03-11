@@ -57,7 +57,6 @@ export default function CTA({ className, ...props }) {
     const [capacity, setCapacity] = useState();
     // const [beds, setBeds] = useState();
     // const [bathrooms, setBathrooms] = useState();
-    console.log(address, postalCode, city, rooms, capacity)
     useEffect(() => {
     gsap.fromTo('#ctaHero',{
         y: '100%',
