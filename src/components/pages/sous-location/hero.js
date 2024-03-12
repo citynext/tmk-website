@@ -1,18 +1,75 @@
-import Image from "next/image";
 import _Hero from "@/components/reusable/hero";
-import heroImg from "@/../public/images/sous-location/hero.png";
-import rectangle from "@/../public/images/sous-location/hero-rectangle.svg";
-
+import { useState, useEffect } from "react";
+import heroImg from "../../../../public/images/general-landing/hero.png";
+import gsap from "gsap";
 
 export default function Hero() {
+  const [cid, setCid] = useState(0);
+  const choices = [
+    "rendre visite à la famille",
+    "découvrir de nouveaux pays",
+    "télétravailler depuis la plage",
+  ];
+  useEffect(() => {
+    const id = setInterval(
+      () =>
+        setCid((oldCount) => {
+          if (oldCount === choices.length - 1) {
+            return 0;
+          } else {
+            return oldCount + 1;
+          }
+        }),
+      3000
+    );
+    return () => {
+      clearInterval(id);
+    };
+  }, [choices.length]);
+
+  useEffect(() => {
+    gsap.fromTo(
+      "#cidTextWrap",
+      {
+        opacity: 0.4,
+        y: "100px",
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.26,
+      }
+    );
+    gsap.fromTo(
+      "#cidText",
+      {
+        opacity: 0,
+        y: "100px",
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.3,
+      }
+    );
+  }, [cid]);
+
   return (
     <_Hero bgImg={heroImg}>
-        <div className="relative border-8 border-primary max-w-[50rem] lg:border-none p-8 sm:p-16 flex flex-col justify-center">
-            <Image src={rectangle} alt="rectangle" className="absolute left-0 h-full w-fit hidden object-[fit] lg:block" />
-            <h1 className="uppercase">Sous-louer son appartement</h1>
-            <h1>Maximisez vos gains avec TAKE MY KEYS pour les Locataires !</h1>
-            <p className="!text-white">Confiez-nous votre appartement en toute confiance et commencez à récolter dès maintenant</p>
-        </div>
+      <h1 className="!text-4xl lg:!text-5xl">
+        Besoin d&apos;argent pour
+      </h1>
+      <h1 id="cidTextWrap">
+        <strong
+          id="cidText"
+          className="bg-secondary !text-white !text-4xl lg:!text-5xl"
+        >
+          {choices[cid]} ?
+        </strong>
+      </h1>
+      <h2 className="!font-semibold">
+        TAKE MY KEYS a la solution !
+      </h2>
     </_Hero>
   );
 }

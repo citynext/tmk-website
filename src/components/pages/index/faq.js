@@ -28,7 +28,7 @@ export default function Faq() {
   };
   return (
     <section className="mb-60 px-5">
-      <div className="flex flex-col ">
+      <div className="flex flex-col mb-10">
         <motion.h1
           initial={initialState}
           whileInView={inView}
@@ -38,7 +38,7 @@ export default function Faq() {
         >
           Réponses à vos questions
         </motion.h1>
-        <motion.p
+        {/* <motion.p
           initial={initialState}
           whileInView={inView}
           transition={{ ...transit, delay: 0.1 }}
@@ -49,7 +49,7 @@ export default function Faq() {
           <Link href="/faq" className="text-secondary">
             Posez votre question ici !
           </Link>
-        </motion.p>
+        </motion.p> */}
       </div>
       <ul className="flex flex-col justify-center items-stretch max-w-[50rem] mx-auto">
         {questions.slice(0,3).map((q, i) => (
@@ -89,9 +89,9 @@ export default function Faq() {
           </motion.li>
         ))}
       </ul>
-      <div className="flex justify-center mt-10">
+      {/* <div className="flex justify-center mt-10">
         <Button className="text-3xl !py-2 !px-10 shadow-xl" href="/faq">FAQ</Button>
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -57,12 +57,12 @@ const EmblaCarousel = ({children, className, options, autoplay, ...props}) => {
     <li className="pl-4 min-w-0 relative" style={{flex: "0 0 auto"}}>{child}</li>
   );
   return (
-    <div className={className}>
+    <div className={className} {...props}>
       <div
-        className={`overflowx-hidden`}
+        className={`overflow-x-hidden`}
         ref={emblaRef}
         >
-        <ul className="flex touch-pan-y -m-4">
+        <ul className="flex touch-pan-y">
           { mappedChildren }
         </ul>
       </div>
