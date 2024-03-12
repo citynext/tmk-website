@@ -1,8 +1,32 @@
-import Image from "next/image";
-import icon1 from "@/../public/images/conciergerie/why/1.svg";
-import icon2 from "@/../public/images/conciergerie/why/2.svg";
-import icon3 from "@/../public/images/conciergerie/why/3.svg";
-import icon4 from "@/../public/images/conciergerie/why/4.svg";
+import { BsGraphUpArrow } from "react-icons/bs";
+import { FaPersonShelter, FaS } from "react-icons/fa6";
+import { FaSearch } from "react-icons/fa";
+import { FaWandMagicSparkles } from "react-icons/fa6";
+import { FaArrowTrendUp } from "react-icons/fa6";
+const whys = [
+    {
+        icon: FaPersonShelter,
+        title: "Par des propriétaires pour les propriétaires",
+        text: "Voilà pourquoi on vous comprend si bien: nous avons les mêmes problèmes que vous. <strong>Votre succès est notre priorité.</strong>"
+    },
+    {
+        icon: FaWandMagicSparkles,
+        title: "Une solution tout-en-un",
+        text: "Nous nous occupons de toute la <strong>gestion</strong>, du nettoyage à la communication avec les voyageurs. Nous référençons votre bien sur plusieurs plateformes de réservation."
+    },
+    {
+        icon: FaArrowTrendUp,
+        title: "Optimisation de vos revenus",
+        text: "Augmentez vos revenus locatifs jusqu'à <strong>60%</strong> sans bouger le petit doigt. Nos diverses stratégies, nos outils innovants et notre expertise seront la clé pour atteindre le plein potentiel de votre logement."
+    },
+    {
+        icon: FaSearch,
+        title: "Transparence et qualité",
+        text: "Avec une note de <strong>4.8</strong> sur les plateformes de réservation, nous témoignons de notre engagement envers la qualité. Forts de l'accueil de plus de <strong>2000 voyageurs</strong>, notre équipe multidisciplinaire assure une gestion rigoureuse de chaque propriété, en alliant expertise et performance."
+    
+    }
+]
+
 
 export default function Why() {
     const className = {
@@ -13,29 +37,19 @@ export default function Why() {
     }
     return (
         <section className="flex flex-col items-center px-4 text-center">
-            <h1 className="!text-2xl !font-bold lg:!text-4xl">Pourquoi choisir <strong>TAKE MY KEYS</strong> ?</h1>
-            <p className="lg:!text-xl">Découvrez les avantages de faire confiance à Take My Keys pour la gestion de votre propriété</p>
-            <div className="grid lg:grid-cols-4 mt-20 px-4 lg:px-24 justify-items-center items-start w-full gap-10">
-                <div className={className.container}>
-                    <Image src={icon1} alt="Pour les propriétaires" {...className.img} />
-                    <h2 className={className.h2}>Conçu par les propriétaires pour les propriétaires</h2>
-                    <p className={className.p}>Notre service est spécifiquement élaboré pour répondre aux exigences uniques des propriétaires. Nous comprenons vos besoins parce que nous les partageons.<br /><strong className={className.strong}>Votre succès est notre priorité</strong></p>
-                </div>
-                <div className={className.container}>
-                    <Image src={icon2} alt="Expérience" {...className.img} />
-                    <h2 className={className.h2}>Une équipe expérimentée et spécialisée</h2>
-                    <p className={className.p}>Forts d&apos;une expérience significative avec <strong className={className.strong}>plus de 2000 voyageurs</strong> accueillis, nous mettons à votre disposition une équipe multidisciplinaire de haut niveau. Chaque membre apporte une expertise unique, assurant une gestion de votre propriété à la fois complète et performante.</p>
-                </div>
-                <div className={className.container}>
-                    <Image src={icon3} alt="Transparence" {...className.img} />
-                    <h2 className={className.h2}>Engagement envers la transparence</h2>
-                    <p className={className.p}>Fini l&apos;incertitude. Notre simulation personnalisée vous offre une <strong className={className.strong}>clarté totale</strong> avec un rapport détaillé immédiat, suivi d&apos;une consultation directe pour répondre à toutes vos questions. Nous valorisons votre confiance par une transparence absolue.</p>
-                </div>
-                <div className={className.container}>
-                    <Image src={icon4} alt="Qualité" {...className.img} />
-                    <h2 className={className.h2}>Haute qualité reconnue</h2>
-                    <p className={className.p}>La note moyenne de <strong className={className.strong}>4.8</strong> sur les plateformes de réservation témoigne de notre engagement envers l&apos;excellence. Nous nous engageons à maintenir et dépasser cette norme de qualité pour chaque propriété sous notre gestion.</p>
-                </div>
+            <h1 className="">Pourquoi choisir <strong className="rounded-lg px-2 bg-secondary !text-primary">TAKE MY KEYS</strong> ?</h1>
+            {/* <p className="lg:!text-xl">Découvrez les avantages de faire confiance à Take My Keys pour la gestion de votre propriété</p> */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-20 px-4 lg:px-24 justify-items-center items-start w-full gap-10">
+                {whys.map((why, i) => (
+                    <div key={i} className={className.container}>
+                        <div className="flex justify-center items-center mb-4 bg-third size-28 shadow-xl rounded-tr-[2.5rem] rounded-bl-[2.5rem]">
+                            <why.icon className="text-primary size-12" />
+                        </div>
+                        {/* <Image src={why.icon} alt={why.title} {...className.img} /> */}
+                        <h2 className={className.h2}>{why.title}</h2>
+                        <p className={className.p} dangerouslySetInnerHTML={{__html: why.text}}></p>
+                    </div>
+                ))}
             </div>
         </section>
     )

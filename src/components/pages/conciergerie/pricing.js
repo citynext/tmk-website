@@ -86,19 +86,39 @@ const PricingCard = ({
 export default function Pricing() {
   return (
     <section className="flex flex-col items-center w-full">
-    <div className="text-center px-5 lg:px-20">
-        <h1>Nos offres</h1>
-        <p className="mt-10 lg:px-20">
-            Chez <strong className="!text-primary">TAKE MY KEYS</strong>, nous
-            comprenons que chaque logement est unique. C&apos;est pourquoi nous avons
-            conçu une gamme d&apos;offres adaptées à vos besoins.
-        </p>
-    </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20 lg:mx-20">
+      <div className="text-center px-5 lg:px-20">
+          <h1>Une offre unique</h1>
+          <p className="mt-10 lg:px-20">
+            Notre conciergerie vous propose une formule simple : La Gestion Complète.<br />Cette formule inclut, par défaut, tous les services Take my Keys. Nous nous occupons de tout et prenons une commission de 20% sur le revenu total par réservation. Vous ne payez donc notre service de gestion des locations que si vous louez et pouvez suivre vos réservations et revenus sur une application dédiée.
+          </p>
+      </div>
+      <div className="flex flex-wrap p-4 justify-center items-stretch gap-10 w-full mt-10">
+        <div className="w-[25rem] flex flex-col justify-center bg-third p-6 text-center text-primary">
+          <div className="text-2xl uppercase font-semibold">Commissions sur revenus</div>
+          <div>
+            <span className="text-8xl font-semibold">20%</span>
+            <span> TTC</span>
+          </div>
+          <div className="uppercase text-2xl">de chaque reservation</div>
+          <div className="uppercase text-2xl">+ forfait ménage / linge*</div>
+          <div className="text-sm">* à la chage du voyageur</div>
+        </div>
+        <div className="w-[25rem] flex flex-col justify-center bg-primary p-6 text-center text-third">
+          <div className="text-2xl uppercase font-semibold">Une tarification claire</div>
+          <div>
+            <span className="text-8xl font-semibold">80%</span>
+            {/* <span> TTC</span> */}
+          </div>
+          <div className="uppercase text-2xl">dans votre poche</div>
+          <div className="uppercase text-2xl">Sans effort</div>
+          <div className="text-sm">Nous ne prenons aucune commission sur le ménage</div>
+        </div>
+      </div>
+      {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20 lg:mx-20">
         {prices.map((price, index) => (
           <PricingCard key={index} {...price} />
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -13,8 +13,8 @@ export default function ClientReviews() {
             key={index}
             className="relative bg-white shadow-2xl rounded-2xl mx-6 p-4 w-72 sm:w-96"
           >
-            <div className="absolute flex justify-center items-center top-[-5rem] left-0 right-0 w-40 h-40 mx-auto bg-primary rounded-full z-[-1]"></div>
-            <div className="absolute top-[-4rem] left-0 right-0 mx-auto w-32 h-32 z-20">
+            <div className="absolute flex justify-center items-center -top-20 left-0 right-0 w-40 h-40 mx-auto bg-primary rounded-full z-[-1]"></div>
+            <div className="absolute -top-16 left-0 right-0 mx-auto w-32 h-32 z-20">
               <Image
                 src={review.image}
                 alt={review.name}

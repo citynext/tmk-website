@@ -59,17 +59,17 @@ const EmblaCarousel = ({children, className, options, autoplay, ...props}) => {
   return (
     <div className={className} {...props}>
       <div
-        className={`overflow-x-hidden`}
+        className={``}
         ref={emblaRef}
         >
         <ul className="flex touch-pan-y">
           { mappedChildren }
         </ul>
       </div>
-      <div className="flex justify-center mt-10">
+      {/* <div className="flex justify-center mt-10">
         <button className="rounded-full bg-white shadow-xl p-4 flex justify-center items-center text-3xl m-4" onClick={onPrevButtonClick} disabled={prevBtnDisabled}><FaChevronLeft /></button>
         <button className="rounded-full bg-white shadow-xl p-4 flex justify-center items-center text-3xl m-4" onClick={onNextButtonClick} disabled={nextBtnDisabled}><FaChevronRight /></button>
-      </div>
+      </div> */}
     </div>
   );
 };

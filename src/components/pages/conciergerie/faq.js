@@ -37,7 +37,7 @@ export default function Faq() {
         >
           Réponses à vos questions
         </motion.h1>
-        <motion.p
+        {/* <motion.p
           initial={initialState}
           whileInView={inView}
           transition={{ ...transit, delay: 0.1 }}
@@ -48,9 +48,9 @@ export default function Faq() {
           <Link href="/faq" className="text-secondary">
             Posez votre question ici !
           </Link>
-        </motion.p>
+        </motion.p> */}
       </div>
-      <ul className="flex flex-col justify-center items-stretch max-w-[50rem] mx-auto">
+      <ul className="flex flex-col justify-center items-stretch max-w-[50rem] mx-auto mt-10">
         {questions.slice(0, 3).map((q, i) => (
           <motion.li
             initial={initialState}
