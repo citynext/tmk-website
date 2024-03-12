@@ -74,9 +74,9 @@ export default function How() {
                   <Image
                     src={step.image}
                     alt={step.title}
-                    className={`w-[80vw] sm:w-full ${selected == index ? "" : "sm:opacity-50"} rounded-2xl`}
+                    className={`w-[80vw] transition ease-in-out duration-500 sm:w-full ${selected == index ? "" : "sm:opacity-50"} rounded-2xl`}
                   />
-                  <StepCard className={`${selected == index ? "": "hidden"} w-[70vw] sm:w-full z-10 absolute -bottom-10 sm:bottom-10 left-0 translate-x-5 sm:-translate-x-10`} step={index + 1} title={step.title} description={step.description} />
+                  <StepCard className={`${selected == index ? "scale-100": "scale-0"} w-[70vw] sm:w-full z-10 absolute -bottom-10 sm:bottom-10 left-0 translate-x-5 sm:-translate-x-10 transition ease-in-out duration-200`} step={index + 1} title={step.title} description={step.description} />
                 </li>
               ))}
             </ul>
