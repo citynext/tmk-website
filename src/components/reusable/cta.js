@@ -31,7 +31,7 @@ const Input = ({value, onChange, maxValue, ...props}) => {
 
     const btnClasses = "flex justify-center items-center rounded-full w-5 h-5 m-[1px] pb-0.5 text-primary line-height-[1.5]";
     return (
-        <div className={`flex flex-col px-2 lg:px-8 ${props.className}`}>
+        <div className={`flex flex-col ${props.className}`}>
             <label className="text-md mb-3">{props.label}</label>
             <div className="flex relative items-center">
                 { props.icon && <props.icon className="absolute size-5 top-2/4 bottom-2/4 my-auto mx-3 text-gray-600" /> }
@@ -110,7 +110,7 @@ export default function CTA({ className, ...props }) {
             <div className="relative bg-white opacity-80 flex-wrap lg:opacity-100 h-fit flex justify-between rounded-2xl rounded-tl-none gap-5 border-gray-400 border-solid border-b border-x p-5">
                 <div className="flex flex-col w-full lg:w-fit gap-3">
                     <div className="flex flex-wrap items-end gap-y-3">
-                        <LabelInput label={"Adresse"} className="w-full text-md lg:w-80 mx-2 lg:mx-8">
+                        <LabelInput label={"Adresse"} className="w-full text-md lg:w-80 lg:mr-8">
                             <TextInput 
                                 type="address" value={address}
                                 onChange={(e) => setAddress(e.target.value)} 
@@ -120,8 +120,8 @@ export default function CTA({ className, ...props }) {
                                 placeholder="Adresse du logement" 
                                 className="lg:w-80 mt-3 border-gray-400" />
                         </LabelInput>
-                        <Input type="number" value={rooms} onChange={(v) => setRooms(v)} icon={LiaDoorOpenSolid} label="Chambre(s)" placeholder="0" className="w-1/2 lg:w-48 border-gray-400 lg:border-solid lg:border-l lg:border-r" />
-                        <Input type="number" value={capacity} onChange={(v) => setCapacity(v)} icon={IoPersonOutline} label="Capacité d'accueil" placeholder="0" className="w-1/2 lg:w-56 !pr-0" />
+                        <Input type="number" value={rooms} onChange={(v) => setRooms(v)} icon={LiaDoorOpenSolid} label="Chambre(s)" placeholder="0" className="w-1/2 lg:w-48 border-gray-400 lg:border-solid lg:border-l lg:border-r pr-2 lg:px-8" />
+                        <Input type="number" value={capacity} onChange={(v) => setCapacity(v)} icon={IoPersonOutline} label="Capacité d'accueil" placeholder="0" className="w-1/2 lg:w-56 pl-2 lg:pl-8" />
                     </div>
                     {/* {expanded &&
                         <div className="flex lg:justify-end gap-y-2">
