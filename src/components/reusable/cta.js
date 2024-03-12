@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { IoPersonOutline } from "react-icons/io5";
 import { LiaDoorOpenSolid } from "react-icons/lia";
 import { IoLocationOutline } from "react-icons/io5";
-import { LiaBedSolid } from "react-icons/lia";
-import { LiaBathSolid } from "react-icons/lia";
+// import { LiaBedSolid } from "react-icons/lia";
+// import { LiaBathSolid } from "react-icons/lia";
+import { GoPeople } from "react-icons/go";
 import Button from "../form/button";
 import gsap from "gsap";
 import {motion} from  'framer-motion'
 import { useRouter } from "next/router";
 import { TextInput, LabelInput } from "../form/inputs";
+import { FaMinus, FaPlus } from "react-icons/fa6";
 
 const Input = ({value, onChange, maxValue, ...props}) => {
     const _max = maxValue;
@@ -29,17 +31,17 @@ const Input = ({value, onChange, maxValue, ...props}) => {
         else onChange(e.target.value)
     }
 
-    const btnClasses = "flex justify-center items-center rounded-full w-5 h-5 m-[1px] pb-0.5 text-primary line-height-[1.5]";
+    const btnClasses = "flex justify-center items-center rounded-full w-5 h-5 m-[1px] p-1 text-primary line-height-[1.5]";
     return (
         <div className={`flex flex-col ${props.className}`}>
-            <label className="text-md mb-3">{props.label}</label>
+            <label className="mb-3 pr-6 lg:pr-0">{props.label}</label>
             <div className="flex relative items-center">
                 { props.icon && <props.icon className="absolute size-5 top-2/4 bottom-2/4 my-auto mx-3 text-gray-600" /> }
                 <input value={value} onChange={handleChange} className="appearance-none border border-gray-400 rounded-lg pl-12 w-full h-11" type={props.type} placeholder={props.placeholder} />
                 {props.type === 'number' && 
                     <div className="ml-2 flex flex-col justify-center items-center">
-                        <button onClick={increment} className={`${btnClasses} bg-primary-80`} >+</button>
-                        <button onClick={decrement} className={`${btnClasses} bg-primary-30`}>-</button>
+                        <button onClick={increment} className={`${btnClasses} bg-primary-80`}><FaPlus /></button>
+                        <button onClick={decrement} className={`${btnClasses} bg-primary-30`}><FaMinus /></button>
                     </div>
                 }
             </div>
@@ -120,8 +122,8 @@ export default function CTA({ className, ...props }) {
                                 placeholder="Adresse du logement" 
                                 className="lg:w-80 mt-3 border-gray-400" />
                         </LabelInput>
-                        <Input type="number" value={rooms} onChange={(v) => setRooms(v)} icon={LiaDoorOpenSolid} label="Chambre(s)" placeholder="0" className="w-1/2 lg:w-48 border-gray-400 lg:border-solid lg:border-l lg:border-r pr-2 lg:px-8" />
-                        <Input type="number" value={capacity} onChange={(v) => setCapacity(v)} icon={IoPersonOutline} label="Capacité d'accueil" placeholder="0" className="w-1/2 lg:w-56 pl-2 lg:pl-8" />
+                        <Input type="number" value={rooms} onChange={(v) => setRooms(v)} icon={LiaDoorOpenSolid} label="Nombre de Pièces" placeholder="0" className="w-1/2 lg:w-56 border-gray-400 lg:border-solid lg:border-l lg:border-r pr-2 lg:px-8" />
+                        <Input type="number" value={capacity} onChange={(v) => setCapacity(v)} icon={GoPeople} label="Capacité d'accueil" placeholder="0" className="w-1/2 lg:w-48 pl-2 lg:pl-8" />
                     </div>
                     {/* {expanded &&
                         <div className="flex lg:justify-end gap-y-2">
@@ -131,7 +133,7 @@ export default function CTA({ className, ...props }) {
                     } */}
                 </div>
                 <div className="w-full lg:w-fit flex items-center justify-center gap-2 lg:flex-col">
-                    <Button className="!px-6 !py-3" onClick={handleSubmit}>Calculer</Button>
+                    <Button className="" onClick={handleSubmit}>Calculer</Button>
                     {/* <Button outline onClick={() => setExpanded(!expanded)} className="p-2">{expanded ? "Moins" : "Plus"} d&apos;options</Button> */}
                 </div>
             </div>
