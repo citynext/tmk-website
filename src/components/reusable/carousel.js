@@ -42,7 +42,7 @@ const usePrevNextButtons = (emblaApi) => {
 const EmblaCarousel = ({children, className, options, autoplay, ...props}) => {
   let args = [];
   if (autoplay) {
-    args.push(Autoplay());
+    args.push(Autoplay({delay: 8000, stopOnUserInteraction: true}));
   }
   const [emblaRef, emblaApi] = useEmblaCarousel(options, args);
   

@@ -75,7 +75,7 @@ export default function Services() {
         <p>Votre tranquilité, Notre signature</p>
       </div>
       <Carousel
-        options={{loop: true}}
+        options={{loop: true, slidesToScroll: 3}}
         autoplay
         className="w-full mt-20 z-10">
         {services.map((service, i) => (
