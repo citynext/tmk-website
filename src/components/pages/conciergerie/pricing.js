@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaCheck } from "react-icons/fa6";
 
 const prices = [
@@ -119,6 +120,9 @@ export default function Pricing() {
           <PricingCard key={index} {...price} />
         ))}
       </div> */}
+      <Link href="/formulaire">
+        <button className="bg-secondary hover:bg-primary transition ease-in-out duration-300 text-white rounded-lg mt-16 px-6 py-2 text-xl">Estimer mes revenus</button>
+      </Link>
     </section>
   );
 }

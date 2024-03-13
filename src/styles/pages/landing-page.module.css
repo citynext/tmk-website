@@ -10,8 +10,12 @@
     @apply text-xl lg:text-3xl font-medium mb-2;
 }
 
+.all h3 {
+    @apply text-lg lg:text-2xl font-medium mb-1;
+}
+
 .all p {
-    @apply lg:text-lg text-sm font-light text-gray-500;
+    @apply text-sm lg:text-lg font-light text-gray-500;
 }
 
 .all strong {
