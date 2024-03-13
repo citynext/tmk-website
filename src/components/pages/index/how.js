@@ -60,11 +60,9 @@ export default function How() {
       });
     }
   }, [emblaApi])
-  
 
   return (
-    <section>
-      <div className="flex flex-col gap-10 items-center p-10">
+    <section className="flex flex-col gap-10 items-center p-10">
         <h1 className="max-w-[95vw] lg:max-w-[60rem] my-5 text-2xl lg:text-4xl text-center">Une démarche simplifiée pour nous confier votre logement</h1>
         <div className="flex flex-col items-center gap-10">
           <div className="sm:pl-10 sm:w-2/3" ref={emblaRef}>
@@ -86,7 +84,6 @@ export default function How() {
             <button onClick={() => emblaApi.scrollNext()} className="rounded-full bg-white shadow-xl p-4 flex justify-center items-center text-3xl"><HiOutlineArrowSmallRight /></button>
           </div>
         </div>
-      </div>
     </section>
   )
 }

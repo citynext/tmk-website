@@ -62,7 +62,7 @@ const EmblaCarousel = ({children, className, options, autoplay, ...props}) => {
         className={``}
         ref={emblaRef}
         >
-        <ul className="flex touch-pan-y">
+        <ul className="flex justify-center touch-pan-y">
           { mappedChildren }
         </ul>
       </div>

@@ -1,5 +1,4 @@
-import { BsGraphUpArrow } from "react-icons/bs";
-import { FaPersonShelter, FaS } from "react-icons/fa6";
+import { FaPersonShelter } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { FaWandMagicSparkles } from "react-icons/fa6";
 import { FaArrowTrendUp } from "react-icons/fa6";

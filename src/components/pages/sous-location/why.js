@@ -1,40 +1,56 @@
-import Image from "next/image";
-import icon1 from "@/../public/images/sous-location/why/1.svg";
-import icon2 from "@/../public/images/sous-location/why/2.svg";
-import icon3 from "@/../public/images/sous-location/why/3.svg";
-import icon4 from "@/../public/images/sous-location/why/4.svg";
+
+import { GiTakeMyMoney } from "react-icons/gi";
+import { RiShieldStarFill } from "react-icons/ri";
+import { FaHandHoldingHeart } from "react-icons/fa";
+import { FaHandshake } from "react-icons/fa";
+
+const whys = [
+    {
+        icon: GiTakeMyMoney,
+        title: "Revenu Garanti",
+        text: "Nous vous garantissons le versement de l'intégralité du revenu, que votre logement soit loué ou non."
+    },
+    {
+        icon: RiShieldStarFill,
+        title: "Couverture d’assurance premium",
+        text: "La couverture d'assurance la plus élevée du marché : vous êtes protégé jusqu'à 8 000 000€."
+    },
+    {
+        icon: FaHandshake,
+        title: "Zéro Commission",
+        text: "Notre rémunération dépend uniquement des sous-locataires occupant l'appartement pendant votre absence. Aucun frais caché ne vous est demandé : aucune commission n'est prélevée, notre service est entièrement gratuit."
+    },
+    {
+        icon: FaHandHoldingHeart,
+        title: "Sans efforts",
+        text: "Take My Keys prend soin de votre logement durant votre absence, retrouvez votre logement tel que vous l’avez laissé."
+    
+    }
+]
+
 
 export default function Why() {
     const className = {
         container: "flex flex-col gap-2 justify-center items-center max-w-96 ",
         img: { width: 100, height: 100},
-        h2: "!text-xl !font-semibold text-center",
+        h2: "!text-lg !font-bold text-center",
         p: "!text-sm"
     }
     return (
         <section className="flex flex-col items-center px-4 text-center">
-            <h1 className="">Pourquoi partager votre logement avec<br /><strong>TAKE MY KEYS</strong> ?</h1>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 my-10 px-4 lg:px-24 justify-items-center items-center w-full gap-10">
-                <div className={className.container}>
-                    <Image src={icon1} alt="Pour les propriétaires" {...className.img} />
-                    <h2 className={className.h2}>Revenu garanti</h2>
-                    <p className={className.p}>Vous avez la garantie d&apos;un certain montant de revenus, que votre bien soit loué ou non. C&apos;est un gage de sécurité financière et de tranquilité d&apos;esprit</p>
-                </div>
-                <div className={className.container}>
-                    <Image src={icon2} alt="Expérience" {...className.img} />
-                    <h2 className={className.h2}>Couverture d&apos;assurance de haut niveau</h2>
-                    <p className={className.p}>La couverture d&apos;assurance la plus élevée du marché : vous êtes protégé jusqu&apos;à 8 000 000€.</p>
-                </div>
-                <div className={className.container}>
-                    <Image src={icon3} alt="Transparence" {...className.img} />
-                    <h2 className={className.h2}>Conditions flexibles</h2>
-                    <p className={className.p}>Nous proposons des conditions flexibles, avec un séjour minimum de seulement deux jours et un délai de préavis de 48 heures. Il est ainsi facile pour les hôtes de tirer le meilleur parti de leur propriété.</p>
-                </div>
-                <div className={className.container}>
-                    <Image src={icon4} alt="Qualité" {...className.img} />
-                    <h2 className={className.h2}>Sans effort</h2>
-                    <p className={className.p}>Nous fournissons une gamme de services pour que vous n&apos;ayez rien à faire. Nous prenons des photos, créons des annonces, nos Hosts-on-Demand gèrent vos annonces, nettoient, effectuent des petits travaux d&apos;entretien et communiquent avec les clients.</p>
-                </div>
+            <h1 className="">Pourquoi choisir <strong className="rounded-lg px-2 bg-secondary !text-primary">TAKE MY KEYS</strong> ?</h1>
+            {/* <p className="lg:!text-xl">Découvrez les avantages de faire confiance à Take My Keys pour la gestion de votre propriété</p> */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-20 px-4 lg:px-24 justify-items-center items-start w-full gap-10">
+                {whys.map((why, i) => (
+                    <div key={i} className={className.container}>
+                        <div className="flex justify-center items-center mb-4 bg-third size-28 shadow-xl rounded-tr-[2.5rem] rounded-bl-[2.5rem]">
+                            <why.icon className="text-primary size-12" />
+                        </div>
+                        {/* <Image src={why.icon} alt={why.title} {...className.img} /> */}
+                        <h2 className={className.h2}>{why.title}</h2>
+                        <p className={className.p} dangerouslySetInnerHTML={{__html: why.text}}></p>
+                    </div>
+                ))}
             </div>
         </section>
     )

@@ -7,10 +7,10 @@ import rectangle from "@/../public/images/sous-location/hero-rectangle.svg";
 export default function Hero() {
   return (
     <_Hero bgImg={heroImg}>
-        <div className="relative border-8 border-primary max-w-[50rem] lg:border-none p-8 sm:p-16 flex flex-col justify-center">
+        <div className="relative border-8 border-primary max-w-[60rem] lg:border-none p-8 sm:p-16 flex flex-col justify-center">
             <Image src={rectangle} alt="rectangle" className="absolute left-0 h-full w-fit hidden object-[fit] lg:block" />
-            {/* <h1 className="uppercase">Sous-louer son appartement</h1> */}
-            <h1>Maximisez vos gains avec TAKE MY KEYS !</h1>
+            <h1 className="">Locataire ? propriétaire ? Peu importe</h1>
+            <h1>TAKE MY KEYS est l&apos;agence qu&apos;il vous faut</h1>
             <p className="!text-white">Confiez-nous votre appartement en toute confiance et commencez à récolter dès maintenant</p>
         </div>
     </_Hero>
