@@ -132,7 +132,7 @@ const Formulaire = () => {
           <h2 className="text-2xl font-semibold text-[red]">Erreur</h2>
           <ul>
             {Object.entries(errors).map(([key, values]) => (
-              <li key={key}><p>{key} :</p>{values.map((value) => (<p>{value}</p>))}<br /></li>
+              <li key={key}><p>{key} :</p>{values.map((value, i) => (<p key={i}>{value}</p>))}<br /></li>
             ))}
           </ul>
           <button onClick={() => setErrors({})} className="bg-primary text-white rounded-lg px-4 py-2">Fermer</button>
