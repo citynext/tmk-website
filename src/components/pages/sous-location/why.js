@@ -1,28 +1,28 @@
 
 import { GiTakeMyMoney } from "react-icons/gi";
 import { RiShieldStarFill } from "react-icons/ri";
-import { FaHandHoldingHeart } from "react-icons/fa";
-import { FaHandshake } from "react-icons/fa";
+import { PiNumberZeroBold } from "react-icons/pi";
+import { FaHandPeace } from "react-icons/fa6";
 
 const whys = [
     {
         icon: GiTakeMyMoney,
         title: "Revenu Garanti",
-        text: "Nous vous garantissons le versement de l'intégralité du revenu, que votre logement soit loué ou non."
+        text: "Take My Keys vous garantit un revenu fixe pour votre logement durant votre absence. Vous n’avez plus à vous soucier de votre loyer, nous nous occupons de tout."
     },
     {
         icon: RiShieldStarFill,
-        title: "Couverture d’assurance premium",
-        text: "La couverture d'assurance la plus élevée du marché : vous êtes protégé jusqu'à 8 000 000€."
+        title: "Couverture d’assurance",
+        text: "Take My Keys vous assure une couverture d’assurance complète pour votre logement durant votre absence. Nous prenons en charge les éventuels dégâts causés par les sous-locataires."
     },
     {
-        icon: FaHandshake,
+        icon: PiNumberZeroBold,
         title: "Zéro Commission",
         text: "Notre rémunération dépend uniquement des sous-locataires occupant l'appartement pendant votre absence. Aucun frais caché ne vous est demandé : aucune commission n'est prélevée, notre service est entièrement gratuit."
     },
     {
-        icon: FaHandHoldingHeart,
-        title: "Sans efforts",
+        icon: FaHandPeace,
+        title: "Sans effort",
         text: "Take My Keys prend soin de votre logement durant votre absence, retrouvez votre logement tel que vous l’avez laissé."
     
     }
@@ -38,7 +38,7 @@ export default function Why() {
     }
     return (
         <section className="flex flex-col items-center px-4 text-center">
-            <h1 className="">Pourquoi choisir <strong className="rounded-lg px-2 bg-secondary !text-primary">TAKE MY KEYS</strong> ?</h1>
+            <h1 className="">Pourquoi choisir <strong className="bg-secondary !text-white whitespace-nowrap">TAKE MY KEYS</strong> ?</h1>
             {/* <p className="lg:!text-xl">Découvrez les avantages de faire confiance à Take My Keys pour la gestion de votre propriété</p> */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-20 px-4 lg:px-24 justify-items-center items-start w-full gap-10">
                 {whys.map((why, i) => (

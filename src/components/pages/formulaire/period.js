@@ -27,13 +27,14 @@ export default function Period({ className, onPrev, onNext, ...props }) {
   return (
     <div className={`light flex flex-col items-center ${className}`} {...props}>
       <h1 className="w-fit text-2xl text-center font-semibold my-10">
-        Détaillez votre projet de mobilité
+        Détaillez votre projet
       </h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-8 w-full max-w-[50rem] mt-10 lg:mt-20">
         <div>
-            <label>Période d&apos;absence</label>
+            <label>{searchParams.get("owner") === "true" ? "Début souhaité" : "Période d'absence"}</label>
             <div className="mt-2 border border-gray-400 rounded-lg">
                 <Datepicker
+                  asSingle={searchParams.get("owner") === "true"}
                   useRange={false}
                   i18n="fr"
                   separator="->"
@@ -47,7 +48,7 @@ export default function Period({ className, onPrev, onNext, ...props }) {
         </div>
         <ToggleButton
             checked={checked}
-            label="Je ne connais pas mes dates"
+            label="Je ne sais pas encore"
             onChange={() => setChecked(!checked)}
         />
         <label>

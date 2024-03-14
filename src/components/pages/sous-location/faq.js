@@ -37,7 +37,7 @@ export default function Faq() {
         >
           Réponses à vos questions
         </motion.h1>
-        <motion.p
+        {/* <motion.p
           initial={initialState}
           whileInView={inView}
           transition={{ ...transit, delay: 0.1 }}
@@ -48,7 +48,7 @@ export default function Faq() {
           <Link href="/faq" className="text-secondary">
             Posez votre question ici !
           </Link>
-        </motion.p>
+        </motion.p> */}
       </div>
       <ul className="flex flex-col justify-center items-stretch max-w-[50rem] mx-auto">
         {questions.slice(0, 3).map((q, i) => (
@@ -63,9 +63,9 @@ export default function Faq() {
             } transition-all duration-250 ease-in-out bg-white flex flex-col overflow-hidden justify-between items-center my-5 border-2 rounded-lg border-primary`}
           >
             <div className="flex justify-between items-center w-full sm:pl-5">
-              <span className=" bg-white text-xl rounded-3xl mx-5 my-3">
+              {/* <span className=" bg-white text-xl rounded-3xl mx-5 my-3">
                 {i}.
-              </span>
+              </span> */}
               <h2 className="flex-1 !text-base lg:!text-2xl">{q.question}</h2>
               <button
                 className={`${

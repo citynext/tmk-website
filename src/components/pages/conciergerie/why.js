@@ -6,12 +6,12 @@ const whys = [
     {
         icon: FaPersonShelter,
         title: "Par des propriétaires pour les propriétaires",
-        text: "Voilà pourquoi on vous comprend si bien: nous avons les mêmes problèmes que vous. <strong>Votre succès est notre priorité.</strong>"
+        text: "Voilà pourquoi on vous comprend si bien: nous avons les mêmes problèmes que vous. Votre succès est notre priorité."
     },
     {
         icon: FaWandMagicSparkles,
         title: "Une solution tout-en-un",
-        text: "Nous nous occupons de toute la <strong>gestion</strong>, du nettoyage à la communication avec les voyageurs. Nous référençons votre bien sur plusieurs plateformes de réservation."
+        text: "Nous nous occupons de toute la gestion, du nettoyage à la communication avec les voyageurs. Nous référençons votre bien sur plusieurs plateformes de réservation."
     },
     {
         icon: FaArrowTrendUp,
@@ -21,7 +21,7 @@ const whys = [
     {
         icon: FaSearch,
         title: "Transparence et qualité",
-        text: "Avec une note de <strong>4.8</strong> sur les plateformes de réservation, nous témoignons de notre engagement envers la qualité. Forts de l'accueil de plus de <strong>2000 voyageurs</strong>, notre équipe multidisciplinaire assure une gestion rigoureuse de chaque propriété, en alliant expertise et performance."
+        text: "Avec une note de <strong>4.8</strong> sur les plateformes de réservation, nous témoignons de notre engagement envers la qualité. Forts de l'accueil de plus de 2000 voyageurs, notre équipe multidisciplinaire assure une gestion rigoureuse de chaque propriété, en alliant expertise et performance."
     
     }
 ]
@@ -36,7 +36,7 @@ export default function Why() {
     }
     return (
         <section className="flex flex-col items-center px-4 text-center">
-            <h1 className="">Pourquoi choisir <strong className="rounded-lg px-2 bg-secondary !text-primary">TAKE MY KEYS</strong> ?</h1>
+            <h1 className="">Pourquoi choisir <strong className="bg-secondary !text-white whitespace-nowrap">TAKE MY KEYS</strong> ?</h1>
             {/* <p className="lg:!text-xl">Découvrez les avantages de faire confiance à Take My Keys pour la gestion de votre propriété</p> */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-20 px-4 lg:px-24 justify-items-center items-start w-full gap-10">
                 {whys.map((why, i) => (

@@ -11,13 +11,13 @@ import { FaMapPin } from "react-icons/fa6";
 import { Select } from "@/components/form/inputs";
 import { useSearchParams } from "next/navigation";
 
-const typeOptions = [
-  { value: "t1", label: "Studio" },
-  { value: "t2", label: "2 pièce" },
-  { value: "t3", label: "3 pièces" },
-  { value: "t4", label: "4 pièces" },
-  { value: "t5", label: "5 pièces" },
-  { value: "t6+", label: "Plus de 6 pièces" },
+const roomsOptions = [
+  { value: "1", label: "Studio" },
+  { value: "2", label: "2 pièce" },
+  { value: "3", label: "3 pièces" },
+  { value: "4", label: "4 pièces" },
+  { value: "5", label: "5 pièces" },
+  { value: "6", label: "Plus de 6 pièces" },
 ]
 
 const categoryOptions = [
@@ -41,21 +41,22 @@ export default function Project({ className, onPrev, onNext, ...props }) {
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     address: searchParams.get("address") || "",
-    elevator: searchParams.get("elevator") || false,
+    elevator: searchParams.get("elevator") == "true",
     category: searchParams.get("category") || "",
     postalCode: searchParams.get("postalCode") || "",
     city: searchParams.get("city") || "",
-    type: searchParams.get("type") || "",
+    rooms: searchParams.get("rooms") || "",
     area: searchParams.get("area") || "",
-    level: searchParams.get("level") || "",
+    floor: searchParams.get("floor") || "",
     capacity: searchParams.get("capacity") || "",
   });
 
   const handleChange = (e) => {
     if (e.target.type === "checkbox")
-      setFormData({ ...FormData, [e.target.name]: e.target.checked });
-    else setFormData({ ...FormData, [e.target.name]: e.target.value });
+      setFormData({ ...formData, [e.target.name]: e.target.checked });
+    else setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  console.log(formData)
 
   return (
     <div className={`flex flex-col items-center ${className}`} {...props}>
@@ -135,10 +136,10 @@ export default function Project({ className, onPrev, onNext, ...props }) {
           <LabelInput label="Type" className="flex-1 min-w-[40%]">
             <Select
               required
-              value={formData.type}
+              value={formData.rooms}
               onChange={handleChange}
-              name="type"
-              options={typeOptions}
+              name="rooms"
+              options={roomsOptions}
               className="w-full"
             />
           </LabelInput>
@@ -158,9 +159,9 @@ export default function Project({ className, onPrev, onNext, ...props }) {
             <TextInput
               required
               type="number"
-              value={formData.level}
+              value={formData.floor}
               onChange={handleChange}
-              name="level"
+              name="floor"
               className="flex-1 min-w-[40%]"
               placeholder="0"
             />
@@ -178,7 +179,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
           </LabelInput>
           <LabelInput label="Ascenseur" className="flex-1 min-w-[40%]">
             <ToggleButton
-              value={formData.elevator}
+              checked={formData.elevator}
               onChange={handleChange}
               name="elevator"
             />

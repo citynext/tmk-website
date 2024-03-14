@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { FaCheck } from "react-icons/fa6";
 import Type from "@/components/pages/formulaire/type";
@@ -11,6 +12,7 @@ import hair2 from "@/../public/images/backgrounds/hair2.svg"
 
 
 const Formulaire = () => {
+  const [errors, setErrors] = useState({});
   const totalSteps = 4;
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -38,6 +40,7 @@ const Formulaire = () => {
   }
 
   const onNext = (additionnalParams) => {
+    console.log(additionnalParams);
     router?.push({
       pathname: `/formulaire`,
       query: {
@@ -49,13 +52,55 @@ const Formulaire = () => {
   };
 
   const submitResult = (additionnalParams)  => {
-    router?.push({
-      pathname: `/formulaire/result`,
-      query: {
-        ...query,
-        step: step + 1,
-        ...additionnalParams,
+    let input = {...query, ...additionnalParams};
+    delete input.step;
+    const body = {
+      isOwner: input.owner,
+      address: input.address,
+      postal_code: input.postalCode,
+      city: input.city,
+      category: input.category,
+      rent: input.rent,
+      rooms: input.rooms,
+      area: input.area,
+      floor: input.floor,
+      capacity: input.capacity,
+      hasElevator: input.elevator,
+      start_date: input.startDate,
+      end_date: input.endDate,
+      email: input.email,
+      first_name: input.firstName,
+      last_name: input.lastName,
+      phone: input.phone,
+    }
+    fetch(process.env.NEXT_PUBLIC_API_URL + "/formSubmission/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify(body)
+    }).then((response) => {
+      if (response.ok) {
+        response.json().then((data) => {
+          router?.push({
+            pathname: `/formulaire/result`,
+            query: {
+              id: data.id,
+            },
+          });
+        });
+      }
+      else if (response.status === 400) {
+        response.json().then((data) => {
+          setErrors(data);
+          console.error(data)
+        })
+      }
+      else {
+        throw new Error("Network response was not ok.");
+      }
+    }).catch((error) => {
+      console.error("There was an error!", error);
     });
   }
 
@@ -82,6 +127,17 @@ const Formulaire = () => {
       { step == 2 && <Project {...stepProps} /> }
       { step == 3 && <Period {...stepProps} /> }
       { step == 4 && <Info {...stepProps} onNext={submitResult} /> }
+      { Object.keys(errors).length > 0 && <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+        <div className="bg-white p-8 rounded-lg">
+          <h2 className="text-2xl font-semibold text-[red]">Erreur</h2>
+          <ul>
+            {Object.entries(errors).map(([key, values]) => (
+              <li key={key}><p>{key} :</p>{values.map((value) => (<p>{value}</p>))}<br /></li>
+            ))}
+          </ul>
+          <button onClick={() => setErrors({})} className="bg-primary text-white rounded-lg px-4 py-2">Fermer</button>
+        </div>
+      </div> }
       <div className={`fixed bottom-0 left-0 w-full h-2 flex`}>
         { Array.from({length: totalSteps}, (_, i) => (
           <div key={i} className={`${i < step-1 ? "bg-primary": "bg-transparent"} flex-1 transition transform duration-1000`}></div>

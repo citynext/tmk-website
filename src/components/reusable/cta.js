@@ -79,7 +79,7 @@ export default function CTA({ className, ...props }) {
                 address: address,
                 postalCode: postalCode,
                 city: city,
-                rooms: rooms,
+                rooms: rooms > 6 ? 6 : rooms,
                 capacity: capacity
             }
         })

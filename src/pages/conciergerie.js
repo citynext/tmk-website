@@ -18,10 +18,10 @@ export default function ConciergeriePage() {
         <main className={styles.all}>
             <Hero />
             <Why />
-            <Services />
-            <Process />
             <Pricing />
             <Example />
+            <Services />
+            <Process />
             {/* <Personas /> */}
             <ClientReviews />
             <TravelerReviews />

@@ -1,5 +1,6 @@
 import Button from "@/components/form/button";
 import Image from "next/image";
+import Link from "next/link";
 
 
 const PersonaItem = ({img, title, description, reverse}) => {
@@ -11,7 +12,9 @@ const PersonaItem = ({img, title, description, reverse}) => {
             <div className={`flex-1 text-center ${reverse ? 'lg:text-end' : 'lg:text-start'}`}>
                 <h2 className="!text-2xl !font-bold">{title}</h2>
                 <p>{description}</p>
-                <Button className="mt-10 lg:text-2xl !px-10 !py-4">Se connecter</Button>
+                <Link href="/formulaire">
+                    <Button className="mt-10">Estimer mes revenus</Button>
+                </Link>
             </div>
         </div>
     )
