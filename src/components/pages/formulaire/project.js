@@ -41,14 +41,15 @@ export default function Project({ className, onPrev, onNext, ...props }) {
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     address: searchParams.get("address") || "",
-    elevator: searchParams.get("elevator") == "true",
-    category: searchParams.get("category") || "",
     postalCode: searchParams.get("postalCode") || "",
     city: searchParams.get("city") || "",
+    category: searchParams.get("category") || "",
+    rent: searchParams.get("rent") || "",
     rooms: searchParams.get("rooms") || "",
     area: searchParams.get("area") || "",
     floor: searchParams.get("floor") || "",
     capacity: searchParams.get("capacity") || "",
+    elevator: searchParams.get("elevator") == "true",
   });
 
   const handleChange = (e) => {
@@ -124,9 +125,9 @@ export default function Project({ className, onPrev, onNext, ...props }) {
             <LabelInput label="Loyer Mensuel (Charges comprises)" className="flex-1 min-w-[40%]">
               <TextInput
                 required
-                value={formData.monthlyRent}
+                value={formData.rent}
                 onChange={handleChange}
-                name="monthlyRent"
+                name="rent"
                 className="w-full"
                 unit="€"
                 placeholder="0"
