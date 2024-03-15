@@ -55,22 +55,22 @@ const Formulaire = () => {
     let input = {...query, ...additionnalParams};
     delete input.step;
     const body = {
-      isOwner: input.owner,
+      isOwner: input.owner === "true",
       address: input.address,
       postal_code: input.postalCode,
       city: input.city,
       category: input.category,
-      rent: parseFloat(input.rent),
+      rent: rent ? parseFloat(input.rent) : null,
       rooms: parseInt(input.rooms),
-      area: parseFloat(Intinput.area),
+      area: parseInt(input.area),
       floor: parseInt(input.floor),
-      capacity: input.capacity,
+      capacity: parseInt(input.capacity),
       hasElevator: input.elevator === "true",
       start_date: input.startDate,
       end_date: input.endDate,
-      email: input.email,
       first_name: input.firstName,
       last_name: input.lastName,
+      email: input.email,
       phone: input.phone,
     }
     fetch(process.env.NEXT_PUBLIC_API_URL + "/formSubmission/", {
