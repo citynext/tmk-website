@@ -60,7 +60,7 @@ const Formulaire = () => {
       postal_code: input.postalCode,
       city: input.city,
       category: input.category,
-      rent: rent ? parseFloat(input.rent) : null,
+      rent: input.rent ? parseFloat(input.rent) : null,
       rooms: parseInt(input.rooms),
       area: parseInt(input.area),
       floor: parseInt(input.floor),
