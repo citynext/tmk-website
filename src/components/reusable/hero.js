@@ -6,7 +6,7 @@ export default function Hero({ children, bgImg, className, ...props }) {
     <section className={`relative h-screen w-screen ${className}`} {...props}>
       <Image
         src={bgImg}
-        placeholder="blur"
+        // placeholder="blur"
         alt="Image principale"
         className="object-cover w-full h-full lg:h-[95%]"
       />

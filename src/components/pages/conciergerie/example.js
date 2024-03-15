@@ -1,5 +1,5 @@
 import Image from "next/image"
-import exampleImg from "@/../public/images/conciergerie/example.png"
+import exampleImg from "@/../public/images/conciergerie/diagram.svg"
 
 const steps = [
     {
