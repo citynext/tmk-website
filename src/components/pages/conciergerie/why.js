@@ -31,14 +31,14 @@ export default function Why() {
     const className = {
         container: "flex flex-col gap-2 justify-center items-center max-w-96 ",
         img: { width: 100, height: 100},
-        h2: "!text-lg !font-bold text-center",
+        h2: "lg:!text-lg !text-base !font-bold text-center",
         p: "!text-sm"
     }
     return (
         <section className="flex flex-col items-center px-4 text-center">
-            <h1 className="">Pourquoi choisir <strong className="bg-secondary !text-white whitespace-nowrap">TAKE MY KEYS</strong> ?</h1>
+            <h1>Pourquoi choisir <strong className="bg-secondary !text-white whitespace-nowrap">TAKE MY KEYS</strong> ?</h1>
             {/* <p className="lg:!text-xl">Découvrez les avantages de faire confiance à Take My Keys pour la gestion de votre propriété</p> */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-20 px-4 lg:px-24 justify-items-center items-start w-full gap-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-12 lg:mt-24 px-4 lg:px-24 justify-items-center items-start w-full gap-10">
                 {whys.map((why, i) => (
                     <div key={i} className={className.container}>
                         <div className="flex justify-center items-center mb-4 bg-third size-28 shadow-xl rounded-tr-[2.5rem] rounded-bl-[2.5rem]">

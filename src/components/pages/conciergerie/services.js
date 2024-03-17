@@ -1,5 +1,8 @@
 import Image from "next/image";
-import Carousel from "@/components/reusable/carousel";
+import { useEffect, useState } from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from 'embla-carousel-autoplay'
 import bg from "@/../public/images/backgrounds/wave.svg";
 import img1 from "@/../public/images/conciergerie/services1.svg";
 import img2 from "@/../public/images/conciergerie/services2.svg";
@@ -53,10 +56,10 @@ const Service = ({
   return (
     <button
       onClick={onClick}
-      className={`flex flex-col items-center justify-start sm:mx-2 w-[80vw] sm:w-[28vw] ${className}`}
+      className={`flex flex-col items-center justify-start ${className}`}
       {...props}
     >
-      <div className="relative size-80 rounded-xl">
+      <div className="relative size-60 sm:size-80 rounded-xl">
         <Image src={image} alt={title} fill className="object-cover rounded-xl" />
       </div>
       <h3 className="text-md font-bold mx-5 my-4 uppercase">{title}</h3>
@@ -67,14 +70,55 @@ const Service = ({
 
 export default function Services() {
 
+  const [emblaRef, emblaApi] = useEmblaCarousel({}, [Autoplay()]);
+  const [selected , setSelected] = useState(0);
+
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.on("select", () => {
+        setSelected(emblaApi.selectedScrollSnap());
+      });
+    }
+  }, [emblaApi])
+
   return (
-    <section className="relative flex flex-col items-center my-10 py-10 px-20">
+    <section className="relative flex flex-col items-center pt-10">
       <Image src={bg} alt="bg img" className="absolute top-40 lg:top-0 left-0 w-full -z-10" />
       <div className="text-center lg:mx-24">
         <h1>Nos services</h1>
         <p>Votre tranquilité, Notre signature</p>
       </div>
-      <Carousel
+      <div className="w-screen max-w-full" ref={emblaRef}>
+        <ul className="w-full flex mb-10 sm:mb-0 mt-24 gap-4 sm:gap-24">
+          {services.map((service, index) => (
+            <li
+            key={index}
+            >
+              <Service
+                image={service.image}
+                title={service.title}
+                description={service.description}
+                className="mx-4"
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="hidden sm:flex justify-center items-center gap-4">
+        <button
+          onClick={() => emblaApi.scrollPrev()}
+          className="rounded-full bg-white p-4 text-2xl shadow-xl"
+        >
+          <FaArrowLeft />
+        </button>
+        <button
+          onClick={() => emblaApi.scrollNext()}
+          className="rounded-full bg-white p-4 text-2xl shadow-xl"
+        >
+          <FaArrowRight />
+        </button>
+      </div>
+      {/* <Carousel
         options={{slidesToScroll: 3}}
         autoplay
         className="w-full mt-20 z-10">
@@ -86,7 +130,7 @@ export default function Services() {
             description={service.description}
           />
         ))}
-      </Carousel>
+      </Carousel> */}
     </section>
   );
 }

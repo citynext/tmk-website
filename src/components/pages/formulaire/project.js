@@ -122,7 +122,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
             </LabelInput>
           }
           {searchParams.get("owner") === 'false' &&
-            <LabelInput label="Loyer Mensuel (Charges comprises)" className="flex-1 min-w-[40%]">
+            <LabelInput label="Loyer Mensuel (CC)" className="flex-1 min-w-[40%]">
               <TextInput
                 required
                 value={formData.rent}

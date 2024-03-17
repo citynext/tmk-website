@@ -88,7 +88,7 @@ export default function Pricing() {
   return (
     <section className="flex flex-col items-center w-full">
       <div className="text-center px-5 lg:px-20">
-          <h1>Une offre unique</h1>
+          <h1 className="!text-3xl lg:!text-4xl">Une offre <strong className="uppercase underline !text-primary">unique</strong></h1>
           <p className="mt-10 lg:px-20">
             Notre conciergerie vous propose une formule simple : La Gestion Complète.<br />Cette formule inclut, par défaut, tous les services Take my Keys. Nous nous occupons de tout et prenons une commission de 20% sur le revenu total par réservation. Vous ne payez donc notre service de gestion des locations que si vous louez et pouvez suivre vos réservations et revenus sur une application dédiée.
           </p>
@@ -121,7 +121,7 @@ export default function Pricing() {
         ))}
       </div> */}
       <Link href="/formulaire">
-        <button className="bg-secondary hover:bg-primary transition ease-in-out duration-300 text-white rounded-lg mt-16 px-6 py-2 text-xl">Estimer mes revenus</button>
+        <button className="bg-secondary hover:bg-primary transition ease-in-out duration-300 text-white rounded-lg mt-6 lg:mt-12 px-6 py-2 text-xl">Estimer mes revenus</button>
       </Link>
     </section>
   );

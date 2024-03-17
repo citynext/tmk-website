@@ -22,7 +22,7 @@ const steps = [
 export default function Example() {
     return (
         <section className="flex flex-col items-center gap-10 md:gap-24 bg-third p-10">
-            <h1 className="uppercase text-center !font-semibold"><strong className="!font-semibold">Prenons le cas de Xavier</strong> qui loue son appartement 200€ la nuit</h1>
+            <h1 className="uppercase text-center !font-semibold"><strong className="!font-semibold">Prenons le cas de Guillaume </strong>qui loue son appartement 200€ la nuit</h1>
             <div className="flex flex-col md:flex-row w-full justify-center gap-24 md:px-24 max-w-[90rem]">
                 <div className="flex flex-col items-end gap-12">
                     {steps.map((step, index) => (

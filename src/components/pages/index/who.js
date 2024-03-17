@@ -24,7 +24,7 @@ export default function Who() {
     ease: "easeInOut",
   };
   return (
-    <section className="relative mt-32 h-fit">
+    <section className="relative !mt-24">
       <Image
         src={bgImg}
         alt="bg img"

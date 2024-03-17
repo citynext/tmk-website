@@ -10,6 +10,7 @@ import Faq from '@/components/pages/conciergerie/faq';
 import Example from '@/components/pages/conciergerie/example';
 // import Personas from '@/components/pages/conciergerie/personas';
 import TravelerReviews from '@/components/pages/conciergerie/travelerReviews';
+import Stats from '@/components/pages/index/stats';
 
 
 
@@ -18,6 +19,7 @@ export default function ConciergeriePage() {
         <main className={styles.all}>
             <Hero />
             <Why />
+            <Stats />
             <Pricing />
             <Example />
             <Services />

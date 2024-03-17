@@ -17,7 +17,6 @@ export default function index() {
       <Why />
       <Cta />
       <Who />
-      <Faq />
     </main>
   );
 }
