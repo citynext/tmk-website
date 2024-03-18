@@ -63,7 +63,7 @@ const Service = ({
         <Image src={image} alt={title} fill className="object-cover rounded-xl" />
       </div>
       <h3 className="text-md font-bold mx-5 my-4 uppercase">{title}</h3>
-      <p className="!text-sm mx-5">{description}</p>
+      <p className="!text-sm lg:mx-5">{description}</p>
     </button>
   );
 };
@@ -82,14 +82,14 @@ export default function Services() {
   }, [emblaApi])
 
   return (
-    <section className="relative flex flex-col items-center pt-10">
+    <section className="relative flex flex-col items-center lg:pt-10">
       <Image src={bg} alt="bg img" className="absolute top-40 lg:top-0 left-0 w-full -z-10" />
       <div className="text-center lg:mx-24">
         <h1>Nos services</h1>
         <p>Votre tranquilité, Notre signature</p>
       </div>
       <div className="w-screen max-w-full" ref={emblaRef}>
-        <ul className="w-full flex mb-10 sm:mb-0 mt-24 gap-4 sm:gap-24">
+        <ul className="w-full flex mb-10 sm:mb-0 mt-12 lg:mt-24 gap-4 sm:gap-24">
           {services.map((service, index) => (
             <li
             key={index}
