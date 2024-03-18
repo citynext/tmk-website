@@ -55,7 +55,7 @@ export default function Hero() {
   }, [cid]);
 
   return (
-    <_Hero bgImg={heroImg}>
+    <_Hero bgImg={heroImg} quality={100}>
       <h1 className="!text-4xl lg:!text-5xl">
         Besoin d&apos;argent pour
       </h1>

@@ -1,12 +1,13 @@
 import CTA from "@/components/reusable/cta";
 import Image from "next/image";
 
-export default function Hero({ children, bgImg, className, ...props }) {
+export default function Hero({ children, bgImg, className, quality, ...props }) {
   return (
     <section className={`relative h-screen w-screen ${className}`} {...props}>
       <Image
         src={bgImg}
-        // placeholder="blur"
+        placeholder="blur"
+        quality={quality || 100}
         alt="Image principale"
         className="object-cover w-full h-full lg:h-[95%]"
       />

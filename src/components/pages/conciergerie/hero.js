@@ -1,6 +1,6 @@
 import _Hero from "@/components/reusable/hero";
 import { useState, useEffect } from "react";
-import heroImg from "../../../../public/images/conciergerie/hero.svg";
+import heroImg from "../../../../public/images/conciergerie/hero.png";
 import gsap from "gsap";
 
 export default function Hero() {
@@ -55,7 +55,7 @@ export default function Hero() {
   }, [cid]);
 
   return (
-    <_Hero bgImg={heroImg}>
+    <_Hero bgImg={heroImg} quality={20}>
       <h1 className="!text-4xl lg:!text-5xl uppercase">
         La conciergerie qui
       </h1>

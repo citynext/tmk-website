@@ -2,6 +2,8 @@ import { FaPersonShelter } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { FaWandMagicSparkles } from "react-icons/fa6";
 import { FaArrowTrendUp } from "react-icons/fa6";
+
+
 const whys = [
     {
         icon: FaPersonShelter,
@@ -36,7 +38,7 @@ export default function Why() {
     }
     return (
         <section className="flex flex-col items-center px-4 text-center">
-            <h1>Pourquoi choisir <strong className="bg-secondary !text-white whitespace-nowrap">TAKE MY KEYS</strong> ?</h1>
+            <h1>Pourquoi choisir <span className="whitespace-nowrap"><strong className="bg-secondary !text-white">TAKE MY KEYS</strong> ?</span></h1>
             {/* <p className="lg:!text-xl">Découvrez les avantages de faire confiance à Take My Keys pour la gestion de votre propriété</p> */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-12 lg:mt-24 px-4 lg:px-24 justify-items-center items-start w-full gap-10">
                 {whys.map((why, i) => (
