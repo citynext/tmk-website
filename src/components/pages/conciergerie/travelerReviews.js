@@ -2,10 +2,10 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from 'embla-carousel-autoplay'
 import { useEffect, useState } from "react";
-import review1 from "@/../public/images/conciergerie/reviews/1.svg"
-import review2 from "@/../public/images/conciergerie/reviews/2.svg"
-import review3 from "@/../public/images/conciergerie/reviews/3.svg"
-import review4 from "@/../public/images/conciergerie/reviews/4.svg"
+import review1 from "@/../public/images/conciergerie/reviews/1.png"
+import review2 from "@/../public/images/conciergerie/reviews/2.png"
+import review3 from "@/../public/images/conciergerie/reviews/3.png"
+import review4 from "@/../public/images/conciergerie/reviews/4.png"
 
 
 const reviews = [

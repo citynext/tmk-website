@@ -11,11 +11,11 @@ import logo from "@/../public/logo/transparent/white-title.png";
 const navigation = [
     { name: 'Sous-location', href: '/sous-location' },
     { name: 'Conciergerie', href: '/conciergerie' },
+    { name: 'Contact', href: 'https://calendly.com/citynext-sas/30min'},
     // { name: 'A propos', href: '/a-propos' },
     // { name: 'FAQ', href: '/foire-aux-questions' },
     // { name: 'Parrainage', href: '/parrainage' },
     // { name: 'Bonus JO 2024', href: '/bonus-jo-2024' },
-
 ]
 
 const useScrollPosition = () => {
@@ -71,20 +71,21 @@ export default function Navbar() {
             <Link className='absolute left-5 top-5 lg:static' href="/">
                 <Image src={logo} alt="take my keys logo" width={112} height={62.56} />
             </Link>
-            <ul className={`${open ? 'absolute bg-primary shadow-2xl flex flex-col mt-20 rounded' : 'hidden'} text-white text-lg lg:mt-0 lg:flex lg:flex-row lg:justify-end lg:items-center`}>
+            <ul className={`${open ? 'absolute bg-primary shadow-2xl flex flex-col mt-20 rounded' : 'hidden'} text-white gap-10 text-lg lg:mt-0 lg:flex lg:flex-row lg:justify-end lg:items-center`}>
                 {navigation.map((item, index) => (
                     <motion.li 
                     initial={initialState}
                     whileInView={inView}
                     transition={{ ...transit, delay:index/6 }}
                     viewport={{ once: true }}
-                    key={item.name} className='m-4 hover:underline'>
+                    key={item.name} className='hover:underline'>
                         <Link href={item.href} onClick={() => setOpen(false)}>
                             {item.name}
                         </Link>
                     </motion.li>
                 ))}
             </ul>
+            <div></div>
         </nav>
     );
 }

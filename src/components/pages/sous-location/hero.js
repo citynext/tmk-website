@@ -1,6 +1,6 @@
 import _Hero from "@/components/reusable/hero";
 import { useState, useEffect } from "react";
-import heroImg from "../../../../public/images/general-landing/hero.png";
+import heroImg from "../../../../public/images/sous-location/hero.png";
 import gsap from "gsap";
 
 export default function Hero() {

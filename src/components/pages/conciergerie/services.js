@@ -5,10 +5,10 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from 'embla-carousel-autoplay'
 import bg from "@/../public/images/backgrounds/wave.svg";
 import img1 from "@/../public/images/conciergerie/services1.svg";
-import img2 from "@/../public/images/conciergerie/services2.svg";
-import img3 from "@/../public/images/conciergerie/services3.svg";
-import img4 from "@/../public/images/conciergerie/services4.svg";
-import img5 from "@/../public/images/conciergerie/services5.svg";
+import img2 from "@/../public/images/conciergerie/services2.png";
+import img3 from "@/../public/images/conciergerie/services3.png";
+import img4 from "@/../public/images/conciergerie/services4.png";
+import img5 from "@/../public/images/conciergerie/services5.png";
 import img6 from "@/../public/images/conciergerie/services6.svg";
 
 
@@ -70,7 +70,7 @@ const Service = ({
 
 export default function Services() {
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({}, [Autoplay()]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({delay:6000, stopOnUserInteraction: true})]);
   const [selected , setSelected] = useState(0);
 
   useEffect(() => {
@@ -89,7 +89,7 @@ export default function Services() {
         <p>Votre tranquilité, Notre signature</p>
       </div>
       <div className="w-screen max-w-full" ref={emblaRef}>
-        <ul className="w-full flex mb-10 sm:mb-0 mt-12 lg:mt-24 gap-4 sm:gap-24">
+        <ul className="w-full flex mb-10 sm:mb-0 mt-12 lg:mt-24">
           {services.map((service, index) => (
             <li
             key={index}
@@ -98,7 +98,7 @@ export default function Services() {
                 image={service.image}
                 title={service.title}
                 description={service.description}
-                className="mx-4"
+                className="mx-4 sm:mx-16"
               />
             </li>
           ))}
