@@ -19,34 +19,31 @@ export function TextInput({
   onSuggestionClick,
   ...props
 }) {
-  let _ref = useRef();
-  if (type === "address") {
-    const { ref } = usePlacesWidget({
-      apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-      ref: _ref,
-      onPlaceSelected: (place) => {
-        place.address_components.forEach((component) => {
-          place.address = place.formatted_address;
-          if (component.types.includes("postal_code")) {
-            place.postalCode = component.long_name;
-          }
-          if (component.types.includes("locality")) {
-            place.city = component.long_name;
-          }
-          if (component.types.includes("country")) {
-            place.country = component.long_name;
-          }
-        });
-        onSuggestionClick(place);
-      },
-      language: "fr",
-      options: {
-        types: ["address"],
-        componentRestrictions: { country: "fr" },
-      }
-    });
-    _ref = ref;
-  }
+
+  const { ref } = usePlacesWidget({
+    apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    ref: _ref,
+    onPlaceSelected: (place) => {
+      place.address_components.forEach((component) => {
+        place.address = place.formatted_address;
+        if (component.types.includes("postal_code")) {
+          place.postalCode = component.long_name;
+        }
+        if (component.types.includes("locality")) {
+          place.city = component.long_name;
+        }
+        if (component.types.includes("country")) {
+          place.country = component.long_name;
+        }
+      });
+      onSuggestionClick(place);
+    },
+    language: "fr",
+    options: {
+      types: ["address"],
+      componentRestrictions: { country: "fr" },
+    }
+  });
 
   return (
     <div
@@ -71,7 +68,7 @@ export function TextInput({
         className={`bg-transparent p-2 ${icon ? "pl-10" : "pl-4"} w-full ${
           disabled ? "text-gray-400" : "text-inherit"
         }`}
-        ref={_ref}
+        ref={type === "address" ? ref : null}
         type={type}
         required={required}
         pattern={pattern}
