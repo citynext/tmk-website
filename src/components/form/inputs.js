@@ -22,7 +22,6 @@ export function TextInput({
 
   const { ref } = usePlacesWidget({
     apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-    ref: _ref,
     onPlaceSelected: (place) => {
       place.address_components.forEach((component) => {
         place.address = place.formatted_address;
