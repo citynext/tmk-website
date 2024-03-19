@@ -24,9 +24,9 @@ export default function Example() {
         <section className="flex flex-col items-center gap-10 md:gap-24 bg-third p-10">
             <h1 className="uppercase text-center !font-semibold"><strong className="!font-semibold">Prenons le cas de Guillaume </strong>qui loue son appartement 200€ la nuit</h1>
             <div className="flex flex-col lg:flex-row w-full justify-center gap-24 lg:px-24 max-w-[90rem]">
-                <div className="flex flex-col items-end gap-12">
+                <div className="flex-[1] flex flex-col items-end gap-12 pt-4">
                     {steps.map((step, index) => (
-                        <div key={index} className="flex items-start gap-4 max-w-[30rem]">
+                        <div key={index} className="flex items-start gap-4">
                             <h3 className="flex-[1] uppercase text-primary">étape {index + 1}</h3>
                             <div className="flex-[3] flex flex-col pl-4 border-l border-l-gray-300">
                                 <h3>{step.title}</h3>
@@ -36,7 +36,7 @@ export default function Example() {
                         </div>
                     ))}
                 </div>
-                <div className="">
+                <div className="flex-[1]">
                     <Image src={exampleImg} alt="graph" className="object-cover" />
                 </div>
             </div>

@@ -1,6 +1,6 @@
-import { BiSolidHappyHeartEyes } from "react-icons/bi";
 import { FaHeartCirclePlus } from "react-icons/fa6";
 import { BsPeopleFill } from "react-icons/bs";
+import { FaLaughBeam } from "react-icons/fa";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import bgImg from "@/../public/images/general-landing/stats-bg.svg";
@@ -59,7 +59,7 @@ export default function Stats() {
             transition={transit}
           >
             <StatItem
-              icon={BiSolidHappyHeartEyes}
+              icon={FaLaughBeam}
               kpi="97%"
               text="Satisfaction client"
             />
