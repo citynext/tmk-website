@@ -85,12 +85,11 @@ export default function CTA({ className, ...props }) {
         })
     }
 
-    const onSuggestionClick = (suggestion) => {
-
-        setAddress(suggestion.address.freeformAddress);
-        setPostalCode(suggestion.address.postalCode);
-        setCity(suggestion.address.municipality);
-      };
+    const onSuggestionClick = ({ address, postalCode, city }) => {
+        setAddress(address);
+        setPostalCode(postalCode);
+        setCity(city);
+    };
 
     return (
         <motion.div

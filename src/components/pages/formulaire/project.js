@@ -57,7 +57,6 @@ export default function Project({ className, onPrev, onNext, ...props }) {
       setFormData({ ...formData, [e.target.name]: e.target.checked });
     else setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  console.log(formData)
 
   return (
     <div className={`flex flex-col items-center ${className}`} {...props}>
@@ -80,12 +79,12 @@ export default function Project({ className, onPrev, onNext, ...props }) {
             type="address"
             className="w-full"
             icon={FaMapMarkedAlt}
-            onSuggestionClick={(suggestion) => {
+            onSuggestionClick={({ address, postalCode, city }) => {
               setFormData({
                 ...formData,
-                address: suggestion.address.freeformAddress,
-                postalCode: suggestion.address.postalCode,
-                city: suggestion.address.municipality,
+                address,
+                postalCode,
+                city,
               });
             }}
             placeholder="Adresse postale"

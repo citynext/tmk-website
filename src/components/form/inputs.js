@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import { IoLocation } from "react-icons/io5";
-import { searchAddress } from "@/lib/tomtom";
+import { usePlacesWidget } from "react-google-autocomplete";
+
 
 export function TextInput({
   type,
@@ -19,35 +19,34 @@ export function TextInput({
   onSuggestionClick,
   ...props
 }) {
-  const [suggestions, setSuggestions] = useState([]);
-  const [selectedAddress, setSelectedAddress] = useState(true);
-  setTimeout(() => setSelectedAddress(false), 1000);
-
-  useEffect(() => {
-    if (type === "address") {
-      if (!selectedAddress) {
-        const timeOutId = setTimeout(() => {
-          if (value && value.length > 2) {
-            searchAddress(value)
-              .then((response) => {
-                setSuggestions(response.results);
-              })
-              .catch((error) => {
-                console.log(error);
-              });
+  let _ref = useRef();
+  if (type === "address") {
+    const { ref } = usePlacesWidget({
+      apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+      ref: _ref,
+      onPlaceSelected: (place) => {
+        place.address_components.forEach((component) => {
+          place.address = place.formatted_address;
+          if (component.types.includes("postal_code")) {
+            place.postalCode = component.long_name;
           }
-        }, 500);
-        return () => clearTimeout(timeOutId);
+          if (component.types.includes("locality")) {
+            place.city = component.long_name;
+          }
+          if (component.types.includes("country")) {
+            place.country = component.long_name;
+          }
+        });
+        onSuggestionClick(place);
+      },
+      language: "fr",
+      options: {
+        types: ["address"],
+        componentRestrictions: { country: "fr" },
       }
-    }
-  }, [value, selectedAddress, type]);
-
-  const _onSuggestionClick = (suggestion) => {
-    setSelectedAddress(true);
-    onSuggestionClick(suggestion);
-    setTimeout(() => setSelectedAddress(false), 1000);
-    setSuggestions([]);
-  };
+    });
+    _ref = ref;
+  }
 
   return (
     <div
@@ -72,6 +71,7 @@ export function TextInput({
         className={`bg-transparent p-2 ${icon ? "pl-10" : "pl-4"} w-full ${
           disabled ? "text-gray-400" : "text-inherit"
         }`}
+        ref={_ref}
         type={type}
         required={required}
         pattern={pattern}
@@ -82,16 +82,6 @@ export function TextInput({
         value={value}
         onChange={onChange}
       />
-      { type === 'address' && suggestions.length > 1 && 
-        <ul className='absolute bg-white w-full border z-10'>
-            {suggestions.map((suggestion, i) => (
-            <li key={i} className="flex gap-2 items-center p-2 cursor-pointer text-primary hover:bg-primary hover:text-white" onClick={() => _onSuggestionClick(suggestion)}>
-              <IoLocation className="text-inherit mr-2" />
-              {suggestion.address.freeformAddress}
-            </li>
-            ))}
-        </ul>
-      }
     </div>
   );
 }

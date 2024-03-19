@@ -40,7 +40,6 @@ const Formulaire = () => {
   }
 
   const onNext = (additionnalParams) => {
-    console.log(additionnalParams);
     router?.push({
       pathname: `/formulaire`,
       query: {
