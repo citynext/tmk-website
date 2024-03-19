@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import hair1 from "@/../public/images/backgrounds/hair1.svg"
 import hair2 from "@/../public/images/backgrounds/hair2.svg"
-
+import { PiSignpostFill } from "react-icons/pi";
 
 const Formulaire = () => {
   const [errors, setErrors] = useState({});
@@ -30,7 +30,7 @@ const Formulaire = () => {
   }
   const onPrev = (additionnalParams) => {
     router?.push({
-      pathname: `/formulaire`,
+      pathname: `/form`,
       query: {
         ...query,
         step: step - 1,
@@ -41,7 +41,7 @@ const Formulaire = () => {
 
   const onNext = (additionnalParams) => {
     router?.push({
-      pathname: `/formulaire`,
+      pathname: `/form`,
       query: {
         ...query,
         step: step + 1,
@@ -55,7 +55,9 @@ const Formulaire = () => {
     delete input.step;
     const body = {
       isOwner: input.owner === "true",
-      address: input.address,
+      full_address: input.address,
+      house_number: input.houseNumber,
+      street: input.street,
       postal_code: input.postalCode,
       city: input.city,
       category: input.category,
@@ -65,8 +67,8 @@ const Formulaire = () => {
       floor: parseInt(input.floor),
       capacity: parseInt(input.capacity),
       hasElevator: input.elevator === "true",
-      start_date: input.startDate,
-      end_date: input.endDate,
+      start_date: input.startDate ? input.startDate : null,
+      end_date: input.endDate ? input.endDate : null,
       first_name: input.firstName,
       last_name: input.lastName,
       email: input.email,
@@ -82,7 +84,7 @@ const Formulaire = () => {
       if (response.ok) {
         response.json().then((data) => {
           router?.push({
-            pathname: `/formulaire/result`,
+            pathname: `/form/result`,
             query: {
               id: data.id,
             },
@@ -106,7 +108,7 @@ const Formulaire = () => {
   const stepProps = { className: "px-4 py-16", onPrev, onNext }
 
   return (
-    <main className="relative w-full h-screen bg-third bg-opacity-30 pt-10 px-4">
+    <main className="relative w-full min-h-screen bg-third bg-opacity-30 pt-10 px-4">
       <Image src={hair1} alt="Background image" className="absolute top-0 left-0 -z-[50]" />
       <Image src={hair2} alt="Background image" className="absolute bottom-0 right-0 -z-[50]" />
       <div className="relative flex justify-between mx-auto max-w-[50rem] w-[90%]">

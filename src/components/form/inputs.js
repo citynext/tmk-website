@@ -34,6 +34,12 @@ export function TextInput({
         if (component.types.includes("country")) {
           place.country = component.long_name;
         }
+        if (component.types.includes("street_number")) {
+          place.houseNumber = component.long_name;
+        }
+        if (component.types.includes("route")) {
+          place.street = component.long_name;
+        }
       });
       onSuggestionClick(place);
     },

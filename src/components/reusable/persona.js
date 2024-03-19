@@ -12,7 +12,7 @@ const PersonaItem = ({img, title, description, reverse}) => {
             <div className={`flex-1 text-center ${reverse ? 'lg:text-end' : 'lg:text-start'}`}>
                 <h2 className="!text-2xl !font-bold">{title}</h2>
                 <p>{description}</p>
-                <Link href="/formulaire">
+                <Link href="/form">
                     <Button className="mt-4 lg:mt-10">Estimer mes revenus</Button>
                 </Link>
             </div>

@@ -120,7 +120,7 @@ export default function Pricing() {
           <PricingCard key={index} {...price} />
         ))}
       </div> */}
-      <Link href="/formulaire">
+      <Link href="/form">
         <button className="bg-secondary hover:bg-primary transition ease-in-out duration-300 text-white rounded-lg mt-6 lg:mt-12 px-6 py-2 text-xl">Estimer mes revenus</button>
       </Link>
     </section>

@@ -10,6 +10,8 @@ import { FaMapMarkedAlt } from "react-icons/fa";
 import { FaMapPin } from "react-icons/fa6";
 import { Select } from "@/components/form/inputs";
 import { useSearchParams } from "next/navigation";
+import { AiOutlineFieldNumber } from "react-icons/ai";
+import { PiSignpostFill } from "react-icons/pi";
 
 const roomsOptions = [
   { value: "1", label: "Studio" },
@@ -41,6 +43,8 @@ export default function Project({ className, onPrev, onNext, ...props }) {
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     address: searchParams.get("address") || "",
+    houseNumber: searchParams.get("houseNumber") || "",
+    street: searchParams.get("street") || "",
     postalCode: searchParams.get("postalCode") || "",
     city: searchParams.get("city") || "",
     category: searchParams.get("category") || "",
@@ -58,16 +62,18 @@ export default function Project({ className, onPrev, onNext, ...props }) {
     else setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = (e) => {
+    onNext(formData);
+    e.preventDefault();
+  }
+
   return (
     <div className={`flex flex-col items-center ${className}`} {...props}>
       <h1 className="w-fit text-2xl text-center font-semibold my-6">
         Votre logement
       </h1>
       <form
-        onSubmit={(e) => {
-          onNext(formData);
-          e.preventDefault();
-        }}
+        onSubmit={handleSubmit}
         className="max-w-[50rem] w-full"
       >
         <FormGroup title="Adresse" className="w-full mb-6">
@@ -79,15 +85,38 @@ export default function Project({ className, onPrev, onNext, ...props }) {
             type="address"
             className="w-full"
             icon={FaMapMarkedAlt}
-            onSuggestionClick={({ address, postalCode, city }) => {
+            onSuggestionClick={({ address, houseNumber, street, postalCode, city }) => {
               setFormData({
                 ...formData,
                 address,
+                houseNumber,
+                street,
                 postalCode,
                 city,
               });
             }}
-            placeholder="Adresse postale"
+            placeholder="Chercher mon adresse"
+          />
+          <div className="w-full flex gap-4">
+            ou
+          </div>
+          <TextInput
+            required
+            className="flex-1"
+            name="houseNumber"
+            value={formData.houseNumber}
+            onChange={handleChange}
+            icon={AiOutlineFieldNumber}
+            placeholder="Numéro de rue"
+          />
+          <TextInput
+            required
+            className="flex-1"
+            name="street"
+            value={formData.street}
+            onChange={handleChange}
+            icon={FaMapPin}
+            placeholder="Rue"
           />
           <TextInput
             required
@@ -95,7 +124,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
             name="postalCode"
             value={formData.postalCode}
             onChange={handleChange}
-            icon={FaMapPin}
+            icon={PiSignpostFill}
             placeholder="Code postal"
           />
           <TextInput

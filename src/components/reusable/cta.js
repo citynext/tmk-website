@@ -74,7 +74,7 @@ export default function CTA({ className, ...props }) {
     
     const handleSubmit = () => {
         router.push({
-            pathname: '/formulaire',
+            pathname: '/form',
             query: {
                 address: address,
                 postalCode: postalCode,

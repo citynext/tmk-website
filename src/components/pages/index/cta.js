@@ -38,7 +38,7 @@ export default function Cta() {
           Commencez l&apos;aventure avec{" "}
           <strong className="text-secondary">TAKE MY KEYS</strong>
         </p>
-        <Link href="/formulaire">
+        <Link href="/form">
           <motion.button
             initial={initialState}
             whileInView={inView}

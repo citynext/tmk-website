@@ -84,23 +84,7 @@ export default function Navbar() {
                         </Link>
                     </motion.li>
                 ))}
-                {/* <motion.li
-                initial={initialState}
-                whileInView={inView}
-                transition={{ ...transit }}
-                viewport={{ once: true }}
-                className='lg:hidden m-4 hover:font-bold'>
-                  <Link href="/formulaire" className='flex items-center' onClick={() => setOpen(false)}>
-                    <IoMdLogIn className='mr-2' />
-                            S&apos;inscrire
-                        </Link>
-                  </motion.li> */}
             </ul>
-            {/* <Link href="/formulaire" className='md-4'>
-                <Button className={`hidden lg:block text-lg ${open ? '' : 'hidden'}`}>
-                    S&apos;inscrire
-                </Button>
-            </Link> */}
         </nav>
     );
 }
