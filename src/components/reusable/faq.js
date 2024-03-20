@@ -40,7 +40,7 @@ export default function Faq({data, title, className, ...props}) {
                 className={`transition-all duration-250 ease-in-out bg-white flex flex-col overflow-hidden justify-between items-center my-2 border-2 rounded-lg border-primary`}
               >
                 <div className="flex w-full justify-center items-stretch h-16 pl-4">
-                  <h2 className={`flex-1 !text-base lg:!text-2xl !my-auto ${expanded[i] ? "" : "line-clamp-2"} overflow-hidden`}>{q.question}</h2>
+                  <h2 className={`flex-1 !text-base lg:!text-xl !my-auto ${expanded[i] ? "" : "line-clamp-2"} overflow-hidden`}>{q.question}</h2>
                   <div>
                     <button
                       className={`${
@@ -58,8 +58,8 @@ export default function Faq({data, title, className, ...props}) {
                       ? "translate-y-0 opacity-[1]"
                       : "translate-y-[50px] opacity-0 hidden"
                   }`}
+                  dangerouslySetInnerHTML={{ __html: q.answer }}
                 >
-                    {q.answer}
                 </p>
             </motion.li>
             ))}
