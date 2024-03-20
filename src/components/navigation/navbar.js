@@ -11,7 +11,7 @@ import logo from "@/../public/logo/transparent/white-title.png";
 const navigation = [
     { name: 'Sous-location', href: '/sous-location' },
     { name: 'Conciergerie', href: '/conciergerie' },
-    { name: 'Contact', href: 'https://calendly.com/citynext-sas/30min'},
+    { name: 'Contact', href: process.env.NEXT_PUBLIC_CALENDLY_URL},
     // { name: 'A propos', href: '/a-propos' },
     // { name: 'FAQ', href: '/foire-aux-questions' },
     // { name: 'Parrainage', href: '/parrainage' },

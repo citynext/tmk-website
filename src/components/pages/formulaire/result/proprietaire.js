@@ -57,7 +57,7 @@ export default function Proprietaire({ estimation, rent, marketRent, form }) {
         <p className="text-center text-lg max-w-[50rem]">
             Prenez rendez-vous avec un de nos conseillers pour finaliser votre projet.
         </p>
-        <Link href="https://calendly.com/citynext-sas/30min">
+        <Link href={process.env.NEXT_PUBLIC_CALENDLY_URL}>
             <button className="bg-secondary w-fit text-white rounded-full py-3 px-10 hover:underline z-10">Prendre rendez-vous</button>
         </Link>
       </div>
