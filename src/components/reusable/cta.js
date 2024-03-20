@@ -53,6 +53,8 @@ export default function CTA({ className, ...props }) {
     const router = useRouter();
     // const [expanded, setExpanded] = useState(false)
     const [address, setAddress] = useState("");
+    const [houseNumber, setHouseNumber] = useState("");
+    const [street, setStreet] = useState("");
     const [postalCode, setPostalCode] = useState("");
     const [city, setCity] = useState("");
     const [rooms, setRooms] = useState();
@@ -77,6 +79,8 @@ export default function CTA({ className, ...props }) {
             pathname: '/form',
             query: {
                 address: address,
+                houseNumber: houseNumber,
+                street: street,
                 postalCode: postalCode,
                 city: city,
                 rooms: rooms > 6 ? 6 : rooms,
@@ -85,8 +89,10 @@ export default function CTA({ className, ...props }) {
         })
     }
 
-    const onSuggestionClick = ({ address, postalCode, city }) => {
+    const onSuggestionClick = ({ address, houseNumber, street, postalCode, city }) => {
         setAddress(address);
+        setHouseNumber(houseNumber);
+        setStreet(street);
         setPostalCode(postalCode);
         setCity(city);
     };
