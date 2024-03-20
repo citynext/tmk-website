@@ -23,6 +23,11 @@ export default function Period({ className, onPrev, onNext, ...props }) {
     }
     e.preventDefault()
   }
+
+  // date in 10 days
+  const startFrom = new Date();
+  startFrom.setDate(startFrom.getDate() + 12);
+
   
   return (
     <div className={`light flex flex-col items-center ${className}`} {...props}>
@@ -31,14 +36,16 @@ export default function Period({ className, onPrev, onNext, ...props }) {
       </h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-8 w-full max-w-[50rem] mt-10 lg:mt-20">
         <div>
-            <label>{searchParams.get("owner") === "true" ? "Début souhaité" : "Période d'absence"}</label>
+            <label>{searchParams.get("owner") === "true" && searchParams.get("category") != "primary" ? "Début souhaité" : "Période d'absence"}</label>
             <div className="mt-2 border border-gray-400 rounded-lg">
                 <Datepicker
-                  asSingle={searchParams.get("owner") === "true"}
+                  asSingle={searchParams.get("owner") === "true" && searchParams.get("category") != "primary"}
                   useRange={false}
                   i18n="fr"
                   separator="->"
                   displayFormat="DD/MM/YYYY"
+                  startFrom={startFrom}
+                  minDate={startFrom}
                   startWeekOn="mon"
                   disabled={checked}
                   value={FormData}
@@ -53,7 +60,7 @@ export default function Period({ className, onPrev, onNext, ...props }) {
         />
         <label>
             <input type="checkbox" className="checked:bg-primary mr-2" required />
-            J&apos;accepte les CGU et le traitement de mes données personnelles.
+            J&apos;accepte que mes données personnelles soient utilisées pour me recontacter dans le cadre de ma demande d&apos;estimation.
         </label>
 
         <div className="w-full flex justify-between mt-10">
