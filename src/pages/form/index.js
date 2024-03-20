@@ -9,7 +9,13 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import hair1 from "@/../public/images/backgrounds/hair1.svg"
 import hair2 from "@/../public/images/backgrounds/hair2.svg"
-import { PiSignpostFill } from "react-icons/pi";
+import Head from "next/head";
+
+const metadata = {
+  title: "Formulaire de contact",
+  description: "Formulaire de contact pour sous-location ou conciergerie",
+};
+
 
 const Formulaire = () => {
   const [errors, setErrors] = useState({});
@@ -109,6 +115,10 @@ const Formulaire = () => {
 
   return (
     <main className="relative w-full min-h-screen bg-third bg-opacity-30 pt-10 px-4">
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+      </Head>
       <Image src={hair1} alt="Background image" className="absolute top-0 left-0 -z-[50]" />
       <Image src={hair2} alt="Background image" className="absolute bottom-0 right-0 -z-[50]" />
       <div className="relative flex justify-between mx-auto max-w-[50rem] w-[90%]">
