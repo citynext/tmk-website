@@ -97,12 +97,9 @@ export default function Project({ className, onPrev, onNext, ...props }) {
             }}
             placeholder="Chercher mon adresse"
           />
-          <div className="w-full flex gap-4">
-            ou
-          </div>
           <TextInput
             required
-            className="flex-1"
+            className="flex-1 min-w-[20%] lg:min-w-0"
             name="houseNumber"
             value={formData.houseNumber}
             onChange={handleChange}
@@ -111,20 +108,20 @@ export default function Project({ className, onPrev, onNext, ...props }) {
           />
           <TextInput
             required
-            className="flex-1"
+            className="flex-1 min-w-[60%] lg:min-w-0"
             name="street"
             value={formData.street}
             onChange={handleChange}
-            icon={FaMapPin}
+            icon={PiSignpostFill}
             placeholder="Rue"
           />
           <TextInput
             required
-            className="flex-1"
+            className="flex-1 min-w-[20%] lg:min-w-0"
             name="postalCode"
             value={formData.postalCode}
             onChange={handleChange}
-            icon={PiSignpostFill}
+            icon={FaMapPin}
             placeholder="Code postal"
           />
           <TextInput
@@ -132,7 +129,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
             value={formData.city}
             onChange={handleChange}
             name="city"
-            className="flex-1"
+            className="flex-1 min-w-[60%] lg:min-w-0"
             icon={FaCity}
             placeholder="Ville"
           />
@@ -150,7 +147,7 @@ export default function Project({ className, onPrev, onNext, ...props }) {
             </LabelInput>
           }
           {searchParams.get("owner") === 'false' &&
-            <LabelInput label="Loyer Mensuel (CC)" className="flex-1 min-w-[40%]">
+            <LabelInput label="Loyer mensuel (cc)" className="flex-1 min-w-[40%]">
               <TextInput
                 required
                 value={formData.rent}
