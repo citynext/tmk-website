@@ -4,12 +4,12 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from 'embla-carousel-autoplay'
 import bg from "@/../public/images/backgrounds/wave.svg";
-import img1 from "@/../public/images/conciergerie/services1.svg";
+import img1 from "@/../public/images/conciergerie/services1.png";
 import img2 from "@/../public/images/conciergerie/services2.png";
 import img3 from "@/../public/images/conciergerie/services3.png";
 import img4 from "@/../public/images/conciergerie/services4.png";
 import img5 from "@/../public/images/conciergerie/services5.png";
-import img6 from "@/../public/images/conciergerie/services6.svg";
+import img6 from "@/../public/images/conciergerie/services6.png";
 
 
 const services = [
@@ -36,7 +36,7 @@ const services = [
   {
       "image": img5,
       "title": "Services de ménage complet",
-      "description": "Soyez assuré que votre propriété conservera son état impeccable grâce à la qualité de ménage. Nous nous occupons également du linge de maison pour vous fournir des draps et des serviettes frais. Notre équipe de professionnels effectue un entretien méticuleux et régulier pour garantir un environnement impeccable et chaleureux pour accueillir les voyageurs."
+      "description": "Soyez tranquille : votre propriété restera impeccable grâce à notre ménage de qualité. Nous gérons aussi le linge, offrant draps et serviettes frais. Notre équipe assure un nettoyage méticuleux et fréquent, pour un accueil chaleureux des voyageurs."
   },
   {
       "image": img6,
