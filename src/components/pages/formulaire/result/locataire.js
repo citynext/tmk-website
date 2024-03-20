@@ -16,7 +16,7 @@ export default function Locataire({ estimation, rent, form}) {
       </div>
       <div className="flex flex-col items-center lg:mt-10 text-center">
         <p className="mb-6">Prenez rendez-vous avec un de nos conseillers pour finaliser votre projet de départ</p>
-        <Link href={process.env.NEXT_PUBLIC_CALENDLY_URL}>
+        <Link target="_blank" href={process.env.NEXT_PUBLIC_CALENDLY_URL}>
           <button className="bg-secondary w-fit text-white rounded-full py-3 px-10 hover:underline z-10">Prendre rendez-vous</button>
         </Link>
         <Image src={happy} alt="happy woman raising hands" className="max-h-[50vh]" />

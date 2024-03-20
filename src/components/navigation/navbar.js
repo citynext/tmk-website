@@ -11,7 +11,7 @@ import logo from "@/../public/logo/transparent/white-title.png";
 const navigation = [
     { name: 'Sous-location', href: '/sous-location' },
     { name: 'Conciergerie', href: '/conciergerie' },
-    { name: 'Contact', href: process.env.NEXT_PUBLIC_CALENDLY_URL},
+    { name: 'Contact', href: process.env.NEXT_PUBLIC_CALENDLY_URL, target: '_blank'},
     // { name: 'A propos', href: '/a-propos' },
     // { name: 'FAQ', href: '/foire-aux-questions' },
     // { name: 'Parrainage', href: '/parrainage' },
@@ -79,7 +79,7 @@ export default function Navbar() {
                     transition={{ ...transit, delay:index/6 }}
                     viewport={{ once: true }}
                     key={item.name} className='hover:underline'>
-                        <Link href={item.href} onClick={() => setOpen(false)}>
+                        <Link target={item.target} href={item.href} onClick={() => setOpen(false)}>
                             {item.name}
                         </Link>
                     </motion.li>
