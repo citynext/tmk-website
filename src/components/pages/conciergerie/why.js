@@ -7,13 +7,13 @@ import { FaArrowTrendUp } from "react-icons/fa6";
 const whys = [
     {
         icon: FaPersonShelter,
-        title: "Par des propriétaires pour les propriétaires",
-        text: "Voilà pourquoi on vous comprend si bien: nous avons les mêmes problèmes que vous. Votre succès est notre priorité."
+        title: "Par des propriétaires pour des propriétaires",
+        text: "Voilà pourquoi nous vous comprenons si bien: nous avons les mêmes problèmes que vous. Votre succès est notre priorité."
     },
     {
         icon: FaWandMagicSparkles,
         title: "Une solution tout-en-un",
-        text: "Nous nous occupons de toute la gestion, du nettoyage à la communication avec les voyageurs. Nous référençons votre bien sur plusieurs plateformes de réservation."
+        text: "Nous nous occupons de la gestion, du nettoyage et de la communication avec les voyageurs. Nous référençons votre bien sur plusieurs plateformes de réservation."
     },
     {
         icon: FaArrowTrendUp,

@@ -41,7 +41,7 @@ const services = [
   {
       "image": img6,
       "title": "Statut de Superhôte",
-      "description": "Confier votre propriété à Take my Keys vous assure d'obtenir le statut très convoité et les commentaires des clients Airbnb 5 étoiles, laissant une impression durable pour les milliers de visiteurs du site."
+      "description": "Confier votre propriété à Take My Keys vous assure d'obtenir ce statut très convoité et des avis positifs, laissant une impression durable pour les milliers de visiteurs du site."
   }
 ]
 
@@ -86,7 +86,7 @@ export default function Services() {
       <Image src={bg} alt="bg img" className="absolute top-40 lg:top-0 left-0 w-full -z-10" />
       <div className="text-center lg:mx-24">
         <h1>Nos services</h1>
-        <p>Votre tranquilité, Notre signature</p>
+        <p>Votre tranquilité, notre signature</p>
       </div>
       <div className="w-screen max-w-full" ref={emblaRef}>
         <ul className="w-full flex mb-10 sm:mb-0 mt-12 lg:mt-24">

@@ -13,17 +13,17 @@ const reviews = [
   {
       "name": "Gauthier R.",
       "image": homme1,
-      "review": "Grâce à Take My Keys, j'ai pu louer mon appartement en toute sérénité. Leur équipe est très réactive et a su trouver des locataires rapidement. Je recommande vivement leurs services."
+      "review": "Take My Keys a transformé ma perception de la location courte durée. Avec leur gestion de mon appartement près de Versailles, j'ai vu mes revenus locatifs augmenter significativement tout en ayant zéro tracas. L'équipe est à l'écoute et très compétente. Une solution clé en main que je conseille vivement à tous les propriétaires en Île-de-France."
   },
   {
       "name": "Laura D.",
       "image": femme,
-      "review": "J'ai été ravi de confier la gestion de mon appartement à Take My Keys. Leur équipe est très professionnelle et a su gérer mon bien avec succès. Je les recommande vivement."
+      "review": "L'expérience avec Take My Keys a été exceptionnelle du début à la fin. En tant que propriétaire vivant à l'étranger, il était primordial pour moi de trouver une agence de confiance pour gérer mon appartement à Paris. L'équipe de TakeMyKeys a non seulement pris soin de mon bien comme si c'était le leur, mais ils ont aussi réussi à optimiser les revenus de location bien au-delà de mes attentes."
   },
   {
       "name": "Julien T.",
       "image": homme2,
-      "review": "Take My Keys m'a permis de trouver un appartement en un temps record. Leur équipe est très réactive et a su répondre à mes attentes. Je recommande vivement leurs services."
+      "review": "Impressionné par la qualité du service ! La gestion de mon studio a été impeccable. Réservations constantes, entretien parfait et une rentabilité optimisée. L'équipe est réactive et professionnelle. Recommandé à 100% !"
   }
 ]
 
