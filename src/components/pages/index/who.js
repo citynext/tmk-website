@@ -81,7 +81,7 @@ export default function Who() {
               <IoHomeOutline size={80} className="text-primary mb-5" />
               <h2 className="text-4xl">Conciergerie</h2>
               <p className="text-xl my-10 font-light">
-                Maximisez votre rentabilité et assurez votre tranquillité d'esprit
+                Maximisez votre rentabilité et assurez votre tranquillité d&apos;esprit
               </p>
               <span className="text-white bg-primary text-xl rounded-3xl px-5 py-3">
                 En savoir plus

@@ -90,7 +90,7 @@ export default function Pricing() {
       <div className="text-center px-5 lg:px-20">
           <h1 className="!text-3xl lg:!text-4xl">Une offre <strong className="uppercase underline !text-primary">unique</strong></h1>
           <p className="mt-10 lg:px-20">
-            Notre conciergerie vous propose une formule simple : La gestion complète.<br />Cette formule inclut, par défaut, tous les services Take My Keys. Nous nous occupons de tout et prenons une commission de 20% sur le revenu total par réservation. Vous ne payez donc notre service de gestion des locations si votre bien est loué. Vous avez accès via l'application au suivi des réservations et des revenus perçus.
+            Notre conciergerie vous propose une formule simple : La gestion complète.<br />Cette formule inclut, par défaut, tous les services Take My Keys. Nous nous occupons de tout et prenons une commission de 20% sur le revenu total par réservation. Vous ne payez donc notre service de gestion des locations si votre bien est loué. Vous avez accès via l&apos;application au suivi des réservations et des revenus perçus.
           </p>
       </div>
       <div className="flex flex-wrap p-4 justify-center items-stretch gap-10 w-full mt-10">
