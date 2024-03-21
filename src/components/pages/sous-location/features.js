@@ -39,7 +39,7 @@ const data = [
     },
     {
         icon: RxCountdownTimer,
-        title: "Gestion complète de la clientèle 24/7",
+        title: "Gestion complète des voyageurs",
     },
     {
         icon: MdOutlinePhotoCamera,
@@ -51,7 +51,7 @@ export default function Features() {
     return (
         <section className="p-4 text-center bg-third py-12">
             <h1 className="!font-medium">Que se passe-t-il dans le logement pendant votre absence ?</h1>
-            <p className="my-4 mx-auto max-w-[60rem]">Nous attachons une grande importance à la sécurité, c&apos;est pourquoi nous examinons systématiquement les profils des voyageurs avant de confirmer toute réservation.</p>
+            <p className="my-4 mx-auto max-w-[60rem]">Nous accordons une grande importance à la sécurité, c&apos;est pourquoi nous examinons systématiquement les profils des voyageurs avant de confirmer toute réservation.</p>
             <ul className="grid grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-32 p-6 sm:px-32 sm:py-14">
                 {data.map((item, index) => {
                     const Icon = item.icon;

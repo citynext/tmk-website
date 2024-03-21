@@ -16,7 +16,7 @@ const reviews = [
   {
       "name": "Ines L.",
       "image": femme,
-      "review": "Bénéficiant du service de Take My Keys lors de mon séjour en Malaisie, je suis pleinement satisfait. À mon retour, mon logement était impeccable, me permettant ainsi de profiter pleinement de mon voyage grâce aux économies réalisées. Merci à toute l'équipe pour leur efficacité."
+      "review": "Bénéficiant du service de Take My Keys lors de mon séjour en Malaisie, je suis pleinement satisfaite. À mon retour, mon logement était impeccable. Merci à toute l'équipe pour leur efficacité."
   },
   {
       "name": "Leo M.",
@@ -49,7 +49,7 @@ export default function ClientReviews() {
             >
               <div className="absolute -top-20 left-0 right-0 mx-auto bg-primary p-2 h-20 w-40 -z-10" style={{borderRadius: "10rem 10rem 0 0"}}></div>
               <Image src={review.image} alt={review.name} className="absolute -top-16 left-0 right-0 mx-auto size-32 object-cover rounded-full z-10" />
-              <div className="flex flex-col justify-between items-center text-center gap-6">
+              <div className="h-full flex flex-col justify-between items-center text-center gap-6">
                 <h2 className="text-center">{review.name}</h2>
                 <p className="bg-white !text-base text-center line-clamp-[8] z-0">
                   {review.review}

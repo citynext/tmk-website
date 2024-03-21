@@ -6,7 +6,7 @@ const questions = [
     answer: "Notre service est totalement gratuit : nous gérons la sous-location de votre logement et nous nous finançons exclusivement par le biais des services facturés aux sous-locataires. En tant que client de Take My Keys, aucune commission ne vous sera prélevée et ce quel que soit le taux d'occupation. Vous êtes assuré de recevoir l'intégralité de votre loyer.",
   },
   {
-    question: "Comment ça fonctione ?",
+    question: "Comment ça fonctionne ?",
     answer: "Nous garantissons le paiement total du loyer et les frais de fonctionnement (électricité, gaz, internet…)  et prenons en charge toute la gestion du logement de manière gratuite, légale et sécurisée. Nous proposons l'appartement sur des plateformes de location à court terme telles que Airbnb ou Booking afin d'accueillir des professionnels et des touristes."
   },
   {

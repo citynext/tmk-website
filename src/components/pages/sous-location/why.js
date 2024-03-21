@@ -7,7 +7,7 @@ import { FaHandPeace } from "react-icons/fa6";
 const whys = [
     {
         icon: GiTakeMyMoney,
-        title: "Revenu Garanti",
+        title: "Revenu garanti",
         text: "Take My Keys vous garantit un revenu fixe pour votre logement durant votre absence. Vous n’avez plus à vous soucier de votre loyer, nous nous occupons de tout."
     },
     {
@@ -17,13 +17,13 @@ const whys = [
     },
     {
         icon: PiNumberZeroBold,
-        title: "Zéro Commission",
-        text: "Notre rémunération dépend uniquement des sous-locataires occupant l'appartement pendant votre absence. Aucun frais caché ne vous est demandé : aucune commission n'est prélevée, notre service est entièrement gratuit."
+        title: "Zéro commission",
+        text: "Notre rémunération dépend uniquement des sous-locataires occupant votre logement pendant votre absence. Aucun frais caché ne vous sera réclamé : aucune commission n'est prélevée, notre service est entièrement gratuit."
     },
     {
         icon: FaHandPeace,
         title: "Sans effort",
-        text: "Take My Keys prend soin de votre logement durant votre absence, retrouvez votre logement tel que vous l’avez laissé."
+        text: "Take My Keys prend soin de votre logement durant votre absence, retrouvez votre logement tel que vous l’avez confié."
     
     }
 ]

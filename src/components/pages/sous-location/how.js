@@ -22,7 +22,7 @@ const steps = [
     {
         img: img2,
         title: "Nous visitons votre logement",
-        description: "Lors de notre visite, nous validons votre intérêt pour la sous-location de votre logement et procédons au shooting de celui-ci."
+        description: "Lors de notre visite, nous complétons la fiche de votre logement et le prenons en photo."
     },
     {
         img: img3,
@@ -32,7 +32,7 @@ const steps = [
     {
         img: img4,
         title: "Nous procédons à l'état des lieux avant votre départ",
-        description: "Un état des lieux est organisé la veille de votre départ afin de dresser un inventaire détaillé de l'état du logement. Un document récapitulatif vous sera transmis pour validation avant votre départ."
+        description: "La veille de votre départ, nous procédons ensemble à un état des lieux de votre logement."
     },
     {
         img: img5,
@@ -46,7 +46,7 @@ const steps = [
     },
     {
         img: img7,
-        title: "Nous procédons à l'état des lieux à votre retour",
+        title: " Retrouvez votre logement tel que vous nous l'aviez confié.",
         description: "Un état des lieux est organisé afin de vérifier qu’il n’y a pas eu de dégradation. Retrouvez votre logement comme vous l'avez laissé."
     }
 

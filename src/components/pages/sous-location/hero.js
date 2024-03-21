@@ -68,7 +68,7 @@ export default function Hero() {
         </strong>
       </h1>
       <h2 className="!font-semibold">
-        TAKE MY KEYS a la solution !
+        TAKE MY KEYS est la solution !
       </h2>
     </_Hero>
   );

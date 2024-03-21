@@ -2,16 +2,16 @@
     {
         "img": "/images/sous-location/personas/1.png",
         "title": "Léo, l'étudiant en Erasmus",
-        "description": "Léo, étudiant partant en échange universitaire à l'étranger de 4 mois. Il veut garder son appartement tout en couvrant ses frais de loyer et charges sans recourir à une sous-location illégale ou affronter des problèmes d'assurance."
+        "description": "Léo qui prévoit de partir en échange universitaire, souhaite garder son appartement tout en couvrant ses frais de loyer et charges et sans recourir à une sous-location illégale ou affronter des problèmes d'assurance."
     },
     {
         "img": "/images/sous-location/personas/2.png",
         "title": "Emma, la jeune active en télétravail",
-        "description": "A 28 ans, Emma, une professionnelle dans le secteur des technologies, a décidé de télétravailler depuis la maison de ses parents en Bretagne pendant la période estivale. Son objectif est de trouver une solution fiable pour rentabiliser son appartement pendant son absence, une plateforme qui gère avec transparence son appartement."
+        "description": "A 28 ans, Emma, freelance en data analyst, a décidé de télétravailler depuis la maison de ses parents en Bretagne pendant la période estivale. Elle souhaite rentabiliser son appartement durant son absence."
     },
     {
         "img": "/images/sous-location/personas/3.png",
         "title": "Marc, le propriétaire investisseur",
-        "description": "Marc, 42 ans, propriétaire de plusieurs appartements à Paris et en petite couronne, cherche à maximiser ses revenus locatifs sans les tracas de la gestion quotidienne, ainsi qu'avoir des garanties de sécurité et d'intégrité pour ses biens."
+        "description": "Marc, 42 ans, propriétaire d'un parc immobilier sur Paris et sa petite couronne. Il cherche à déléguer la gestion de ses biens tout en maximisant ses revenus locatifs."
     }
 ]
