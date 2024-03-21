@@ -4,12 +4,25 @@ import hair2 from "@/../public/images/backgrounds/hair2.svg"
 import Locataire from "@/components/pages/formulaire/result/locataire";
 import NotAccepted from "@/components/pages/formulaire/result/not-accepted";
 import Proprietaire from "@/components/pages/formulaire/result/proprietaire";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+
 
 export default function Result(props) {
+  const router = useRouter();
   const { estimation, rent, status, form, error } = props;
-  let child = null;
-  if (status === 422 && error === "NOT_ACCEPTED") {
-    child =  <NotAccepted {...props} />;
+  let child = <></>;
+  useEffect(() => {
+    if (status === 404) {
+      router.push("/form");
+    }
+  });
+
+  if (status === 404) {
+    child = <></>;
+  }
+  else if (status === 422 && error === "NOT_ACCEPTED") {
+    child = <NotAccepted {...props} />;
   }
   else if (form.is_owner) {
     child = <Proprietaire {...props} />;
@@ -33,7 +46,7 @@ Result.getLayout = function getLayout(page) {
 };
 
 export async function getServerSideProps(context) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/estimation?id=" + context.query.id)
+  const res = await fetch(process.env.PRIVATE_API_URL + "/estimation?id=" + context.query.id)
   const result = await res.json()
   return { props: {status: res.status, ...result }}
 }
