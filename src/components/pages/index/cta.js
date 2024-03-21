@@ -32,7 +32,7 @@ export default function Cta() {
           viewport={{ once: true }}
           className="!text-white text-xl lg:text-3xl"
         >
-          Convaincu(e) ?
+          Convaincu ?
         </motion.p>
         <p className="!text-white text-xl lg:text-2xl mt-2">
           Commencez l&apos;aventure avec{" "}
@@ -46,7 +46,7 @@ export default function Cta() {
             viewport={{ once: true }}
             className="bg-secondary !text-white rounded-3xl lg:text-xl px-5 py-1 lg:px-10 lg:py-3 mt-5"
           >
-            Démarrer la simulation
+            Démarrer votre simulation
           </motion.button>
         </Link>
       </div>

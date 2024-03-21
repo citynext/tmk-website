@@ -63,8 +63,7 @@ export default function Who() {
               <IoKeyOutline size={80} className="mb-5" />
               <h2 className="text-4xl">Sous-location</h2>
               <p className="!text-white text-xl my-10 font-light">
-                Transformez votre logement en source de revenu garantie avec Take My
-                Keys
+                Transformer votre charge de loyer en un revenu garanti durant vos absences
               </p>
               <span className="text-secondary bg-white text-xl rounded-3xl px-5 py-3">
                 En savoir plus
@@ -82,7 +81,7 @@ export default function Who() {
               <IoHomeOutline size={80} className="text-primary mb-5" />
               <h2 className="text-4xl">Conciergerie</h2>
               <p className="text-xl my-10 font-light">
-                Maximisez votre rentabilité et assurez-vous une tranquilité d&apos;esprit avec Take My Keys
+                Maximisez votre rentabilité et assurez votre tranquillité d'esprit
               </p>
               <span className="text-white bg-primary text-xl rounded-3xl px-5 py-3">
                 En savoir plus

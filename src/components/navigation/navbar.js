@@ -71,7 +71,7 @@ export default function Navbar() {
             <Link className='absolute left-5 top-5 lg:static' href="/">
                 <Image src={logo} alt="take my keys logo" width={112} height={62.56} />
             </Link>
-            <ul className={`${open ? 'absolute bg-primary shadow-2xl flex flex-col mt-20 rounded' : 'hidden'} text-white gap-10 text-lg lg:mt-0 lg:flex lg:flex-row lg:justify-end lg:items-center`}>
+            <ul className={`${open ? 'absolute bg-primary shadow-2xl flex flex-col mt-20 rounded p-4' : 'hidden'} text-white gap-10 text-lg lg:mt-0 lg:flex lg:flex-row lg:justify-end lg:items-center`}>
                 {navigation.map((item, index) => (
                     <motion.li 
                     initial={initialState}

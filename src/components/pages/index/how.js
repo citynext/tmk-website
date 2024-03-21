@@ -23,7 +23,7 @@ const steps = [
     image: how2,
   },
   {
-    title: "Encaissez votre loyer chaque mois",
+    title: "Encaissez votre revenu chaque mois",
     description:
       "Profitez de votre temps libre, nous nous occupons de tout pour vous garantir un revenu régulier.",
     image: how3,
@@ -62,7 +62,7 @@ export default function How() {
   }, [emblaApi])
 
   return (
-    <section className="flex flex-col gap-10 items-center p-10">
+    <section className="flex flex-col gap-10 items-center px-4 pt-10 lg:pt-0">
         <h1 className="max-w-[95vw] lg:max-w-[60rem] my-5 text-2xl lg:text-4xl text-center">Une démarche simplifiée pour nous confier votre logement</h1>
         <div className="flex flex-col items-center gap-10">
           <div className="sm:pl-10 sm:w-2/3" ref={emblaRef}>

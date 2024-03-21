@@ -127,7 +127,7 @@ export default function CTA({ className, ...props }) {
                                 placeholder="Adresse du logement" 
                                 className="lg:w-80 mt-3 border-gray-400" />
                         </LabelInput>
-                        <Input type="number" value={rooms} onChange={(v) => setRooms(v)} icon={LiaDoorOpenSolid} label="Nombre de Pièces" placeholder="0" className="w-1/2 lg:w-56 border-gray-400 lg:border-solid lg:border-l lg:border-r pr-2 lg:px-8" />
+                        <Input type="number" value={rooms} onChange={(v) => setRooms(v)} icon={LiaDoorOpenSolid} label="Nombre de pièces" placeholder="0" className="w-1/2 lg:w-56 border-gray-400 lg:border-solid lg:border-l lg:border-r pr-2 lg:px-8" />
                         <Input type="number" value={capacity} onChange={(v) => setCapacity(v)} icon={GoPeople} label="Capacité d'accueil" placeholder="0" className="w-1/2 lg:w-48 pl-2 lg:pl-8" />
                     </div>
                     {/* {expanded &&
