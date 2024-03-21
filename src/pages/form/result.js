@@ -11,7 +11,7 @@ export default function Result(props) {
   if (status === 422 && error === "NOT_ACCEPTED") {
     child =  <NotAccepted {...props} />;
   }
-  else if (form.isOwner) {
+  else if (form.is_owner) {
     child = <Proprietaire {...props} />;
   }
   else {

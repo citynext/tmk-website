@@ -60,7 +60,7 @@ const Formulaire = () => {
     let input = {...query, ...additionnalParams};
     delete input.step;
     const body = {
-      isOwner: input.owner === "true",
+      is_owner: input.owner === "true",
       full_address: input.address,
       house_number: input.houseNumber,
       street: input.street,
@@ -72,7 +72,7 @@ const Formulaire = () => {
       area: parseInt(input.area),
       floor: parseInt(input.floor),
       capacity: parseInt(input.capacity),
-      hasElevator: input.elevator === "true",
+      has_elevator: input.elevator === "true",
       start_date: input.startDate ? input.startDate : null,
       end_date: input.endDate ? input.endDate : null,
       first_name: input.firstName,
