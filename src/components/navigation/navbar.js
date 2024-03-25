@@ -11,7 +11,7 @@ import logo from "@/../public/logo/transparent/white-title.png";
 const navigation = [
     { name: 'Sous-location', href: '/sous-location' },
     { name: 'Conciergerie', href: '/conciergerie' },
-    { name: 'Contact', href: process.env.NEXT_PUBLIC_CALENDLY_URL, target: '_blank'},
+    { name: 'Contact', href: '/contact' },
     // { name: 'A propos', href: '/a-propos' },
     // { name: 'FAQ', href: '/foire-aux-questions' },
     // { name: 'Parrainage', href: '/parrainage' },
@@ -39,7 +39,7 @@ const useScrollPosition = () => {
 };
 
 
-export default function Navbar() {
+export default function Navbar({bgColor}) {
     const [open, setOpen] = useState(false);
 
     const toggle = () => {
@@ -47,7 +47,7 @@ export default function Navbar() {
     }
 
     const scrollY = useScrollPosition();
-    let className = open ? 'bg-primary shadow-2xl': 'bg-transparent';
+    let className = open ? 'bg-primary shadow-2xl': bgColor ?? 'bg-transparent';
     if (scrollY > 200) {
         className = 'bg-primary shadow-2xl';
     }

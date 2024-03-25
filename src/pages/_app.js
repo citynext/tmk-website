@@ -4,7 +4,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 
 
 export default function App({ Component, pageProps }) {
-  const getLayout = Component.getLayout ?? ((page) => (<DefaultLayout>{page}</DefaultLayout>));
+  const getLayout = Component.getLayout ?? ((page) => (<DefaultLayout navColor={Component.navColor}>{page}</DefaultLayout>));
 
   return getLayout(
     <>
