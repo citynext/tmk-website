@@ -58,6 +58,6 @@ export const getStaticProps = async () => {
       navColor: Faq.navColor,
       data: faq,
     },
-    revalidate: 10,
+    revalidate: 300,
   };
 };

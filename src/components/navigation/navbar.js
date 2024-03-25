@@ -13,7 +13,7 @@ const navigation = [
     { name: 'Conciergerie', href: '/conciergerie' },
     { name: 'Contact', href: '/contact' },
     // { name: 'A propos', href: '/a-propos' },
-    // { name: 'FAQ', href: '/foire-aux-questions' },
+    { name: 'FAQ', href: '/faq' },
     // { name: 'Parrainage', href: '/parrainage' },
     // { name: 'Bonus JO 2024', href: '/bonus-jo-2024' },
 ]
