@@ -7,6 +7,8 @@ export default function Contact() {
     const [loading, setLoading] = useState(false)
 
     const handleSubmit = (e) => {
+        setError("")
+        setMessage("")
         setLoading(true)
         const input = {
             name: e.target.name.value,
@@ -14,7 +16,8 @@ export default function Contact() {
             phone: e.target.phone.value,
             message: e.target.message.value
         }
-        fetch(process.env.NEXT_PUBLIC_API_URL, {
+        console.log(process.env.NEXT_PUBLIC_API_URL + '/contact/')
+        fetch(process.env.NEXT_PUBLIC_API_URL + '/contact/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -64,8 +67,9 @@ export default function Contact() {
 
                         <label htmlFor="message" className="block mb-2">Message:</label>
                         <textarea id="message" rows={6} name="message" required className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md"></textarea>
-
-                        <button disabled={loading} type="submit" className="px-4 py-2 bg-primary text-white rounded-md">Envoyer</button>
+                        {message && <p className="text-green-500">{message}</p>}
+                        {error && <p className="text-red-500">{error}</p>}
+                        <button disabled={loading} type="submit" className="px-4 py-2 bg-primary disabled:bg-primary-90 text-white rounded-md">Envoyer</button>
                     </form>
                 </div>
             </div>
