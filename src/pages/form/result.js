@@ -24,6 +24,14 @@ export default function Result(props) {
   else if (status === 422 && error === "NOT_ACCEPTED") {
     child = <NotAccepted {...props} />;
   }
+  else if (status === 500) {
+    child = <div className="flex justify-center items-center h-screen">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold">Erreur serveur</h1>
+        <p className="text-lg">Une erreur est survenue lors du traitement de votre demande.</p>
+      </div>
+    </div>
+  }
   else if (form.is_owner) {
     child = <Proprietaire {...props} />;
   }
