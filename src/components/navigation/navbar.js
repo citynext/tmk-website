@@ -14,7 +14,7 @@ const navigation = [
     { name: 'Contact', href: '/contact' },
     // { name: 'A propos', href: '/a-propos' },
     { name: 'FAQ', href: '/faq' },
-    { name: 'Blog', href: '/blog' },
+    // { name: 'Blog', href: '/blog' },
     // { name: 'Parrainage', href: '/parrainage' },
     // { name: 'Bonus JO 2024', href: '/bonus-jo-2024' },
 ]
