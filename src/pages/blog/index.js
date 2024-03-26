@@ -9,7 +9,7 @@ export default function Blog({ articles }) {
             <ul className="grid grid-cols-3 m-12 gap-12">
                 {articles.map((article, index) => (
                     <li key={index} className="border">
-                        <Image src={process.env.NEXT_PUBLIC_API_URL + '/' + article.cover ?? anonymous} width={300} height={200} alt={article.id} />
+                        <Image src={process.env.NEXT_PUBLIC_API_URL + '/media/' + article.cover ?? anonymous} width={300} height={200} alt={article.id} />
                         <a href={`/blog/${article.id}`}>{article.title}</a>
                     </li>
                 ))}
